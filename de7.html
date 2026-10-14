@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디지털 윤리 7차시 - 디지털 과의존·추천 알고리즘과 책임 있는 사용</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --navy:#17365d; --blue:#2f66a3; --light:#edf4fb; --line:#d7e1ec;
+  --text:#1f2937; --green:#147d64; --red:#b23a48; --gold:#9b6a00;
+}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;background:#f5f7fa;color:var(--text);line-height:1.72}
+header{background:linear-gradient(135deg,#17365d,#3b6fa7);color:#fff;padding:46px 20px 38px;text-align:center}
+header h1{margin:0 0 8px;font-size:2.12rem}
+header p{margin:0;opacity:.94}
+.wrap{width:min(1180px,94%);margin:25px auto 60px}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin-bottom:22px;box-shadow:0 4px 16px rgba(0,0,0,.055)}
+h2{color:var(--navy);border-left:6px solid #4c7bb1;padding-left:12px;margin-top:0}
+h3{color:#285788}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.box{background:#f8fafc;border:1px solid #e3e9ef;border-radius:12px;padding:16px}
+.keyword{display:inline-block;background:var(--light);color:#275b91;border-radius:999px;padding:5px 10px;margin:3px;font-weight:700;font-size:.9rem}
+.opening{background:linear-gradient(135deg,#f3f8ff,#eef7f5);border:1px solid #cbdced;border-radius:14px;padding:20px;font-size:1.04rem}
+.notice{background:#fff8e7;border:1px solid #ecd49a;border-radius:12px;padding:15px}
+.flow{counter-reset:n;list-style:none;padding:0}
+.flow li{position:relative;margin:12px 0;padding:13px 15px 13px 52px;background:#fafcff;border:1px solid #e1e8f0;border-radius:11px}
+.flow li:before{counter-increment:n;content:counter(n);position:absolute;left:14px;top:13px;width:27px;height:27px;border-radius:50%;background:#315f94;color:#fff;display:grid;place-items:center;font-weight:800}
+.info-table{width:100%;border-collapse:collapse}
+.info-table th,.info-table td{border:1px solid var(--line);padding:10px;vertical-align:top}
+.info-table th{background:#eaf1f8;color:#17365d}
+.formbar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+input[type=text]{width:100%;padding:11px;border:1px solid #bcc9d7;border-radius:9px;font-size:1rem}
+.q{border:1px solid #dfe6ee;border-radius:13px;padding:18px;margin:16px 0;background:#fff}
+.q-title{font-weight:800;color:#183b63;margin-bottom:10px}
+.options label{display:block;margin:7px 0;padding:8px 10px;border-radius:8px;background:#f8fafc;cursor:pointer}
+.options label:hover{background:#edf4fb}
+button{border:0;border-radius:9px;padding:11px 17px;font-weight:800;cursor:pointer}
+.primary{background:#214f80;color:#fff}
+.secondary{background:#e6edf5;color:#20466e}
+.download{background:#147d64;color:#fff}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.result{display:none;margin-top:20px;padding:18px;border-radius:12px;background:#f4f8fc;border:1px solid #cbd9e8}
+.correct{color:var(--green);font-weight:800}
+.wrong{color:var(--red);font-weight:800}
+.explain{margin-top:9px;background:#fbfcfe;border-left:4px solid #688caf;padding:10px 12px}
+.small{font-size:.91rem;color:#5b6573}
+.score-big{font-size:1.65rem;font-weight:900;color:#17365d}
+.topbtn{position:fixed;top:10px;left:10px;z-index:1000;background:#17365d;color:white;border-radius:8px;padding:8px 11px}
+footer{text-align:center;color:#6b7280;padding:25px}
+@media(max-width:760px){.grid,.formbar{grid-template-columns:1fr}header h1{font-size:1.65rem}}
+@media print{.topbtn,.actions{display:none!important}.card{box-shadow:none;break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+<button class="topbtn" onclick="window.print()">인쇄 / PDF</button>
+
+<header>
+<h1>디지털 윤리 7차시</h1>
+<p>디지털 과의존·추천 알고리즘과 책임 있는 사용 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+
+<section class="card">
+<h2>1. 수업 개요</h2>
+<table class="info-table">
+<tr><th>수업 주제</th><td>디지털 과의존·추천 알고리즘과 책임 있는 사용</td><th>차시</th><td>7 / 8차시</td></tr>
+<tr><th>수업 유형</th><td>개념기반 목표지향 수업</td><th>대상</th><td>고등학생·과학고 학생</td></tr>
+<tr><th>핵심 질문</th><td colspan="3"><strong>“추천 알고리즘을 내가 사용하는 것일까, 알고리즘이 나의 행동을 이끄는 것일까?”</strong></td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>2. 학습목표</h2>
+<div class="grid">
+<div class="box"><strong>지식·이해</strong><br>추천 알고리즘, 주의력 경제, 자동재생, 무한 스크롤, 필터 버블, 디지털 웰빙의 의미를 설명할 수 있다.</div>
+<div class="box"><strong>과정·기능</strong><br>자신의 디지털 사용 습관을 기록하고, 특정 서비스가 자신의 선택과 집중에 미치는 영향을 분석할 수 있다.</div>
+<div class="box"><strong>가치·태도</strong><br>디지털 기술을 무조건 배제하거나 의존하지 않고 목적에 맞게 스스로 조절하여 사용하는 태도를 기른다.</div>
+<div class="box"><strong>최종 도달 목표</strong><br>추천 알고리즘과 자신의 사용 습관의 상호작용을 이해하고 실천 가능한 디지털 웰빙 계획을 설계할 수 있다.</div>
+</div>
+</section>
+
+<section class="card">
+<h2>3. 핵심개념</h2>
+<p>
+<span class="keyword">추천 알고리즘</span>
+<span class="keyword">주의력 경제</span>
+<span class="keyword">자동재생</span>
+<span class="keyword">무한 스크롤</span>
+<span class="keyword">알림</span>
+<span class="keyword">필터 버블</span>
+<span class="keyword">자기조절</span>
+<span class="keyword">목적 기반 사용</span>
+<span class="keyword">디지털 웰빙</span>
+</p>
+<div class="notice">
+<strong>개념적 일반화:</strong> 디지털 서비스는 사용자의 관심과 행동 데이터를 바탕으로 다음 콘텐츠를 추천하며, 이 과정은 편리함과 몰입을 동시에 높일 수 있다. 책임 있는 사용은 기술을 무조건 멀리하는 것이 아니라 자신의 목적과 상태를 인식하고 사용 시간·알림·추천 환경을 스스로 조절하는 것이다.
+</div>
+</section>
+
+<section class="card">
+<h2>4. 수업 열기 멘트</h2>
+<div class="opening">
+밤 10시, 여러분이 내일 발표할 물리 탐구 자료를 찾으려고 동영상 플랫폼을 열었다고 상상해 봅시다. 처음 검색한 것은 <strong>“푸리에 변환 기초 설명”</strong>입니다.<br><br>
+
+첫 번째 영상은 정말 도움이 됩니다. 그런데 영상이 끝나자 “10분 만에 이해하는 양자역학”, “과학고 학생이 꼭 알아야 할 수학 공식”, “천재들이 공부하는 방법” 같은 영상이 연달아 추천됩니다. 잠깐만 보려고 했는데 어느새 시계는 11시 30분을 가리키고 있습니다.<br><br>
+
+여기서 흥미로운 점이 있습니다. 여러분이 플랫폼을 ‘사용한 것’도 맞지만, 플랫폼 역시 여러분이 무엇을 오래 보았는지, 어떤 영상을 넘겼는지, 어느 제목을 눌렀는지 학습하고 있습니다. 그리고 그 기록을 바탕으로 <strong>“다음에 무엇을 보여 주면 더 오래 머물까?”</strong>를 계속 계산합니다.<br><br>
+
+그렇다면 추천 알고리즘은 나쁜 것일까요? 꼭 그렇지는 않습니다. 좋은 강의를 찾게 해 주고, 관심 있는 논문이나 코딩 자료를 빠르게 발견하도록 도와주기도 합니다. 문제는 추천이 편리해질수록 <strong>내가 무엇을 선택한 것인지, 무엇이 나에게 선택되도록 유도된 것인지</strong> 구분하기 어려워질 수 있다는 점입니다.<br><br>
+
+과학고 학생에게 디지털 기기는 공부를 방해하는 물건이기만 한 것이 아닙니다. 코딩, 논문 검색, AI 활용, 공동연구, 시뮬레이션 모두 디지털 환경에서 이루어집니다. 그래서 답은 “스마트폰을 쓰지 말자”가 아닙니다.<br><br>
+
+오늘의 질문은 조금 더 과학적입니다. <strong>“나는 어떤 조건에서 집중이 깨지는가? 어떤 기능이 나를 더 오래 머물게 하는가? 내가 직접 조절할 수 있는 변수는 무엇인가?”</strong><br><br>
+
+좋은 과학자는 실험 조건을 통제합니다. 오늘은 여러분 자신의 디지털 환경을 하나의 실험 시스템처럼 바라보고, <strong>주의력과 시간을 스스로 설계하는 방법</strong>을 찾아보겠습니다.
+</div>
+</section>
+
+<section class="card">
+<h2>5. 수업의 흐름</h2>
+<ol class="flow">
+<li><strong>도입 5분</strong> — “자료 검색 10분이 90분이 된 경험”을 가상 사례로 제시하고 어떤 기능이 사용을 연장했는지 추론한다.</li>
+<li><strong>목표 공유 3분</strong> — 디지털 기술을 끊는 수업이 아니라 ‘목적에 맞게 스스로 조절하는 수업’임을 안내한다.</li>
+<li><strong>개념 형성 12분</strong> — 추천 알고리즘, 주의력 경제, 자동재생, 무한 스크롤, 필터 버블, 디지털 웰빙을 이해한다.</li>
+<li><strong>사례 탐구 12분</strong> — 유튜브 강의, 짧은 영상, 게임, SNS, AI 도구 사용 사례에서 편리함과 과의존 위험을 함께 분석한다.</li>
+<li><strong>개념 전이 8분</strong> — 자신의 사용 기록을 바탕으로 알림 조정, 자동재생 해제, 사용 목적 기록, 집중 시간 설정 등 실천 전략을 설계한다.</li>
+<li><strong>형성평가 7분</strong> — OX 5문항과 옳은 것 3개 고르기 5문항으로 개념을 점검한다.</li>
+<li><strong>정리 3분</strong> — “디지털 기기를 덜 쓰는 것보다 더 중요한 것은 ________하게 사용하는 것이다.”를 완성한다.</li>
+</ol>
+</section>
+
+<section class="card">
+<h2>6. 형성평가</h2>
+<p class="small">총 10문항, 각 10점. 6~10번은 정답 3개를 모두 선택하고 오답 보기를 선택하지 않아야 정답으로 처리됩니다.</p>
+
+<div class="formbar">
+<div><label><strong>학번</strong></label><input id="studentId" type="text" placeholder="예: 1101"></div>
+<div><label><strong>이름</strong></label><input id="studentName" type="text" placeholder="예: 홍길동"></div>
+</div>
+
+<h3>Ⅰ. OX 퀴즈 5문항</h3>
+
+<div class="q" data-num="1" data-type="radio" data-answer="O">
+<div class="q-title">1. 추천 알고리즘은 사용자의 시청 기록, 클릭, 검색 등 행동 정보를 활용하여 다음 콘텐츠를 추천할 수 있다.</div>
+<div class="options">
+<label><input type="radio" name="q1" value="O"> O</label>
+<label><input type="radio" name="q1" value="X"> X</label>
+</div>
+<div class="explain">해설: 추천 시스템은 사용자의 행동 신호와 콘텐츠 특성 등을 이용하여 관심을 가질 가능성이 높은 항목을 제시할 수 있다. 이러한 개인화는 편리함을 높이지만 사용 패턴에도 영향을 줄 수 있다.</div>
+</div>
+
+<div class="q" data-num="2" data-type="radio" data-answer="X">
+<div class="q-title">2. 디지털 웰빙을 실천하려면 스마트폰과 인터넷을 가능한 한 완전히 사용하지 않는 것이 가장 중요하다.</div>
+<div class="options">
+<label><input type="radio" name="q2" value="O"> O</label>
+<label><input type="radio" name="q2" value="X"> X</label>
+</div>
+<div class="explain">해설: 디지털 웰빙의 핵심은 기술을 무조건 배제하는 것이 아니라 자신의 목적과 상태에 맞게 균형 있게 사용하는 것이다. 학습과 연구에 필요한 디지털 도구는 적절히 활용할 수 있다.</div>
+</div>
+
+<div class="q" data-num="3" data-type="radio" data-answer="O">
+<div class="q-title">3. 자동재생이나 무한 스크롤은 사용자가 별도의 선택을 하지 않아도 다음 콘텐츠로 이어지게 하여 사용 시간을 늘릴 수 있다.</div>
+<div class="options">
+<label><input type="radio" name="q3" value="O"> O</label>
+<label><input type="radio" name="q3" value="X"> X</label>
+</div>
+<div class="explain">해설: 자동재생과 무한 스크롤은 콘텐츠 소비의 중단 지점을 줄인다. 이 때문에 사용자가 계획한 시간보다 오래 머무를 가능성이 커질 수 있다.</div>
+</div>
+
+<div class="q" data-num="4" data-type="radio" data-answer="X">
+<div class="q-title">4. 추천 알고리즘이 보여 주는 콘텐츠는 사용자가 관심 있어 하는 내용이므로 정보의 다양성에는 영향을 주지 않는다.</div>
+<div class="options">
+<label><input type="radio" name="q4" value="O"> O</label>
+<label><input type="radio" name="q4" value="X"> X</label>
+</div>
+<div class="explain">해설: 개인화 추천이 비슷한 관심사와 관점을 반복적으로 보여 주면 다른 관점이나 새로운 정보에 노출되는 기회가 줄어들 수 있다. 이를 필터 버블과 연결해 생각할 수 있다.</div>
+</div>
+
+<div class="q" data-num="5" data-type="radio" data-answer="O">
+<div class="q-title">5. 자신의 디지털 사용 시간을 기록하고 어떤 상황에서 사용이 길어지는지 살펴보는 것은 자기조절 전략을 세우는 데 도움이 된다.</div>
+<div class="options">
+<label><input type="radio" name="q5" value="O"> O</label>
+<label><input type="radio" name="q5" value="X"> X</label>
+</div>
+<div class="explain">해설: 실제 사용 기록을 확인하면 막연한 느낌보다 자신의 패턴을 객관적으로 파악할 수 있다. 이후 알림 설정, 시간 제한, 사용 목적 설정 등 구체적인 개선 전략을 세우기 쉬워진다.</div>
+</div>
+
+<h3>Ⅱ. 옳은 것 3개 고르기 — 5지선다형 5문항</h3>
+
+<div class="q" data-num="6" data-type="check" data-answer="A,C,E">
+<div class="q-title">6. 추천 알고리즘의 특징에 대한 설명으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q6" value="A"> ① 사용자의 과거 행동을 바탕으로 관심 가능성이 높은 콘텐츠를 제시할 수 있다.</label>
+<label><input type="checkbox" name="q6" value="B"> ② 추천된 콘텐츠는 항상 객관적으로 가장 중요한 정보이다.</label>
+<label><input type="checkbox" name="q6" value="C"> ③ 편리한 정보 탐색을 돕는 긍정적인 역할도 할 수 있다.</label>
+<label><input type="checkbox" name="q6" value="D"> ④ 추천이 개인화되면 사용자의 선택에는 전혀 영향을 미치지 않는다.</label>
+<label><input type="checkbox" name="q6" value="E"> ⑤ 비슷한 콘텐츠가 반복되면 정보 경험의 범위가 좁아질 가능성이 있다.</label>
+</div>
+<div class="explain">해설: ① 개인화, ③ 탐색 편의, ⑤ 정보 범위 축소 가능성이 모두 추천 알고리즘과 관련된다. 추천 순위가 객관적 중요성을 의미하는 것은 아니며 개인화는 선택 환경에 영향을 줄 수 있다.</div>
+</div>
+
+<div class="q" data-num="7" data-type="check" data-answer="B,C,D">
+<div class="q-title">7. 과학고 학생이 공부 중 디지털 집중력을 높이기 위한 방법으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q7" value="A"> ① 모든 알림을 켜 두어 새로운 정보를 즉시 확인한다.</label>
+<label><input type="checkbox" name="q7" value="B"> ② 공부를 시작하기 전에 디지털 기기를 사용할 목적을 구체적으로 정한다.</label>
+<label><input type="checkbox" name="q7" value="C"> ③ 필요하지 않은 알림을 줄이고 집중 시간에는 방해 요소를 제한한다.</label>
+<label><input type="checkbox" name="q7" value="D"> ④ 일정 시간이 지나면 사용 목적을 다시 확인하고 계속 사용할 필요가 있는지 점검한다.</label>
+<label><input type="checkbox" name="q7" value="E"> ⑤ 자료 검색 중 추천 영상이 나오면 학습과 무관해도 모두 확인한다.</label>
+</div>
+<div class="explain">해설: ② 목적 설정, ③ 방해 요소 조정, ④ 중간 점검은 자기조절을 강화한다. 모든 알림을 켜거나 추천 콘텐츠를 무조건 따라가는 것은 집중을 방해할 수 있다.</div>
+</div>
+
+<div class="q" data-num="8" data-type="check" data-answer="A,B,E">
+<div class="q-title">8. 디지털 과의존 위험을 살펴볼 때 고려할 내용으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q8" value="A"> ① 사용 시간이 수면이나 학습 등 중요한 활동을 반복적으로 방해하는지 확인한다.</label>
+<label><input type="checkbox" name="q8" value="B"> ② 원래 계획보다 훨씬 오래 사용하는 일이 반복되는지 살펴본다.</label>
+<label><input type="checkbox" name="q8" value="C"> ③ 하루 사용 시간이 친구보다 짧으면 어떤 상황에서도 문제가 없다고 판단한다.</label>
+<label><input type="checkbox" name="q8" value="D"> ④ 디지털 기기를 많이 사용하는 직업을 희망하면 자기조절은 필요하지 않다.</label>
+<label><input type="checkbox" name="q8" value="E"> ⑤ 사용을 멈추기 어려운 상황과 그때의 감정·환경을 함께 기록한다.</label>
+</div>
+<div class="explain">해설: ① 중요한 생활 영역의 방해, ② 계획보다 긴 사용, ⑤ 사용을 멈추기 어려운 상황의 기록은 실제 패턴을 이해하는 데 도움이 된다. 단순히 타인과 시간을 비교하는 것만으로는 충분하지 않다.</div>
+</div>
+
+<div class="q" data-num="9" data-type="check" data-answer="A,D,E">
+<div class="q-title">9. 필터 버블과 정보 다양성을 줄이기 위한 행동으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q9" value="A"> ① 추천 목록에만 의존하지 않고 직접 검색어를 바꾸어 자료를 찾아본다.</label>
+<label><input type="checkbox" name="q9" value="B"> ② 기존에 좋아하던 채널의 정보만 반복해서 본다.</label>
+<label><input type="checkbox" name="q9" value="C"> ③ 추천 결과 상단에 있으면 가장 정확한 정보라고 판단한다.</label>
+<label><input type="checkbox" name="q9" value="D"> ④ 서로 다른 관점이나 출처의 자료를 의도적으로 비교한다.</label>
+<label><input type="checkbox" name="q9" value="E"> ⑤ 추천 시스템이 자신의 이전 행동에 영향을 받을 수 있음을 인식한다.</label>
+</div>
+<div class="explain">해설: ① 직접 탐색, ④ 다양한 출처 비교, ⑤ 개인화의 영향을 인식하는 태도는 정보 경험을 넓히는 데 도움이 된다. 추천 순위만으로 정확성을 판단하거나 한 출처만 반복해서 보는 것은 적절하지 않다.</div>
+</div>
+
+<div class="q" data-num="10" data-type="check" data-answer="B,C,E">
+<div class="q-title">10. 실천 가능한 디지털 웰빙 계획에 포함하면 좋은 내용을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q10" value="A"> ① 앞으로 모든 디지털 기기를 사용하지 않겠다고 계획한다.</label>
+<label><input type="checkbox" name="q10" value="B"> ② 자신의 사용 기록을 바탕으로 바꾸고 싶은 행동을 구체적으로 정한다.</label>
+<label><input type="checkbox" name="q10" value="C"> ③ 알림, 자동재생, 집중 모드 등 조절 가능한 환경 설정을 활용한다.</label>
+<label><input type="checkbox" name="q10" value="D"> ④ 계획을 한 번 세운 뒤 효과가 없어도 계속 같은 방식만 유지한다.</label>
+<label><input type="checkbox" name="q10" value="E"> ⑤ 일정 기간 실천한 뒤 실제 효과를 확인하고 계획을 수정한다.</label>
+</div>
+<div class="explain">해설: ② 구체적인 행동 목표, ③ 환경 조정, ⑤ 실행 후 평가와 수정은 지속 가능한 자기조절 계획의 중요한 요소이다. 지나치게 극단적인 금지나 효과 검토 없는 반복은 실천 가능성이 낮다.</div>
+</div>
+
+<div class="actions">
+<button class="primary" onclick="gradeQuiz()">채점하기</button>
+<button class="download" onclick="downloadResult()">결과 TXT 저장</button>
+<button class="secondary" onclick="resetQuiz()">다시 풀기</button>
+</div>
+<div id="result" class="result"></div>
+</section>
+
+<section class="card">
+<h2>7. 교사용 정리 포인트</h2>
+<ul>
+<li>디지털 사용을 선악이나 의지력만의 문제로 단순화하지 않고 <strong>서비스 설계와 개인 행동의 상호작용</strong>으로 이해하게 한다.</li>
+<li>학생의 실제 사용 시간을 공개적으로 비교하거나 평가하지 않고, 개인 기록은 자기성찰 자료로 활용하게 한다.</li>
+<li>과학고 학생에게 디지털 기술은 학습·연구의 핵심 도구이므로 ‘사용 금지’보다 <strong>목적 기반 사용과 환경 조정</strong>을 강조한다.</li>
+<li>추천 알고리즘의 장점과 한계를 모두 다루고, 필터 버블과 정보 다양성 문제까지 연결한다.</li>
+<li>마무리 질문: <strong>“나의 디지털 환경에서 집중력을 지키기 위해 오늘 바로 바꿀 수 있는 한 가지는 무엇인가?”</strong></li>
+</ul>
+</section>
+
+</div>
+<footer>디지털 윤리 7차시 · 디지털 과의존·추천 알고리즘과 책임 있는 사용</footer>
+
+<script>
+let lastResultText="";
+let lastScore=null;
+let lastTime="";
+
+const explanations={
+1:"추천 시스템은 사용자의 검색, 클릭, 시청 시간과 같은 행동 신호를 활용해 관심 가능성이 높은 콘텐츠를 제시할 수 있다.",
+2:"디지털 웰빙은 기술을 전혀 사용하지 않는 것이 아니라 자신의 목적과 상태에 맞게 균형 있게 사용하는 것을 의미한다.",
+3:"자동재생과 무한 스크롤은 콘텐츠 소비의 중단 지점을 줄여 계획한 시간보다 더 오래 사용하게 만들 수 있다.",
+4:"개인화 추천은 비슷한 콘텐츠를 반복적으로 보여 줄 수 있으므로 정보 다양성과 새로운 관점에 노출될 기회를 줄일 수 있다.",
+5:"사용 기록을 확인하면 실제 패턴을 객관적으로 파악하여 알림 조정, 시간 제한, 목적 설정과 같은 자기조절 전략을 세우는 데 도움이 된다.",
+6:"정답은 ①, ③, ⑤이다. 추천 알고리즘은 개인화와 탐색 편의를 제공하지만, 비슷한 콘텐츠가 반복될 경우 정보 경험이 좁아질 수 있다.",
+7:"정답은 ②, ③, ④이다. 사용 목적을 정하고 방해 요소를 줄이며 중간에 목적을 다시 점검하는 것은 집중력과 자기조절을 높이는 방법이다.",
+8:"정답은 ①, ②, ⑤이다. 중요한 생활 활동을 방해하는지, 계획보다 사용이 길어지는지, 멈추기 어려운 상황이 무엇인지 살펴보는 것이 중요하다.",
+9:"정답은 ①, ④, ⑤이다. 직접 검색하고 다양한 출처를 비교하며 개인화의 영향을 인식하면 추천에만 의존하는 것을 줄일 수 있다.",
+10:"정답은 ②, ③, ⑤이다. 구체적인 행동 목표, 환경 설정의 조정, 실행 결과 평가와 수정이 실천 가능한 디지털 웰빙 계획의 핵심이다."
+};
+
+function selectedValue(q){
+  const type=q.dataset.type,num=q.dataset.num;
+  if(type==="radio"){
+    const el=document.querySelector('input[name="q'+num+'"]:checked');
+    return el?el.value:"";
+  }
+  return [...document.querySelectorAll('input[name="q'+num+'"]:checked')].map(x=>x.value).sort().join(",");
+}
+
+function displaySelected(q,val){
+  if(!val) return "미응답";
+  if(q.dataset.type==="radio") return val;
+  const map={A:"①",B:"②",C:"③",D:"④",E:"⑤"};
+  return val.split(",").map(v=>map[v]).join(", ");
+}
+
+function gradeQuiz(){
+  const sid=document.getElementById("studentId").value.trim();
+  const name=document.getElementById("studentName").value.trim();
+  if(!sid||!name){alert("학번과 이름을 입력하세요.");return;}
+
+  let score=0,html="",lines=[];
+  lastTime=new Date().toLocaleString("ko-KR");
+
+  document.querySelectorAll(".q").forEach(q=>{
+    const num=q.dataset.num;
+    const ans=q.dataset.answer.split(",").sort().join(",");
+    const sel=selectedValue(q);
+    const ok=sel===ans;
+    if(ok) score+=10;
+
+    html+=`<div>
+      <span class="${ok?'correct':'wrong'}">${num}번 ${ok?'정답':'오답'}</span>
+      · 선택: ${displaySelected(q,sel)}
+      · 정답: ${displaySelected(q,ans)}
+      <div class="explain">${explanations[num]}</div>
+    </div><hr>`;
+
+    lines.push(`[${num}번] ${ok?'정답':'오답'}`);
+    lines.push(`선택: ${displaySelected(q,sel)}`);
+    lines.push(`정답: ${displaySelected(q,ans)}`);
+    lines.push(`상세 해설: ${explanations[num]}`);
+    lines.push("");
+  });
+
+  lastScore=score;
+  const result=document.getElementById("result");
+  result.style.display="block";
+  result.innerHTML=`<div class="score-big">${sid} ${name} · ${score}점 / 100점</div>
+  <p>응시시각: ${lastTime}</p><hr>${html}`;
+
+  lastResultText=
+`디지털 윤리 7차시 형성평가 결과
+========================================
+학번: ${sid}
+이름: ${name}
+점수: ${score}점 / 100점
+응시시각: ${lastTime}
+========================================
+
+${lines.join("\n")}
+
+[수업 핵심]
+추천 알고리즘은 편리함을 주지만 사용자의 관심과 행동에 영향을 줄 수 있다.
+책임 있는 디지털 사용은 기술을 무조건 피하는 것이 아니라 목적을 정하고, 사용 환경을 조정하며, 자신의 사용 패턴을 점검하고 수정하는 것이다.
+`;
+
+  result.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function safeFile(s){
+  return s.replace(/[\\/:*?"<>|]/g,"_").replace(/\s+/g,"");
+}
+
+function timestampForFile(){
+  const d=new Date();
+  const p=n=>String(n).padStart(2,"0");
+  return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`;
+}
+
+function downloadResult(){
+  if(lastScore===null){
+    gradeQuiz();
+    if(lastScore===null)return;
+  }
+  const sid=safeFile(document.getElementById("studentId").value.trim());
+  const name=safeFile(document.getElementById("studentName").value.trim());
+  const filename=`${sid}_${name}_${lastScore}점_디윤7차시_${timestampForFile()}.txt`;
+  const blob=new Blob(["\ufeff"+lastResultText],{type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=filename;
+  document.body.appendChild(a);
+  a.click();
+  URL.revokeObjectURL(a.href);
+  a.remove();
+}
+
+function resetQuiz(){
+  document.querySelectorAll('input[type="radio"],input[type="checkbox"]').forEach(x=>x.checked=false);
+  document.getElementById("result").style.display="none";
+  lastResultText="";lastScore=null;lastTime="";
+  document.querySelector(".formbar").scrollIntoView({behavior:"smooth",block:"start"});
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디지털 윤리 6차시 - 인공지능 윤리와 알고리즘 편향</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --navy:#17365d; --blue:#2f66a3; --light:#edf4fb; --line:#d7e1ec;
+  --text:#1f2937; --green:#147d64; --red:#b23a48;
+}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;background:#f5f7fa;color:var(--text);line-height:1.72}
+header{background:linear-gradient(135deg,#17365d,#3b6fa7);color:#fff;padding:46px 20px 38px;text-align:center}
+header h1{margin:0 0 8px;font-size:2.12rem}
+header p{margin:0;opacity:.94}
+.wrap{width:min(1180px,94%);margin:25px auto 60px}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin-bottom:22px;box-shadow:0 4px 16px rgba(0,0,0,.055)}
+h2{color:var(--navy);border-left:6px solid #4c7bb1;padding-left:12px;margin-top:0}
+h3{color:#285788}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.box{background:#f8fafc;border:1px solid #e3e9ef;border-radius:12px;padding:16px}
+.keyword{display:inline-block;background:var(--light);color:#275b91;border-radius:999px;padding:5px 10px;margin:3px;font-weight:700;font-size:.9rem}
+.opening{background:linear-gradient(135deg,#f3f8ff,#eef7f5);border:1px solid #cbdced;border-radius:14px;padding:20px;font-size:1.04rem}
+.notice{background:#fff8e7;border:1px solid #ecd49a;border-radius:12px;padding:15px}
+.flow{counter-reset:n;list-style:none;padding:0}
+.flow li{position:relative;margin:12px 0;padding:13px 15px 13px 52px;background:#fafcff;border:1px solid #e1e8f0;border-radius:11px}
+.flow li:before{counter-increment:n;content:counter(n);position:absolute;left:14px;top:13px;width:27px;height:27px;border-radius:50%;background:#315f94;color:#fff;display:grid;place-items:center;font-weight:800}
+.info-table{width:100%;border-collapse:collapse}
+.info-table th,.info-table td{border:1px solid var(--line);padding:10px;vertical-align:top}
+.info-table th{background:#eaf1f8;color:#17365d}
+.formbar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+input[type=text]{width:100%;padding:11px;border:1px solid #bcc9d7;border-radius:9px;font-size:1rem}
+.q{border:1px solid #dfe6ee;border-radius:13px;padding:18px;margin:16px 0;background:#fff}
+.q-title{font-weight:800;color:#183b63;margin-bottom:10px}
+.options label{display:block;margin:7px 0;padding:8px 10px;border-radius:8px;background:#f8fafc;cursor:pointer}
+.options label:hover{background:#edf4fb}
+button{border:0;border-radius:9px;padding:11px 17px;font-weight:800;cursor:pointer}
+.primary{background:#214f80;color:#fff}
+.secondary{background:#e6edf5;color:#20466e}
+.download{background:#147d64;color:#fff}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.result{display:none;margin-top:20px;padding:18px;border-radius:12px;background:#f4f8fc;border:1px solid #cbd9e8}
+.correct{color:var(--green);font-weight:800}
+.wrong{color:var(--red);font-weight:800}
+.explain{margin-top:9px;background:#fbfcfe;border-left:4px solid #688caf;padding:10px 12px}
+.small{font-size:.91rem;color:#5b6573}
+.score-big{font-size:1.65rem;font-weight:900;color:#17365d}
+.topbtn{position:fixed;top:10px;left:10px;z-index:1000;background:#17365d;color:white;border-radius:8px;padding:8px 11px}
+footer{text-align:center;color:#6b7280;padding:25px}
+@media(max-width:760px){.grid,.formbar{grid-template-columns:1fr}header h1{font-size:1.65rem}}
+@media print{.topbtn,.actions{display:none!important}.card{box-shadow:none;break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+<button class="topbtn" onclick="window.print()">인쇄 / PDF</button>
+
+<header>
+<h1>디지털 윤리 6차시</h1>
+<p>인공지능 윤리와 알고리즘 편향 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+
+<section class="card">
+<h2>1. 수업 개요</h2>
+<table class="info-table">
+<tr><th>수업 주제</th><td>인공지능 윤리와 알고리즘 편향</td><th>차시</th><td>6 / 8차시</td></tr>
+<tr><th>수업 유형</th><td>개념기반 목표지향 수업</td><th>대상</th><td>고등학생·과학고 학생</td></tr>
+<tr><th>핵심 질문</th><td colspan="3"><strong>“인공지능의 판단은 언제 공정하다고 말할 수 있을까?”</strong></td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>2. 학습목표</h2>
+<div class="grid">
+<div class="box"><strong>지식·이해</strong><br>알고리즘 편향, 데이터 편향, 공정성, 투명성, 설명가능성, 책임성의 의미를 설명할 수 있다.</div>
+<div class="box"><strong>과정·기능</strong><br>AI 의사결정 사례에서 편향이 발생할 수 있는 지점과 영향을 받는 집단을 찾아 개선 방안을 제안할 수 있다.</div>
+<div class="box"><strong>가치·태도</strong><br>높은 정확도만으로 AI가 바람직하다고 판단하지 않고, 공정성과 인간의 권리를 함께 고려하는 태도를 기른다.</div>
+<div class="box"><strong>최종 도달 목표</strong><br>AI의 판단 결과를 비판적으로 검토하고 데이터·모델·운영 과정에서의 공정성과 책임을 설명할 수 있다.</div>
+</div>
+</section>
+
+<section class="card">
+<h2>3. 핵심개념</h2>
+<p>
+<span class="keyword">인공지능 윤리</span>
+<span class="keyword">알고리즘 편향</span>
+<span class="keyword">데이터 편향</span>
+<span class="keyword">공정성</span>
+<span class="keyword">투명성</span>
+<span class="keyword">설명가능성</span>
+<span class="keyword">책임성</span>
+<span class="keyword">인간 검토</span>
+<span class="keyword">영향받는 집단</span>
+</p>
+<div class="notice">
+<strong>개념적 일반화:</strong> 인공지능은 데이터와 설계 방식의 영향을 받아 판단하므로, 높은 정확도만으로 공정성을 보장할 수 없다. 책임 있는 AI는 데이터의 대표성, 집단별 영향, 판단 근거의 설명 가능성, 인간의 검토와 책임 체계를 함께 고려해야 한다.
+</div>
+</section>
+
+<section class="card">
+<h2>4. 수업 열기 멘트</h2>
+<div class="opening">
+여러분이 직접 만든 AI 모델이 전국 과학탐구대회 참가자를 예측한다고 상상해 봅시다. 이 모델은 과거 수상자 데이터를 학습했고, 전체 정확도는 무려 <strong>92%</strong>입니다. 숫자만 보면 매우 훌륭해 보입니다.<br><br>
+
+그런데 자세히 보니 특정 지역 학생들의 데이터가 거의 포함되어 있지 않았고, 일부 학교 유형에서는 정확도가 크게 떨어졌습니다. 더 놀라운 점은 모델이 왜 어떤 학생을 낮게 평가했는지 설명하기 어렵다는 것입니다.<br><br>
+
+이때 질문이 생깁니다. <strong>“전체 정확도가 높으면 좋은 AI라고 말할 수 있을까?”</strong><br><br>
+
+과학고에서 우리는 모델의 성능을 평가할 때 정확도, 정밀도, 재현율 같은 수치를 배웁니다. 하지만 실제 사회에서 AI는 단순히 숫자를 맞히는 도구가 아니라 사람의 기회와 선택에 영향을 줄 수 있습니다. 입학, 채용, 대출, 의료, 추천 시스템처럼 중요한 결정에 AI가 사용되면 한 번의 잘못된 판단이 누군가에게는 큰 불이익이 될 수 있습니다.<br><br>
+
+AI가 편향되었다는 말은 “AI가 나쁜 의도를 가졌다”는 뜻이 아닙니다. 데이터가 한쪽에 치우쳤거나, 목표 함수가 너무 단순하거나, 우리가 중요하게 보아야 할 집단별 차이를 놓쳤을 수도 있습니다.<br><br>
+
+그래서 오늘은 “AI가 똑똑한가?”보다 한 단계 더 어려운 질문을 해 보겠습니다. <strong>“AI가 누구에게 공정한가? 누가 피해를 볼 수 있는가? 그 판단을 설명할 수 있는가? 문제가 생겼을 때 누가 책임지는가?”</strong><br><br>
+
+좋은 AI 연구자는 모델을 잘 만드는 사람을 넘어, <strong>모델이 사회에 어떤 영향을 주는지까지 질문할 수 있는 사람</strong>입니다.
+</div>
+</section>
+
+<section class="card">
+<h2>5. 수업의 흐름</h2>
+<ol class="flow">
+<li><strong>도입 5분</strong> — 전체 정확도 92%인 AI가 특정 집단에서는 낮은 정확도를 보이는 가상 사례를 제시한다.</li>
+<li><strong>목표 공유 3분</strong> — “정확한 AI와 공정한 AI는 항상 같은가?”를 핵심 질문으로 공유한다.</li>
+<li><strong>개념 형성 12분</strong> — 데이터 편향, 알고리즘 편향, 공정성, 투명성, 설명가능성, 책임성을 사례와 연결한다.</li>
+<li><strong>사례 탐구 12분</strong> — 입학, 채용, 대출, 의료, 추천 시스템 사례에서 편향 가능성과 영향을 받는 사람을 분석한다.</li>
+<li><strong>개념 전이 8분</strong> — ‘데이터 대표성 → 집단별 성능 → 설명 가능성 → 인간 검토 → 책임 주체’의 5단계 점검 기준을 만든다.</li>
+<li><strong>형성평가 7분</strong> — OX 5문항과 옳은 것 3개 고르기 5문항으로 핵심 개념을 확인한다.</li>
+<li><strong>정리 3분</strong> — “공정한 AI를 만들기 위해 정확도 외에 반드시 확인해야 할 것은 ________이다.”를 작성한다.</li>
+</ol>
+</section>
+
+<section class="card">
+<h2>6. 형성평가</h2>
+<p class="small">총 10문항, 각 10점. 6~10번은 정답 3개를 모두 선택하고 오답 보기를 선택하지 않아야 정답으로 처리됩니다.</p>
+
+<div class="formbar">
+<div><label><strong>학번</strong></label><input id="studentId" type="text" placeholder="예: 1101"></div>
+<div><label><strong>이름</strong></label><input id="studentName" type="text" placeholder="예: 홍길동"></div>
+</div>
+
+<h3>Ⅰ. OX 퀴즈 5문항</h3>
+
+<div class="q" data-num="1" data-type="radio" data-answer="X">
+<div class="q-title">1. AI 모델의 전체 정확도가 매우 높다면 모든 집단에게 공정하게 작동한다고 판단해도 된다.</div>
+<div class="options">
+<label><input type="radio" name="q1" value="O"> O</label>
+<label><input type="radio" name="q1" value="X"> X</label>
+</div>
+<div class="explain">해설: 전체 정확도가 높아도 특정 집단에서 오류가 집중될 수 있다. 따라서 집단별 성능과 오류 분포를 함께 확인해야 공정성을 더 잘 판단할 수 있다.</div>
+</div>
+
+<div class="q" data-num="2" data-type="radio" data-answer="O">
+<div class="q-title">2. 학습 데이터에 특정 집단이 충분히 포함되지 않으면 그 집단에 대한 AI 성능이 낮아질 가능성이 있다.</div>
+<div class="options">
+<label><input type="radio" name="q2" value="O"> O</label>
+<label><input type="radio" name="q2" value="X"> X</label>
+</div>
+<div class="explain">해설: 데이터가 현실의 다양한 집단을 충분히 대표하지 못하면 모델이 일부 집단의 특징을 제대로 학습하지 못할 수 있다. 이것은 데이터 편향의 한 형태이다.</div>
+</div>
+
+<div class="q" data-num="3" data-type="radio" data-answer="X">
+<div class="q-title">3. AI가 내린 결정은 컴퓨터가 자동으로 계산한 결과이므로 문제가 생겨도 인간에게 책임을 물을 필요가 없다.</div>
+<div class="options">
+<label><input type="radio" name="q3" value="O"> O</label>
+<label><input type="radio" name="q3" value="X"> X</label>
+</div>
+<div class="explain">해설: AI는 사람이 설계하고 데이터를 선택하며 실제 시스템에 적용한다. 따라서 개발자·운영자·기관 등 인간의 책임 체계와 검토 절차가 필요하다.</div>
+</div>
+
+<div class="q" data-num="4" data-type="radio" data-answer="O">
+<div class="q-title">4. 설명가능성은 AI가 어떤 근거로 결과를 냈는지 사람이 이해하거나 검토할 수 있도록 하는 것과 관련이 있다.</div>
+<div class="options">
+<label><input type="radio" name="q4" value="O"> O</label>
+<label><input type="radio" name="q4" value="X"> X</label>
+</div>
+<div class="explain">해설: 설명가능성은 AI의 판단 근거나 주요 요인을 사람이 이해하고 검토할 수 있게 하는 개념이다. 중요한 의사결정일수록 설명과 검토 가능성이 중요하다.</div>
+</div>
+
+<div class="q" data-num="5" data-type="radio" data-answer="O">
+<div class="q-title">5. AI가 중요한 결정을 내릴 때에는 자동화 결과를 그대로 따르기보다 필요에 따라 인간이 다시 검토할 수 있는 절차가 중요하다.</div>
+<div class="options">
+<label><input type="radio" name="q5" value="O"> O</label>
+<label><input type="radio" name="q5" value="X"> X</label>
+</div>
+<div class="explain">해설: 중요한 결정에서 인간 검토는 오류나 예외 상황을 확인하고, 당사자가 문제를 제기할 수 있도록 하는 안전장치가 될 수 있다.</div>
+</div>
+
+<h3>Ⅱ. 옳은 것 3개 고르기 — 5지선다형 5문항</h3>
+
+<div class="q" data-num="6" data-type="check" data-answer="A,C,E">
+<div class="q-title">6. AI 시스템의 공정성을 점검하는 방법으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q6" value="A"> ① 서로 다른 집단에서 성능 차이가 크게 나타나는지 확인한다.</label>
+<label><input type="checkbox" name="q6" value="B"> ② 전체 정확도만 높으면 추가 검토를 하지 않는다.</label>
+<label><input type="checkbox" name="q6" value="C"> ③ 학습 데이터가 다양한 집단을 충분히 대표하는지 확인한다.</label>
+<label><input type="checkbox" name="q6" value="D"> ④ 모델이 복잡하면 자동으로 공정하다고 판단한다.</label>
+<label><input type="checkbox" name="q6" value="E"> ⑤ 오류가 특정 집단에 집중되는지 살펴본다.</label>
+</div>
+<div class="explain">해설: ① 집단별 성능, ③ 데이터 대표성, ⑤ 오류 분포를 확인하는 것은 공정성 점검의 핵심이다. 전체 정확도나 모델 복잡도만으로 공정성을 보장할 수는 없다.</div>
+</div>
+
+<div class="q" data-num="7" data-type="check" data-answer="B,C,D">
+<div class="q-title">7. AI 기반 입학 추천 시스템을 책임 있게 운영하기 위한 행동으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q7" value="A"> ① AI 점수를 최종 결정으로 사용하고 이의 제기 절차는 두지 않는다.</label>
+<label><input type="checkbox" name="q7" value="B"> ② 어떤 데이터와 기준이 사용되는지 가능한 범위에서 설명한다.</label>
+<label><input type="checkbox" name="q7" value="C"> ③ 특정 집단에 지속적으로 불리한 결과가 나타나는지 점검한다.</label>
+<label><input type="checkbox" name="q7" value="D"> ④ 중요한 경우 인간이 결과를 다시 검토할 수 있도록 한다.</label>
+<label><input type="checkbox" name="q7" value="E"> ⑤ 모델이 자동화되었으므로 운영기관은 결과에 책임이 없다고 본다.</label>
+</div>
+<div class="explain">해설: ② 설명 가능성, ③ 공정성 점검, ④ 인간 검토는 책임 있는 운영에 필요하다. 이의 제기와 책임을 배제하는 방식은 바람직하지 않다.</div>
+</div>
+
+<div class="q" data-num="8" data-type="check" data-answer="A,B,E">
+<div class="q-title">8. 알고리즘 편향이 발생할 수 있는 원인으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q8" value="A"> ① 학습 데이터가 특정 집단에 지나치게 치우쳐 있는 경우</label>
+<label><input type="checkbox" name="q8" value="B"> ② 과거 사회의 불평등한 패턴이 데이터에 포함되어 있는 경우</label>
+<label><input type="checkbox" name="q8" value="C"> ③ 컴퓨터가 계산한다는 사실 자체</label>
+<label><input type="checkbox" name="q8" value="D"> ④ 데이터가 숫자로 표현되어 있다는 사실 자체</label>
+<label><input type="checkbox" name="q8" value="E"> ⑤ 모델 목표가 한 가지 성능 지표만 지나치게 최적화하도록 설계된 경우</label>
+</div>
+<div class="explain">해설: ① 데이터 불균형, ② 과거의 편향이 반영된 데이터, ⑤ 지나치게 단순한 최적화 목표는 편향을 만들거나 강화할 수 있다. 숫자 계산이나 수치화 자체가 곧 편향의 원인은 아니다.</div>
+</div>
+
+<div class="q" data-num="9" data-type="check" data-answer="A,D,E">
+<div class="q-title">9. 설명가능성과 책임성에 대한 설명으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q9" value="A"> ① 중요한 결정일수록 판단 근거를 검토할 수 있는 장치가 필요하다.</label>
+<label><input type="checkbox" name="q9" value="B"> ② AI가 복잡하면 설명할 필요가 없어진다.</label>
+<label><input type="checkbox" name="q9" value="C"> ③ 자동화된 결과는 사람이 관여하지 않았으므로 책임 주체를 정할 필요가 없다.</label>
+<label><input type="checkbox" name="q9" value="D"> ④ 문제가 발생했을 때 누가 수정하고 대응할 것인지 책임 체계를 정해야 한다.</label>
+<label><input type="checkbox" name="q9" value="E"> ⑤ 사용자가 결과에 이의를 제기하거나 재검토를 요청할 수 있는 절차도 중요할 수 있다.</label>
+</div>
+<div class="explain">해설: ① 검토 가능성, ④ 책임 체계, ⑤ 이의 제기와 재검토 절차는 설명가능성과 책임성을 높이는 요소이다.</div>
+</div>
+
+<div class="q" data-num="10" data-type="check" data-answer="B,C,E">
+<div class="q-title">10. 과학고 학생이 AI 연구 프로젝트를 수행할 때 윤리적으로 고려할 사항으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q10" value="A"> ① 최고 정확도 모델만 고르면 윤리 검토는 필요 없다.</label>
+<label><input type="checkbox" name="q10" value="B"> ② 데이터가 특정 집단을 충분히 대표하는지 확인한다.</label>
+<label><input type="checkbox" name="q10" value="C"> ③ 모델 오류가 누구에게 더 큰 피해를 줄 수 있는지 분석한다.</label>
+<label><input type="checkbox" name="q10" value="D"> ④ 결과가 자동으로 생성되면 설명이나 검토 과정은 생략한다.</label>
+<label><input type="checkbox" name="q10" value="E"> ⑤ 연구 결과를 발표할 때 성능뿐 아니라 한계와 편향 가능성도 함께 제시한다.</label>
+</div>
+<div class="explain">해설: ② 데이터 대표성, ③ 오류의 영향 분석, ⑤ 한계와 편향 가능성의 공개는 책임 있는 AI 연구 태도이다. 성능만 보고 윤리적 검토를 생략해서는 안 된다.</div>
+</div>
+
+<div class="actions">
+<button class="primary" onclick="gradeQuiz()">채점하기</button>
+<button class="download" onclick="downloadResult()">결과 TXT 저장</button>
+<button class="secondary" onclick="resetQuiz()">다시 풀기</button>
+</div>
+<div id="result" class="result"></div>
+</section>
+
+<section class="card">
+<h2>7. 교사용 정리 포인트</h2>
+<ul>
+<li>AI 윤리를 ‘AI는 위험하다’는 식으로 접근하지 말고 <strong>어떤 조건에서 더 책임 있게 사용할 수 있는가</strong>를 탐구하게 한다.</li>
+<li>정확도와 공정성이 서로 다른 평가 기준일 수 있음을 실제 수치 사례와 함께 이해시키면 효과적이다.</li>
+<li>과학고 맥락에서는 분류 모델, 추천 시스템, 연구 데이터, 자동화 의사결정 사례를 활용한다.</li>
+<li>편향을 모델 내부만의 문제가 아니라 <strong>데이터 수집 → 모델 설계 → 평가 → 운영 → 책임</strong> 전 과정의 문제로 보게 한다.</li>
+<li>마무리 질문: <strong>“정확도가 조금 낮아지더라도 더 공정한 AI를 선택해야 하는 상황이 있을까?”</strong></li>
+</ul>
+</section>
+
+</div>
+<footer>디지털 윤리 6차시 · 인공지능 윤리와 알고리즘 편향</footer>
+
+<script>
+let lastResultText="";
+let lastScore=null;
+let lastTime="";
+
+const explanations={
+1:"전체 정확도가 높아도 특정 집단에서 오류가 집중될 수 있으므로 집단별 성능과 오류 분포를 함께 확인해야 한다.",
+2:"학습 데이터가 현실의 다양한 집단을 충분히 대표하지 못하면 일부 집단에 대한 성능이 떨어질 수 있다.",
+3:"AI는 사람이 설계하고 운영하는 시스템이므로 문제가 발생했을 때 개발자·운영자·기관 등의 책임과 검토 체계가 필요하다.",
+4:"설명가능성은 AI가 어떤 근거와 요인에 따라 결과를 냈는지 사람이 이해하고 검토할 수 있도록 하는 것과 관련된다.",
+5:"중요한 의사결정에서는 인간 검토가 오류와 예외 상황을 확인하고 이의를 제기할 수 있도록 하는 안전장치가 될 수 있다.",
+6:"정답은 ①, ③, ⑤이다. 집단별 성능, 데이터 대표성, 오류의 집중 여부를 확인하는 것이 공정성 점검의 핵심이다.",
+7:"정답은 ②, ③, ④이다. 기준 설명, 집단별 불이익 점검, 인간의 재검토 절차가 책임 있는 AI 운영에 필요하다.",
+8:"정답은 ①, ②, ⑤이다. 불균형한 데이터, 과거의 사회적 편향, 지나치게 단순한 최적화 목표는 알고리즘 편향을 만들거나 강화할 수 있다.",
+9:"정답은 ①, ④, ⑤이다. 판단 근거의 검토, 책임 주체의 명확화, 이의 제기와 재검토 절차가 설명가능성과 책임성을 높인다.",
+10:"정답은 ②, ③, ⑤이다. 데이터 대표성, 오류가 미치는 영향, 연구의 한계와 편향 가능성을 함께 검토해야 책임 있는 AI 연구가 된다."
+};
+
+function selectedValue(q){
+  const type=q.dataset.type,num=q.dataset.num;
+  if(type==="radio"){
+    const el=document.querySelector('input[name="q'+num+'"]:checked');
+    return el?el.value:"";
+  }
+  return [...document.querySelectorAll('input[name="q'+num+'"]:checked')].map(x=>x.value).sort().join(",");
+}
+
+function displaySelected(q,val){
+  if(!val) return "미응답";
+  if(q.dataset.type==="radio") return val;
+  const map={A:"①",B:"②",C:"③",D:"④",E:"⑤"};
+  return val.split(",").map(v=>map[v]).join(", ");
+}
+
+function gradeQuiz(){
+  const sid=document.getElementById("studentId").value.trim();
+  const name=document.getElementById("studentName").value.trim();
+  if(!sid||!name){alert("학번과 이름을 입력하세요.");return;}
+
+  let score=0,html="",lines=[];
+  lastTime=new Date().toLocaleString("ko-KR");
+
+  document.querySelectorAll(".q").forEach(q=>{
+    const num=q.dataset.num;
+    const ans=q.dataset.answer.split(",").sort().join(",");
+    const sel=selectedValue(q);
+    const ok=sel===ans;
+    if(ok) score+=10;
+
+    html+=`<div>
+      <span class="${ok?'correct':'wrong'}">${num}번 ${ok?'정답':'오답'}</span>
+      · 선택: ${displaySelected(q,sel)}
+      · 정답: ${displaySelected(q,ans)}
+      <div class="explain">${explanations[num]}</div>
+    </div><hr>`;
+
+    lines.push(`[${num}번] ${ok?'정답':'오답'}`);
+    lines.push(`선택: ${displaySelected(q,sel)}`);
+    lines.push(`정답: ${displaySelected(q,ans)}`);
+    lines.push(`상세 해설: ${explanations[num]}`);
+    lines.push("");
+  });
+
+  lastScore=score;
+  const result=document.getElementById("result");
+  result.style.display="block";
+  result.innerHTML=`<div class="score-big">${sid} ${name} · ${score}점 / 100점</div>
+  <p>응시시각: ${lastTime}</p><hr>${html}`;
+
+  lastResultText=
+`디지털 윤리 6차시 형성평가 결과
+========================================
+학번: ${sid}
+이름: ${name}
+점수: ${score}점 / 100점
+응시시각: ${lastTime}
+========================================
+
+${lines.join("\n")}
+
+[수업 핵심]
+AI의 높은 정확도는 공정성을 자동으로 보장하지 않는다.
+데이터 대표성, 집단별 성능, 설명가능성, 인간 검토, 책임 체계를 함께 확인해야 책임 있는 AI 시스템을 만들 수 있다.
+`;
+
+  result.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function safeFile(s){
+  return s.replace(/[\\/:*?"<>|]/g,"_").replace(/\s+/g,"");
+}
+
+function timestampForFile(){
+  const d=new Date();
+  const p=n=>String(n).padStart(2,"0");
+  return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`;
+}
+
+function downloadResult(){
+  if(lastScore===null){
+    gradeQuiz();
+    if(lastScore===null)return;
+  }
+  const sid=safeFile(document.getElementById("studentId").value.trim());
+  const name=safeFile(document.getElementById("studentName").value.trim());
+  const filename=`${sid}_${name}_${lastScore}점_디윤6차시_${timestampForFile()}.txt`;
+  const blob=new Blob(["\ufeff"+lastResultText],{type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=filename;
+  document.body.appendChild(a);
+  a.click();
+  URL.revokeObjectURL(a.href);
+  a.remove();
+}
+
+function resetQuiz(){
+  document.querySelectorAll('input[type="radio"],input[type="checkbox"]').forEach(x=>x.checked=false);
+  document.getElementById("result").style.display="none";
+  lastResultText="";lastScore=null;lastTime="";
+  document.querySelector(".formbar").scrollIntoView({behavior:"smooth",block:"start"});
+}
+</script>
+
+</body>
+</html>

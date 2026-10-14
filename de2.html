@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디지털 윤리 2차시 - 개인정보와 프라이버시</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --navy:#17365d; --blue:#2f66a3; --light:#edf4fb; --line:#d7e1ec;
+  --text:#1f2937; --green:#147d64; --red:#b23a48; --gold:#a96d00;
+}
+body{margin:0;font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;background:#f5f7fa;color:var(--text);line-height:1.72}
+header{background:linear-gradient(135deg,#17365d,#3b6fa7);color:white;padding:45px 20px 36px;text-align:center}
+header h1{margin:0 0 8px;font-size:2.1rem} header p{margin:0;opacity:.93}
+.wrap{width:min(1180px,94%);margin:25px auto 60px}
+.card{background:white;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin-bottom:22px;box-shadow:0 4px 16px rgba(0,0,0,.055)}
+h2{color:var(--navy);border-left:6px solid #4c7bb1;padding-left:12px;margin-top:0}
+h3{color:#285788}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.box{background:#f8fafc;border:1px solid #e3e9ef;border-radius:12px;padding:16px}
+.keyword{display:inline-block;background:var(--light);color:#275b91;border-radius:999px;padding:5px 10px;margin:3px;font-weight:700;font-size:.9rem}
+.opening{background:linear-gradient(135deg,#f3f8ff,#eef7f5);border:1px solid #cbdced;border-radius:14px;padding:20px;font-size:1.04rem}
+.flow{counter-reset:n;list-style:none;padding:0}
+.flow li{position:relative;margin:12px 0;padding:13px 15px 13px 52px;background:#fafcff;border:1px solid #e1e8f0;border-radius:11px}
+.flow li:before{counter-increment:n;content:counter(n);position:absolute;left:14px;top:13px;width:27px;height:27px;border-radius:50%;background:#315f94;color:white;display:grid;place-items:center;font-weight:800}
+.info-table{width:100%;border-collapse:collapse}.info-table th,.info-table td{border:1px solid var(--line);padding:10px;vertical-align:top}.info-table th{background:#eaf1f8;color:#17365d}
+.formbar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+input[type=text]{width:100%;padding:11px;border:1px solid #bcc9d7;border-radius:9px;font-size:1rem}
+.q{border:1px solid #dfe6ee;border-radius:13px;padding:18px;margin:16px 0;background:#fff}
+.q-title{font-weight:800;color:#183b63;margin-bottom:10px}
+.options label{display:block;margin:7px 0;padding:8px 10px;border-radius:8px;background:#f8fafc;cursor:pointer}
+.options label:hover{background:#edf4fb}
+button{border:0;border-radius:9px;padding:11px 17px;font-weight:800;cursor:pointer}
+.primary{background:#214f80;color:white}.secondary{background:#e6edf5;color:#20466e}.download{background:#147d64;color:white}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.result{display:none;margin-top:20px;padding:18px;border-radius:12px;background:#f4f8fc;border:1px solid #cbd9e8}
+.correct{color:var(--green);font-weight:800}.wrong{color:var(--red);font-weight:800}
+.explain{margin-top:9px;background:#fbfcfe;border-left:4px solid #688caf;padding:10px 12px}
+.small{font-size:.91rem;color:#5b6573}.notice{background:#fff8e7;border:1px solid #ecd49a;border-radius:12px;padding:15px}
+.score-big{font-size:1.65rem;font-weight:900;color:#17365d}
+footer{text-align:center;color:#6b7280;padding:25px}
+.topbtn{position:fixed;top:10px;left:10px;z-index:1000;background:#17365d;color:white;border-radius:8px;padding:8px 11px}
+@media(max-width:760px){.grid,.formbar{grid-template-columns:1fr}header h1{font-size:1.65rem}}
+@media print{.topbtn,.actions{display:none!important}.card{box-shadow:none;break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+<button class="topbtn" onclick="window.print()">인쇄 / PDF</button>
+
+<header>
+  <h1>디지털 윤리 2차시</h1>
+  <p>개인정보와 프라이버시 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+
+<section class="card">
+<h2>1. 수업 개요</h2>
+<table class="info-table">
+<tr><th>수업 주제</th><td>개인정보와 프라이버시</td><th>차시</th><td>2 / 8차시</td></tr>
+<tr><th>수업 유형</th><td>개념기반 목표지향 수업</td><th>대상</th><td>고등학생·과학고 학생</td></tr>
+<tr><th>핵심 질문</th><td colspan="3"><strong>“내 정보는 어디까지 공개해도 안전할까?”</strong></td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>2. 학습목표</h2>
+<div class="grid">
+<div class="box"><strong>지식·이해</strong><br>개인정보, 민감정보, 프라이버시, 디지털 발자국의 의미를 설명할 수 있다.</div>
+<div class="box"><strong>과정·기능</strong><br>온라인 게시물과 연구·학습 자료에서 개인정보 노출 요소를 찾아 위험을 분석할 수 있다.</div>
+<div class="box"><strong>가치·태도</strong><br>자신과 타인의 개인정보를 존중하고 필요한 범위에서만 정보를 공유하는 태도를 기른다.</div>
+<div class="box"><strong>최종 도달 목표</strong><br>개인정보 노출 상황에서 위험을 판단하고 실천 가능한 보호 방법을 선택할 수 있다.</div>
+</div>
+</section>
+
+<section class="card">
+<h2>3. 핵심개념</h2>
+<p>
+<span class="keyword">개인정보</span>
+<span class="keyword">민감정보</span>
+<span class="keyword">프라이버시</span>
+<span class="keyword">디지털 발자국</span>
+<span class="keyword">동의</span>
+<span class="keyword">최소수집</span>
+<span class="keyword">목적 제한</span>
+<span class="keyword">공개 범위</span>
+<span class="keyword">자기정보통제</span>
+</p>
+<div class="notice">
+<strong>개념적 일반화:</strong> 개인정보는 한 번 공개되면 예상하지 못한 방식으로 결합·복제·확산될 수 있으므로, 디지털 사회에서는 필요한 정보만 최소한으로 공유하고 자신과 타인의 프라이버시를 함께 보호해야 한다.
+</div>
+</section>
+
+<section class="card">
+<h2>4. 수업 열기 멘트</h2>
+<div class="opening">
+여러분이 연구실에서 멋진 실험 결과를 얻었다고 상상해 봅시다. 기쁜 마음에 실험 장비 사진을 찍어 SNS에 올렸습니다. 그런데 사진 구석에는 연구실 출입카드가 보이고, 칠판에는 실험 일정과 학생 이름이 적혀 있고, 컴퓨터 화면에는 클라우드 폴더 주소가 열려 있습니다.<br><br>
+
+사진 한 장을 올렸을 뿐인데, 생각보다 많은 정보가 함께 공개된 셈입니다. 더 재미있는 점은 우리가 직접 쓰지 않은 정보도 디지털 흔적으로 남는다는 것입니다. 사진의 위치정보, 로그인 기록, 검색 기록, 접속 시간, 자주 사용하는 앱, 심지어 내가 어떤 자료를 오래 바라봤는지까지 디지털 환경에서는 데이터가 될 수 있습니다.<br><br>
+
+과학고에서는 특히 개인정보 문제가 더 가까이 있습니다. 탐구보고서를 함께 쓰기 위해 실험 데이터를 공유하고, 친구와 코드를 주고받고, AI에게 질문하기 위해 자료를 입력합니다. 이때 학생 이름, 학교 정보, 실험 참가자 정보, 연락처, 건강 관련 데이터 등이 섞여 들어가면 단순한 편리함의 문제가 아니라 <strong>윤리와 책임의 문제</strong>가 됩니다.<br><br>
+
+오늘 수업에서는 “개인정보를 숨겨라”가 아니라 더 중요한 질문을 해 보겠습니다. <strong>이 정보는 왜 필요한가? 꼭 이만큼 제공해야 하는가? 누가 볼 수 있는가? 나중에 다른 목적으로 사용될 가능성은 없는가?</strong><br><br>
+
+좋은 과학자는 데이터를 많이 모으는 사람만이 아니라, <strong>어떤 데이터를 왜 수집하고 어떻게 보호해야 하는지 아는 사람</strong>입니다. 오늘은 바로 그 판단 기준을 함께 만들어 보겠습니다.
+</div>
+</section>
+
+<section class="card">
+<h2>5. 수업의 흐름</h2>
+<ol class="flow">
+<li><strong>도입 5분</strong> — 실험실 사진 한 장에 숨어 있는 개인정보를 찾아보며 ‘보이는 정보’와 ‘함께 노출되는 정보’를 구분한다.</li>
+<li><strong>목표 공유 3분</strong> — 개인정보 보호의 목적이 단순한 비밀 유지가 아니라 자기정보통제와 안전이라는 점을 확인한다.</li>
+<li><strong>개념 형성 12분</strong> — 개인정보, 민감정보, 프라이버시, 디지털 발자국, 동의, 최소수집 개념을 실제 사례와 연결한다.</li>
+<li><strong>사례 탐구 12분</strong> — 연구 자료 공유, AI 입력, SNS 게시물, 클라우드 공동 폴더 등 과학고 생활 사례에서 노출 위험을 찾는다.</li>
+<li><strong>개념 전이 8분</strong> — ‘꼭 필요한가, 동의했는가, 공개범위는 적절한가, 나중에 삭제 가능한가’를 기준으로 보호 원칙을 만든다.</li>
+<li><strong>형성평가 7분</strong> — OX 5문항과 옳은 것 3개 고르기 5문항으로 핵심 개념을 점검한다.</li>
+<li><strong>정리 3분</strong> — “내 개인정보를 지키는 가장 중요한 습관 한 가지”를 작성하고 수업을 마무리한다.</li>
+</ol>
+</section>
+
+<section class="card">
+<h2>6. 형성평가</h2>
+<p class="small">총 10문항, 각 10점. 6~10번은 정답 3개를 모두 선택하고 오답 보기를 선택하지 않아야 정답으로 처리됩니다.</p>
+
+<div class="formbar">
+<div><label><strong>학번</strong></label><input id="studentId" type="text" placeholder="예: 1101"></div>
+<div><label><strong>이름</strong></label><input id="studentName" type="text" placeholder="예: 홍길동"></div>
+</div>
+
+<h3>Ⅰ. OX 퀴즈 5문항</h3>
+
+<div class="q" data-num="1" data-type="radio" data-answer="O">
+<div class="q-title">1. 이름, 사진, 위치정보처럼 개인을 알아볼 수 있게 하는 정보는 개인정보가 될 수 있다.</div>
+<div class="options">
+<label><input type="radio" name="q1" value="O"> O</label>
+<label><input type="radio" name="q1" value="X"> X</label>
+</div>
+<div class="explain">해설: 개인정보는 단독으로 또는 다른 정보와 결합하여 특정 개인을 식별할 수 있는 정보를 포함한다. 이름이나 사진뿐 아니라 위치정보, 연락처, 식별번호 등도 개인정보가 될 수 있다.</div>
+</div>
+
+<div class="q" data-num="2" data-type="radio" data-answer="X">
+<div class="q-title">2. 개인정보는 공개된 인터넷 게시물에 한 번 올라가면 더 이상 보호할 필요가 없는 정보가 된다.</div>
+<div class="options">
+<label><input type="radio" name="q2" value="O"> O</label>
+<label><input type="radio" name="q2" value="X"> X</label>
+</div>
+<div class="explain">해설: 한 번 공개된 정보라도 무제한으로 재사용해도 된다는 뜻은 아니다. 공개 목적, 범위, 재사용 맥락, 당사자의 권리 등을 고려해야 한다.</div>
+</div>
+
+<div class="q" data-num="3" data-type="radio" data-answer="O">
+<div class="q-title">3. 디지털 발자국에는 사용자가 직접 올린 게시물뿐 아니라 검색 기록이나 접속 기록처럼 자동으로 생성되는 정보도 포함될 수 있다.</div>
+<div class="options">
+<label><input type="radio" name="q3" value="O"> O</label>
+<label><input type="radio" name="q3" value="X"> X</label>
+</div>
+<div class="explain">해설: 디지털 발자국은 사용자가 의도적으로 남긴 정보와 시스템 이용 과정에서 자동으로 생성된 기록을 모두 포함할 수 있다.</div>
+</div>
+
+<div class="q" data-num="4" data-type="radio" data-answer="X">
+<div class="q-title">4. AI 서비스에 입력하는 정보는 화면에만 잠시 보이므로 학생 이름이나 연락처 같은 개인정보를 자유롭게 입력해도 안전하다.</div>
+<div class="options">
+<label><input type="radio" name="q4" value="O"> O</label>
+<label><input type="radio" name="q4" value="X"> X</label>
+</div>
+<div class="explain">해설: 외부 서비스에 개인정보를 입력할 때는 그 서비스의 저장·처리 방식과 목적을 확인해야 한다. 불필요한 개인정보나 민감정보는 입력하지 않는 것이 안전하다.</div>
+</div>
+
+<div class="q" data-num="5" data-type="radio" data-answer="O">
+<div class="q-title">5. 개인정보 보호에서는 필요한 목적에 맞게 최소한의 정보만 수집하고 공유하는 원칙이 중요하다.</div>
+<div class="options">
+<label><input type="radio" name="q5" value="O"> O</label>
+<label><input type="radio" name="q5" value="X"> X</label>
+</div>
+<div class="explain">해설: 필요한 목적을 달성하는 데 꼭 필요한 범위의 정보만 수집·이용하는 것은 개인정보 보호의 핵심 원칙 중 하나이다.</div>
+</div>
+
+<h3>Ⅱ. 옳은 것 3개 고르기 — 5지선다형 5문항</h3>
+
+<div class="q" data-num="6" data-type="check" data-answer="A,C,E">
+<div class="q-title">6. 개인정보를 안전하게 다루는 행동으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q6" value="A"> ① 회원가입 시 꼭 필요한 정보인지 확인하고 불필요한 정보 제공을 줄인다.</label>
+<label><input type="checkbox" name="q6" value="B"> ② 친구의 연락처는 이미 알고 있으므로 동의 없이 단체방에 공유해도 된다.</label>
+<label><input type="checkbox" name="q6" value="C"> ③ SNS 게시물의 공개 범위를 확인하고 위치정보 노출 여부도 점검한다.</label>
+<label><input type="checkbox" name="q6" value="D"> ④ 편의를 위해 모든 사이트에서 같은 비밀번호를 사용한다.</label>
+<label><input type="checkbox" name="q6" value="E"> ⑤ 다른 사람의 개인정보를 공유하기 전에 당사자의 동의를 확인한다.</label>
+</div>
+<div class="explain">해설: ① 최소수집, ③ 공개 범위와 위치정보 관리, ⑤ 타인의 동의 확인은 개인정보 보호에 적절하다. ②는 타인의 자기정보통제권을 침해할 수 있고, ④는 계정 탈취 위험을 키운다.</div>
+</div>
+
+<div class="q" data-num="7" data-type="check" data-answer="B,C,D">
+<div class="q-title">7. 다음 중 디지털 발자국과 관련된 설명으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q7" value="A"> ① 삭제한 게시물은 반드시 모든 서버와 다른 사람의 기기에서도 즉시 완전히 사라진다.</label>
+<label><input type="checkbox" name="q7" value="B"> ② 검색 기록이나 접속 기록도 디지털 활동의 흔적이 될 수 있다.</label>
+<label><input type="checkbox" name="q7" value="C"> ③ 한 번 공개한 정보는 복사·캡처되어 예상보다 오래 남을 수 있다.</label>
+<label><input type="checkbox" name="q7" value="D"> ④ 여러 정보가 결합되면 개인을 추정하거나 식별할 가능성이 커질 수 있다.</label>
+<label><input type="checkbox" name="q7" value="E"> ⑤ 디지털 발자국은 SNS에 직접 작성한 글만을 의미한다.</label>
+</div>
+<div class="explain">해설: ② 자동 생성 기록, ③ 복제와 확산, ④ 정보 결합에 따른 식별 가능성은 디지털 발자국의 중요한 특성이다. ①은 삭제의 현실적 한계를 무시하며, ⑤는 범위를 지나치게 좁게 본 설명이다.</div>
+</div>
+
+<div class="q" data-num="8" data-type="check" data-answer="A,B,E">
+<div class="q-title">8. 과학고 연구 활동에서 개인정보 보호를 위해 적절한 행동을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q8" value="A"> ① 연구 참가자의 이름이 필요하지 않다면 익명화하거나 식별자를 사용한다.</label>
+<label><input type="checkbox" name="q8" value="B"> ② 공동 폴더를 만들 때 접근 권한을 필요한 사람으로 제한한다.</label>
+<label><input type="checkbox" name="q8" value="C"> ③ 탐구보고서 작성 편의를 위해 학생 연락처가 포함된 원본 자료를 공개 링크로 공유한다.</label>
+<label><input type="checkbox" name="q8" value="D"> ④ AI 분석 도구에 학생 이름과 연락처를 포함한 전체 자료를 그대로 입력한다.</label>
+<label><input type="checkbox" name="q8" value="E"> ⑤ 사진을 공유하기 전에 학생 얼굴, 이름표, 출입카드 등이 노출되는지 확인한다.</label>
+</div>
+<div class="explain">해설: ① 익명화, ② 접근권한 제한, ⑤ 시각적 개인정보 확인은 연구 환경에서 매우 중요한 보호 방법이다. ③과 ④는 불필요한 노출 가능성을 크게 높인다.</div>
+</div>
+
+<div class="q" data-num="9" data-type="check" data-answer="A,D,E">
+<div class="q-title">9. 개인정보와 프라이버시에 대한 설명으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q9" value="A"> ① 프라이버시는 자신의 정보와 사생활이 언제, 누구에게, 어느 정도 공개되는지 통제하는 것과 관련이 있다.</label>
+<label><input type="checkbox" name="q9" value="B"> ② 개인정보는 이름과 주민등록번호처럼 직접 식별 정보만을 의미한다.</label>
+<label><input type="checkbox" name="q9" value="C"> ③ 한 번 친구에게 공유한 개인정보는 그 친구가 다른 사람에게 자유롭게 전달해도 된다.</label>
+<label><input type="checkbox" name="q9" value="D"> ④ 개인을 직접 식별하기 어려운 정보도 다른 정보와 결합하면 개인정보가 될 수 있다.</label>
+<label><input type="checkbox" name="q9" value="E"> ⑤ 개인정보 보호는 자신의 정보뿐 아니라 타인의 정보도 책임 있게 다루는 태도를 포함한다.</label>
+</div>
+<div class="explain">해설: ①은 자기정보통제의 의미, ④는 정보 결합에 따른 식별 가능성, ⑤는 타인의 정보에 대한 책임을 설명한다. ②는 개인정보 범위를 지나치게 좁게 보며, ③은 동의와 목적 범위를 무시한다.</div>
+</div>
+
+<div class="q" data-num="10" data-type="check" data-answer="B,C,E">
+<div class="q-title">10. 다음 중 개인정보를 제공하기 전에 점검할 질문으로 적절한 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q10" value="A"> ① 다른 친구들도 많이 제공했는가?</label>
+<label><input type="checkbox" name="q10" value="B"> ② 이 정보가 서비스 이용 목적에 꼭 필요한가?</label>
+<label><input type="checkbox" name="q10" value="C"> ③ 누가 이 정보를 볼 수 있고 어디까지 공유될 수 있는가?</label>
+<label><input type="checkbox" name="q10" value="D"> ④ 빠르게 가입할 수 있다면 제공 범위는 신경 쓰지 않아도 되는가?</label>
+<label><input type="checkbox" name="q10" value="E"> ⑤ 제공 후 수정·삭제·공개범위 변경이 가능한가?</label>
+</div>
+<div class="explain">해설: ② 필요성, ③ 접근·공유 범위, ⑤ 사후 통제 가능성은 개인정보 제공 전 반드시 점검할 요소이다. ① 다른 사람의 행동은 안전성의 근거가 아니며, ④ 편의성만으로 개인정보 위험을 무시해서는 안 된다.</div>
+</div>
+
+<div class="actions">
+<button class="primary" onclick="gradeQuiz()">채점하기</button>
+<button class="download" onclick="downloadResult()">결과 TXT 저장</button>
+<button class="secondary" onclick="resetQuiz()">다시 풀기</button>
+</div>
+
+<div id="result" class="result"></div>
+</section>
+
+<section class="card">
+<h2>7. 교사용 정리 포인트</h2>
+<ul>
+<li>학생이 개인정보를 단순히 ‘숨겨야 하는 정보’가 아니라 <strong>통제해야 하는 정보</strong>로 이해하도록 한다.</li>
+<li>과학고 맥락에서는 연구 데이터, 참가자 정보, 클라우드 공유, AI 입력 자료, 실험 사진을 개인정보 교육과 연결한다.</li>
+<li>“많이 공개되었으니 괜찮다”가 아니라 <strong>목적·동의·필요성·공개범위</strong>를 기준으로 판단하게 한다.</li>
+<li>마무리 질문: <strong>“연구의 편리함과 개인정보 보호가 충돌할 때 우리는 어떤 기준으로 선택해야 할까?”</strong></li>
+</ul>
+</section>
+
+</div>
+<footer>디지털 윤리 2차시 · 개인정보와 프라이버시</footer>
+
+<script>
+let lastResultText = "";
+let lastScore = null;
+let lastTime = "";
+
+const explanations = {
+1:"개인정보는 단독으로 또는 다른 정보와 결합하여 특정 개인을 식별할 수 있는 정보를 포함한다.",
+2:"인터넷에 공개된 정보도 공개 목적과 범위를 넘어 무제한 재사용할 수 있는 것은 아니다.",
+3:"디지털 발자국에는 직접 작성한 게시물뿐 아니라 검색·접속 기록처럼 자동 생성되는 정보도 포함될 수 있다.",
+4:"AI나 외부 서비스에 개인정보를 입력할 때는 저장·처리 방식과 목적을 확인해야 하며 불필요한 개인정보는 입력하지 않는 것이 안전하다.",
+5:"개인정보 보호에서는 목적 달성에 필요한 최소한의 정보만 수집·이용하는 원칙이 중요하다.",
+6:"정답은 ①, ③, ⑤이다. 최소수집, 공개 범위·위치정보 점검, 타인의 동의 확인은 개인정보 보호에 적절한 행동이다.",
+7:"정답은 ②, ③, ④이다. 디지털 발자국은 자동 생성 기록을 포함하며, 정보는 복제되어 오래 남거나 다른 정보와 결합될 수 있다.",
+8:"정답은 ①, ②, ⑤이다. 익명화, 접근권한 제한, 사진 속 개인정보 확인은 연구 환경의 핵심 보호 방법이다.",
+9:"정답은 ①, ④, ⑤이다. 프라이버시는 정보 통제와 관련되며, 결합 정보도 개인 식별에 사용될 수 있고 타인의 정보도 책임 있게 다뤄야 한다.",
+10:"정답은 ②, ③, ⑤이다. 개인정보 제공 전에는 필요성, 접근·공유 범위, 사후 수정·삭제 가능성을 점검해야 한다."
+};
+
+function selectedValue(q){
+  const type=q.dataset.type, num=q.dataset.num;
+  if(type==="radio"){
+    const el=document.querySelector('input[name="q'+num+'"]:checked');
+    return el?el.value:"";
+  }
+  const arr=[...document.querySelectorAll('input[name="q'+num+'"]:checked')].map(x=>x.value).sort();
+  return arr.join(",");
+}
+
+function displaySelected(q,val){
+  if(!val) return "미응답";
+  if(q.dataset.type==="radio") return val;
+  const map={A:"①",B:"②",C:"③",D:"④",E:"⑤"};
+  return val.split(",").map(v=>map[v]).join(", ");
+}
+
+function gradeQuiz(){
+  const sid=document.getElementById("studentId").value.trim();
+  const name=document.getElementById("studentName").value.trim();
+  if(!sid || !name){
+    alert("학번과 이름을 입력하세요.");
+    return;
+  }
+
+  let score=0, html="", lines=[];
+  const now=new Date();
+  lastTime=now.toLocaleString("ko-KR");
+
+  document.querySelectorAll(".q").forEach(q=>{
+    const num=q.dataset.num;
+    const ans=q.dataset.answer.split(",").sort().join(",");
+    const sel=selectedValue(q);
+    const ok=(sel===ans);
+    if(ok) score+=10;
+
+    html += `<div><span class="${ok?'correct':'wrong'}">${num}번 ${ok?'정답':'오답'}</span> · 선택: ${displaySelected(q,sel)} · 정답: ${displaySelected(q,ans)}
+    <div class="explain">${explanations[num]}</div></div><hr>`;
+
+    lines.push(`[${num}번] ${ok?'정답':'오답'}`);
+    lines.push(`선택: ${displaySelected(q,sel)}`);
+    lines.push(`정답: ${displaySelected(q,ans)}`);
+    lines.push(`상세 해설: ${explanations[num]}`);
+    lines.push("");
+  });
+
+  lastScore=score;
+  const result=document.getElementById("result");
+  result.style.display="block";
+  result.innerHTML=`<div class="score-big">${sid} ${name} · ${score}점 / 100점</div>
+  <p>응시시각: ${lastTime}</p><hr>${html}`;
+
+  lastResultText =
+`디지털 윤리 2차시 형성평가 결과
+========================================
+학번: ${sid}
+이름: ${name}
+점수: ${score}점 / 100점
+응시시각: ${lastTime}
+========================================
+
+${lines.join("\n")}
+
+[수업 핵심]
+개인정보는 필요한 목적에 맞게 최소한으로 수집·공유해야 한다.
+개인정보 보호는 자신의 정보뿐 아니라 타인의 정보와 프라이버시를 존중하는 책임까지 포함한다.
+`;
+
+  result.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function safeFile(s){
+  return s.replace(/[\\/:*?"<>|]/g,"_").replace(/\s+/g,"");
+}
+
+function timestampForFile(){
+  const d=new Date();
+  const p=n=>String(n).padStart(2,"0");
+  return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`;
+}
+
+function downloadResult(){
+  if(lastScore===null){
+    gradeQuiz();
+    if(lastScore===null) return;
+  }
+  const sid=safeFile(document.getElementById("studentId").value.trim());
+  const name=safeFile(document.getElementById("studentName").value.trim());
+  const filename=`${sid}_${name}_${lastScore}점_디윤2차시_${timestampForFile()}.txt`;
+  const blob=new Blob(["\ufeff"+lastResultText],{type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=filename;
+  document.body.appendChild(a);
+  a.click();
+  URL.revokeObjectURL(a.href);
+  a.remove();
+}
+
+function resetQuiz(){
+  document.querySelectorAll('input[type="radio"],input[type="checkbox"]').forEach(x=>x.checked=false);
+  document.getElementById("result").style.display="none";
+  lastResultText=""; lastScore=null; lastTime="";
+  window.scrollTo({top:document.querySelector(".formbar").offsetTop-80,behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>

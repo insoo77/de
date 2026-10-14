@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디지털 윤리 1차시 - 디지털 윤리와 디지털 시민성</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --navy:#17365d; --blue:#2f66a3; --light:#edf4fb; --line:#d7e1ec;
+  --text:#1f2937; --green:#147d64; --red:#b23a48; --gold:#a96d00;
+}
+body{margin:0;font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;background:#f5f7fa;color:var(--text);line-height:1.72}
+header{background:linear-gradient(135deg,#142f53,#315f94);color:white;padding:45px 20px 36px;text-align:center}
+header h1{margin:0 0 8px;font-size:2.1rem} header p{margin:0;opacity:.93}
+.wrap{width:min(1180px,94%);margin:25px auto 60px}
+.card{background:white;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin-bottom:22px;box-shadow:0 4px 16px rgba(0,0,0,.055)}
+h2{color:var(--navy);border-left:6px solid #4c7bb1;padding-left:12px;margin-top:0}
+h3{color:#285788}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.box{background:#f8fafc;border:1px solid #e3e9ef;border-radius:12px;padding:16px}
+.keyword{display:inline-block;background:var(--light);color:#275b91;border-radius:999px;padding:5px 10px;margin:3px;font-weight:700;font-size:.9rem}
+.opening{background:linear-gradient(135deg,#f3f8ff,#eef7f5);border:1px solid #cbdced;border-radius:14px;padding:20px;font-size:1.04rem}
+.flow{counter-reset:n;list-style:none;padding:0}
+.flow li{position:relative;margin:12px 0;padding:13px 15px 13px 52px;background:#fafcff;border:1px solid #e1e8f0;border-radius:11px}
+.flow li:before{counter-increment:n;content:counter(n);position:absolute;left:14px;top:13px;width:27px;height:27px;border-radius:50%;background:#315f94;color:white;display:grid;place-items:center;font-weight:800}
+.info-table{width:100%;border-collapse:collapse}.info-table th,.info-table td{border:1px solid var(--line);padding:10px;vertical-align:top}.info-table th{background:#eaf1f8;color:#17365d}
+.formbar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+input[type=text]{width:100%;padding:11px;border:1px solid #bcc9d7;border-radius:9px;font-size:1rem}
+.q{border:1px solid #dfe6ee;border-radius:13px;padding:18px;margin:16px 0;background:#fff}
+.q-title{font-weight:800;color:#183b63;margin-bottom:10px}
+.options label{display:block;margin:7px 0;padding:8px 10px;border-radius:8px;background:#f8fafc;cursor:pointer}
+.options label:hover{background:#edf4fb}
+button{border:0;border-radius:9px;padding:11px 17px;font-weight:800;cursor:pointer}
+.primary{background:#214f80;color:white}.secondary{background:#e6edf5;color:#20466e}.download{background:#147d64;color:white}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.result{display:none;margin-top:20px;padding:18px;border-radius:12px;background:#f4f8fc;border:1px solid #cbd9e8}
+.correct{color:var(--green);font-weight:800}.wrong{color:var(--red);font-weight:800}
+.explain{margin-top:9px;background:#fbfcfe;border-left:4px solid #688caf;padding:10px 12px}
+.small{font-size:.91rem;color:#5b6573}.notice{background:#fff8e7;border:1px solid #ecd49a;border-radius:12px;padding:15px}
+.score-big{font-size:1.65rem;font-weight:900;color:#17365d}
+footer{text-align:center;color:#6b7280;padding:25px}
+.topbtn{position:fixed;top:10px;left:10px;z-index:1000;background:#17365d;color:white;border-radius:8px;padding:8px 11px}
+@media(max-width:760px){.grid,.formbar{grid-template-columns:1fr}header h1{font-size:1.65rem}}
+@media print{.topbtn,.actions{display:none!important}.card{box-shadow:none;break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+<button class="topbtn" onclick="window.print()">인쇄 / PDF</button>
+<header>
+  <h1>디지털 윤리 1차시</h1>
+  <p>디지털 윤리와 디지털 시민성 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+
+<section class="card">
+<h2>1. 수업 개요</h2>
+<table class="info-table">
+<tr><th>수업 주제</th><td>디지털 윤리와 디지털 시민성</td><th>차시</th><td>1 / 8차시</td></tr>
+<tr><th>수업 유형</th><td>개념기반 목표지향 수업</td><th>대상</th><td>고등학생·과학고 학생</td></tr>
+<tr><th>핵심 질문</th><td colspan="3"><strong>“기술적으로 할 수 있는 일은 모두 해도 되는 일인가?”</strong></td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>2. 학습목표</h2>
+<div class="grid">
+<div class="box"><strong>지식·이해</strong><br>디지털 윤리와 디지털 시민성의 의미를 설명하고 디지털 환경에서 권리와 책임의 관계를 이해한다.</div>
+<div class="box"><strong>과정·기능</strong><br>실제 디지털 사례에서 윤리적 쟁점을 발견하고 서로 다른 선택의 결과를 비교할 수 있다.</div>
+<div class="box"><strong>가치·태도</strong><br>자신의 디지털 행동이 타인과 공동체에 미치는 영향을 고려하는 태도를 기른다.</div>
+<div class="box"><strong>최종 도달 목표</strong><br>디지털 상황에서 책임 있는 행동을 선택하고 그 선택의 이유를 근거를 들어 설명할 수 있다.</div>
+</div>
+</section>
+
+<section class="card">
+<h2>3. 핵심개념</h2>
+<p>
+<span class="keyword">디지털 윤리</span>
+<span class="keyword">디지털 시민성</span>
+<span class="keyword">권리</span>
+<span class="keyword">책임</span>
+<span class="keyword">존중</span>
+<span class="keyword">자율성</span>
+<span class="keyword">공정성</span>
+<span class="keyword">디지털 발자국</span>
+<span class="keyword">공동체</span>
+</p>
+<div class="notice">
+<strong>개념적 일반화:</strong> 디지털 기술의 사용은 개인의 자유를 확장하지만, 그 자유는 다른 사람의 권리·안전·존엄을 해치지 않도록 책임 있는 판단과 함께 행사되어야 한다.
+</div>
+</section>
+
+<section class="card">
+<h2>4. 수업 열기 멘트</h2>
+<div class="opening">
+여러분은 과학고에서 다른 학생들보다 조금 더 빠르게 새로운 기술을 만나게 됩니다. 파이썬으로 데이터를 분석하고, 인공지능에게 아이디어를 묻고, 실험 결과를 클라우드에서 공유하고, 때로는 친구와 코드를 함께 수정합니다. 그런데 재미있는 질문이 하나 있습니다.<br><br>
+
+<strong>“내가 기술적으로 할 수 있는 일이라면, 그 일을 해도 괜찮은 걸까요?”</strong><br><br>
+
+예를 들어 AI가 멋진 탐구 보고서 초안을 몇 초 만에 만들어 주었다고 해 봅시다. 그것을 그대로 제출할 수는 있습니다. 친구의 코드를 복사해서 조금 고쳐 제출하는 것도 기술적으로는 가능합니다. 실험실 단체 채팅방의 재미있는 사진을 캡처해서 다른 방에 올리는 것도 어렵지 않습니다. 하지만 <strong>‘할 수 있다’와 ‘해도 된다’는 전혀 같은 말이 아닙니다.</strong><br><br>
+
+과학자는 새로운 지식을 만드는 사람인 동시에 그 지식을 어떻게 사용할 것인지 책임지는 사람입니다. 여러분이 앞으로 AI, 로봇, 바이오, 데이터 과학, 보안 기술을 연구하게 된다면 기술의 성능만큼이나 중요한 질문을 계속 만나게 될 겁니다. <strong>누구에게 도움이 되는가? 누가 피해를 볼 수 있는가? 내가 이 선택을 설명할 수 있는가?</strong><br><br>
+
+오늘 수업은 ‘인터넷 예절’만 배우는 시간이 아닙니다. 앞으로 여러분이 연구자와 개발자가 되었을 때 필요한 <strong>판단의 기준</strong>을 만드는 첫 시간입니다. 오늘부터 우리는 기술을 잘 쓰는 사람을 넘어, <strong>기술을 책임 있게 사용할 줄 아는 사람</strong>이 되는 연습을 시작하겠습니다.
+</div>
+</section>
+
+<section class="card">
+<h2>5. 수업의 흐름</h2>
+<ol class="flow">
+<li><strong>도입 5분</strong> — 과학고 생활 속 AI·코드·데이터 사례를 제시하고 “할 수 있음과 해도 됨의 차이”를 질문한다.</li>
+<li><strong>목표 공유 3분</strong> — 오늘의 핵심 질문과 학습목표를 학생과 함께 확인한다.</li>
+<li><strong>개념 형성 12분</strong> — 디지털 윤리, 디지털 시민성, 권리, 책임, 존중의 관계를 사례와 연결한다.</li>
+<li><strong>사례 탐구 12분</strong> — AI 생성 보고서, 코드 공유, 사진 무단 게시, 단체채팅 캡처 사례를 모둠별로 분석한다.</li>
+<li><strong>개념 전이 8분</strong> — “내가 이 행동을 해도 되는가?”를 판단하기 위한 권리·피해·책임·공개가능성 기준을 만든다.</li>
+<li><strong>형성평가 7분</strong> — OX 5문항과 옳은 것 3개 고르기 5문항으로 핵심 개념을 점검한다.</li>
+<li><strong>정리 3분</strong> — “좋은 디지털 시민은 ________하는 사람이다.” 한 문장 완성 후 수업을 마무리한다.</li>
+</ol>
+</section>
+
+<section class="card">
+<h2>6. 형성평가</h2>
+<p class="small">총 10문항, 각 10점. 6~10번은 정답 3개를 모두 선택하고 오답 보기를 선택하지 않아야 정답으로 처리됩니다.</p>
+
+<div class="formbar">
+<div><label><strong>학번</strong></label><input id="studentId" type="text" placeholder="예: 1101"></div>
+<div><label><strong>이름</strong></label><input id="studentName" type="text" placeholder="예: 홍길동"></div>
+</div>
+
+<h3>Ⅰ. OX 퀴즈 5문항</h3>
+
+<div class="q" data-num="1" data-type="radio" data-answer="O">
+<div class="q-title">1. 디지털 윤리는 디지털 기술을 사용할 때 무엇을 할 수 있는지만 판단하는 것이 아니라, 무엇을 해야 하는지와 어떤 책임을 져야 하는지도 함께 생각하는 것이다.</div>
+<div class="options">
+<label><input type="radio" name="q1" value="O"> O</label>
+<label><input type="radio" name="q1" value="X"> X</label>
+</div>
+<div class="explain">해설: 디지털 윤리는 기술의 기능 자체보다 사용 과정에서의 책임, 권리, 피해 가능성, 공정성 등을 함께 판단하는 기준이다. 따라서 ‘가능한가’와 ‘정당한가’를 구분해야 한다.</div>
+</div>
+
+<div class="q" data-num="2" data-type="radio" data-answer="X">
+<div class="q-title">2. 친구가 단체 채팅방에 올린 사진은 이미 온라인에 공개된 것이므로 친구의 동의 없이 다른 SNS에 다시 게시해도 디지털 윤리상 문제가 없다.</div>
+<div class="options">
+<label><input type="radio" name="q2" value="O"> O</label>
+<label><input type="radio" name="q2" value="X"> X</label>
+</div>
+<div class="explain">해설: 제한된 대화 공간에 공유했다는 사실이 모든 곳에 재게시하는 것에 동의했다는 뜻은 아니다. 사진 속 사람의 프라이버시와 자기정보통제권을 고려해야 한다.</div>
+</div>
+
+<div class="q" data-num="3" data-type="radio" data-answer="O">
+<div class="q-title">3. 디지털 시민성은 온라인에서 자신의 권리를 누리는 것뿐 아니라 타인의 권리를 존중하고 공동체에 책임 있게 참여하는 태도까지 포함한다.</div>
+<div class="options">
+<label><input type="radio" name="q3" value="O"> O</label>
+<label><input type="radio" name="q3" value="X"> X</label>
+</div>
+<div class="explain">해설: 디지털 시민성은 디지털 공간에서의 권리, 책임, 참여, 존중, 안전한 행동을 포괄하는 개념이다.</div>
+</div>
+
+<div class="q" data-num="4" data-type="radio" data-answer="X">
+<div class="q-title">4. 인공지능이 만든 답변은 사람이 직접 작성한 것이 아니므로, 그것을 이용해 발생한 오류나 피해에 대해 사용자는 책임을 생각할 필요가 없다.</div>
+<div class="options">
+<label><input type="radio" name="q4" value="O"> O</label>
+<label><input type="radio" name="q4" value="X"> X</label>
+</div>
+<div class="explain">해설: AI 결과물을 실제 과제·연구·의사결정에 사용하는 사람은 결과의 정확성, 적절성, 영향 등을 검토할 책임이 있다. 도구가 자동으로 생성했다는 이유만으로 사용자의 책임이 사라지지 않는다.</div>
+</div>
+
+<div class="q" data-num="5" data-type="radio" data-answer="O">
+<div class="q-title">5. 같은 디지털 행동이라도 목적, 대상, 동의 여부, 예상되는 피해에 따라 윤리적 판단이 달라질 수 있다.</div>
+<div class="options">
+<label><input type="radio" name="q5" value="O"> O</label>
+<label><input type="radio" name="q5" value="X"> X</label>
+</div>
+<div class="explain">해설: 윤리적 판단에서는 행동만 보는 것이 아니라 맥락과 결과를 함께 고려해야 한다. 예를 들어 사진 공유도 당사자의 동의와 공개 범위에 따라 평가가 달라질 수 있다.</div>
+</div>
+
+<h3>Ⅱ. 옳은 것 3개 고르기 — 5지선다형 5문항</h3>
+
+<div class="q" data-num="6" data-type="check" data-answer="A,C,E">
+<div class="q-title">6. 책임 있는 디지털 시민의 행동으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q6" value="A"> ① 다른 사람의 사진을 게시하기 전에 당사자의 동의를 확인한다.</label>
+<label><input type="checkbox" name="q6" value="B"> ② 온라인에서는 익명성이 있으므로 오프라인보다 표현의 책임이 작다.</label>
+<label><input type="checkbox" name="q6" value="C"> ③ 정보를 공유하기 전에 사실성과 출처를 확인한다.</label>
+<label><input type="checkbox" name="q6" value="D"> ④ 기술적으로 가능한 행동이면 다른 사람에게 미칠 영향은 고려하지 않아도 된다.</label>
+<label><input type="checkbox" name="q6" value="E"> ⑤ 자신의 행동이 타인의 권리와 공동체에 미칠 영향을 생각한다.</label>
+</div>
+<div class="explain">해설: ①은 프라이버시와 동의를 존중하며, ③은 정보 신뢰성에 대한 책임, ⑤는 공동체적 책임을 실천하는 행동이다. ② 익명성은 책임을 없애지 않으며, ④ 기술적 가능성과 윤리적 정당성은 구분해야 한다.</div>
+</div>
+
+<div class="q" data-num="7" data-type="check" data-answer="B,C,D">
+<div class="q-title">7. 디지털 윤리적 판단을 할 때 고려해야 할 질문으로 적절한 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q7" value="A"> ① 이 행동을 들키지 않을 가능성이 높은가?</label>
+<label><input type="checkbox" name="q7" value="B"> ② 이 행동으로 영향을 받는 사람은 누구인가?</label>
+<label><input type="checkbox" name="q7" value="C"> ③ 다른 사람의 권리나 안전을 침해할 가능성이 있는가?</label>
+<label><input type="checkbox" name="q7" value="D"> ④ 이 선택을 다른 사람에게 공개적으로 설명해도 떳떳한가?</label>
+<label><input type="checkbox" name="q7" value="E"> ⑤ 기술적으로 실행 가능한가만 확인하면 충분한가?</label>
+</div>
+<div class="explain">해설: ② 이해관계자, ③ 권리와 피해, ④ 설명 가능성과 책임성은 윤리적 판단의 중요한 기준이다. ①은 처벌 회피 중심의 질문이며, ⑤는 윤리를 기술적 가능성으로 축소한다.</div>
+</div>
+
+<div class="q" data-num="8" data-type="check" data-answer="A,B,E">
+<div class="q-title">8. 과학고 연구 활동에서 디지털 윤리와 직접 관련된 행동으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q8" value="A"> ① 공동 연구자의 코드를 사용할 때 기여와 출처를 적절히 밝힌다.</label>
+<label><input type="checkbox" name="q8" value="B"> ② 실험 데이터를 공유할 때 개인정보나 민감정보 포함 여부를 확인한다.</label>
+<label><input type="checkbox" name="q8" value="C"> ③ AI가 생성한 결과는 항상 정확하므로 검증 없이 연구 보고서에 사용한다.</label>
+<label><input type="checkbox" name="q8" value="D"> ④ 결과가 더 좋아 보이도록 불리한 데이터를 임의로 삭제해도 된다.</label>
+<label><input type="checkbox" name="q8" value="E"> ⑤ 디지털 도구의 결과를 연구자가 다시 검토하고 책임 있게 해석한다.</label>
+</div>
+<div class="explain">해설: ①은 연구 기여와 정당한 사용, ②는 개인정보 보호, ⑤는 도구 사용자의 책임과 검증을 반영한다. ③은 AI 오류 가능성을 무시하고, ④는 연구의 정직성과 신뢰성을 해친다.</div>
+</div>
+
+<div class="q" data-num="9" data-type="check" data-answer="A,D,E">
+<div class="q-title">9. ‘디지털 권리와 책임의 관계’에 대한 설명으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q9" value="A"> ① 표현의 자유는 중요하지만 타인의 권리와 존엄을 침해하지 않도록 책임 있게 행사해야 한다.</label>
+<label><input type="checkbox" name="q9" value="B"> ② 자신의 계정에서는 어떤 정보든 게시할 절대적 권리가 있다.</label>
+<label><input type="checkbox" name="q9" value="C"> ③ 개인정보 보호는 개인의 권리이므로 다른 사람의 개인정보를 다룰 때의 책임과는 관계가 없다.</label>
+<label><input type="checkbox" name="q9" value="D"> ④ 디지털 공간에서 권리를 누리는 만큼 다른 사람의 권리를 존중할 책임도 함께 존재한다.</label>
+<label><input type="checkbox" name="q9" value="E"> ⑤ 자유와 책임은 서로 반대되는 개념이 아니라 함께 고려되어야 하는 가치이다.</label>
+</div>
+<div class="explain">해설: ①·④·⑤는 권리와 책임의 상호 관계를 정확히 설명한다. ② 개인 계정이라도 타인의 권리 침해는 정당화되지 않으며, ③ 개인정보 보호는 자신의 권리이면서 타인의 정보를 존중할 책임과도 연결된다.</div>
+</div>
+
+<div class="q" data-num="10" data-type="check" data-answer="B,C,E">
+<div class="q-title">10. 다음 중 디지털 시민성이 높은 사람의 태도로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q10" value="A"> ① 온라인에서 문제가 생기면 자신의 행동보다 플랫폼이나 기술만 탓한다.</label>
+<label><input type="checkbox" name="q10" value="B"> ② 새로운 기술의 편리함과 함께 사회적 영향을 비판적으로 살펴본다.</label>
+<label><input type="checkbox" name="q10" value="C"> ③ 자신의 디지털 행동이 기록으로 남고 다른 사람에게 영향을 줄 수 있음을 인식한다.</label>
+<label><input type="checkbox" name="q10" value="D"> ④ 다수의 사람이 하는 행동이면 윤리적 검토 없이 따라도 괜찮다고 생각한다.</label>
+<label><input type="checkbox" name="q10" value="E"> ⑤ 온라인 공동체에서도 존중, 책임, 공정성을 중요한 기준으로 삼는다.</label>
+</div>
+<div class="explain">해설: ②는 비판적 기술 이해, ③은 디지털 발자국과 영향에 대한 인식, ⑤는 공동체적 책임을 나타낸다. ①은 책임 회피, ④는 다수의 행동과 윤리적 정당성을 혼동한다.</div>
+</div>
+
+<div class="actions">
+<button class="primary" onclick="gradeQuiz()">채점하기</button>
+<button class="download" onclick="downloadResult()">결과 TXT 저장</button>
+<button class="secondary" onclick="resetQuiz()">다시 풀기</button>
+</div>
+
+<div id="result" class="result"></div>
+</section>
+
+<section class="card">
+<h2>7. 교사용 정리 포인트</h2>
+<ul>
+<li>학생이 ‘규칙 암기’보다 <strong>왜 그런 판단을 해야 하는가</strong>를 말하도록 한다.</li>
+<li>디지털 윤리를 인터넷 예절에 한정하지 말고 AI, 데이터, 연구, 프로그래밍의 책임 문제까지 연결한다.</li>
+<li>학생이 자신의 선택을 설명할 수 있는지, 타인의 입장을 고려했는지, 예상되는 피해를 검토했는지를 핵심 평가 기준으로 삼는다.</li>
+<li>마무리 질문: <strong>“내가 만든 기술을 누군가가 사용했을 때 생길 결과까지 나는 어디까지 책임져야 할까?”</strong></li>
+</ul>
+</section>
+
+</div>
+<footer>디지털 윤리 1차시 · 개념기반 목표지향 수업지도안</footer>
+
+<script>
+let lastResultText = "";
+let lastScore = null;
+let lastTime = "";
+
+const explanations = {
+1:"디지털 윤리는 기술의 기능뿐 아니라 책임, 권리, 피해 가능성, 공정성 등을 함께 판단하는 기준이다.",
+2:"제한된 채팅방 공유는 다른 SNS에 재게시하는 것까지 자동으로 동의한 것이 아니다. 프라이버시와 동의를 존중해야 한다.",
+3:"디지털 시민성은 권리뿐 아니라 책임, 참여, 존중, 안전한 행동까지 포함한다.",
+4:"AI 결과를 실제 과제나 연구에 사용하는 사람은 결과를 검토하고 그 사용에 따른 영향을 고려할 책임이 있다.",
+5:"윤리적 판단은 목적, 대상, 동의 여부, 예상 피해 등 맥락에 따라 달라질 수 있다.",
+6:"정답은 ①, ③, ⑤이다. 동의 확인, 정보 검증, 타인과 공동체에 대한 영향 고려는 책임 있는 디지털 시민의 핵심 행동이다.",
+7:"정답은 ②, ③, ④이다. 영향을 받는 사람, 권리 침해 가능성, 공개적으로 설명 가능한지를 확인하는 것은 윤리 판단의 중요한 기준이다.",
+8:"정답은 ①, ②, ⑤이다. 연구에서는 출처와 기여, 개인정보 보호, 결과 검증과 해석 책임이 중요하다.",
+9:"정답은 ①, ④, ⑤이다. 디지털 권리는 책임과 분리된 절대적 자유가 아니라 타인의 권리를 존중하면서 행사해야 한다.",
+10:"정답은 ②, ③, ⑤이다. 높은 디지털 시민성은 기술의 사회적 영향에 대한 비판적 이해, 디지털 발자국 인식, 존중·책임·공정성을 포함한다."
+};
+
+function selectedValue(q){
+  const type=q.dataset.type, num=q.dataset.num;
+  if(type==="radio"){
+    const el=document.querySelector('input[name="q'+num+'"]:checked');
+    return el?el.value:"";
+  }
+  const arr=[...document.querySelectorAll('input[name="q'+num+'"]:checked')].map(x=>x.value).sort();
+  return arr.join(",");
+}
+
+function displaySelected(q,val){
+  if(!val) return "미응답";
+  if(q.dataset.type==="radio") return val;
+  const map={A:"①",B:"②",C:"③",D:"④",E:"⑤"};
+  return val.split(",").map(v=>map[v]).join(", ");
+}
+
+function displayAnswer(q,val){
+  return displaySelected(q,val);
+}
+
+function gradeQuiz(){
+  const sid=document.getElementById("studentId").value.trim();
+  const name=document.getElementById("studentName").value.trim();
+  if(!sid || !name){
+    alert("학번과 이름을 입력하세요.");
+    return;
+  }
+
+  let score=0, html="", lines=[];
+  const now=new Date();
+  lastTime=now.toLocaleString("ko-KR");
+
+  document.querySelectorAll(".q").forEach(q=>{
+    const num=q.dataset.num;
+    const ans=q.dataset.answer.split(",").sort().join(",");
+    const sel=selectedValue(q);
+    const ok=(sel===ans);
+    if(ok) score+=10;
+
+    html += `<div><span class="${ok?'correct':'wrong'}">${num}번 ${ok?'정답':'오답'}</span> · 선택: ${displaySelected(q,sel)} · 정답: ${displayAnswer(q,ans)}
+    <div class="explain">${explanations[num]}</div></div><hr>`;
+
+    lines.push(`[${num}번] ${ok?'정답':'오답'}`);
+    lines.push(`선택: ${displaySelected(q,sel)}`);
+    lines.push(`정답: ${displayAnswer(q,ans)}`);
+    lines.push(`상세 해설: ${explanations[num]}`);
+    lines.push("");
+  });
+
+  lastScore=score;
+  const result=document.getElementById("result");
+  result.style.display="block";
+  result.innerHTML=`<div class="score-big">${sid} ${name} · ${score}점 / 100점</div>
+  <p>응시시각: ${lastTime}</p><hr>${html}`;
+
+  lastResultText =
+`디지털 윤리 1차시 형성평가 결과
+========================================
+학번: ${sid}
+이름: ${name}
+점수: ${score}점 / 100점
+응시시각: ${lastTime}
+========================================
+
+${lines.join("\n")}
+
+[수업 핵심]
+기술적으로 할 수 있는 행동과 윤리적으로 해도 되는 행동은 다를 수 있다.
+디지털 시민은 자신의 권리를 누리는 동시에 타인의 권리와 공동체에 대한 책임을 고려해야 한다.
+`;
+
+  result.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function safeFile(s){
+  return s.replace(/[\\/:*?"<>|]/g,"_").replace(/\s+/g,"");
+}
+
+function timestampForFile(){
+  const d=new Date();
+  const p=n=>String(n).padStart(2,"0");
+  return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`;
+}
+
+function downloadResult(){
+  if(lastScore===null){
+    gradeQuiz();
+    if(lastScore===null) return;
+  }
+  const sid=safeFile(document.getElementById("studentId").value.trim());
+  const name=safeFile(document.getElementById("studentName").value.trim());
+  const filename=`${sid}_${name}_${lastScore}점_디윤1차시_${timestampForFile()}.txt`;
+  const blob=new Blob(["\ufeff"+lastResultText],{type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=filename;
+  document.body.appendChild(a);
+  a.click();
+  URL.revokeObjectURL(a.href);
+  a.remove();
+}
+
+function resetQuiz(){
+  document.querySelectorAll('input[type="radio"],input[type="checkbox"]').forEach(x=>x.checked=false);
+  document.getElementById("result").style.display="none";
+  lastResultText=""; lastScore=null; lastTime="";
+  window.scrollTo({top:document.querySelector(".formbar").offsetTop-80,behavior:"smooth"});
+}
+</script>
+</body>
+</html>

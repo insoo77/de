@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디지털 윤리 8차시 연간 수업계획</title>
+<style>
+    * { box-sizing: border-box; }
+    body {
+        margin: 0;
+        font-family: "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif;
+        background: #f6f8fb;
+        color: #1f2937;
+        line-height: 1.65;
+    }
+    header {
+        background: linear-gradient(135deg, #243b68, #3c6cb3);
+        color: white;
+        padding: 42px 22px;
+        text-align: center;
+    }
+    header h1 { margin: 0 0 10px; font-size: 2.2rem; }
+    header p { margin: 0; opacity: .92; }
+    .wrap { width: min(1180px, 94%); margin: 28px auto 60px; }
+    .card {
+        background: white;
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 22px;
+        box-shadow: 0 5px 18px rgba(0,0,0,.07);
+        border: 1px solid #e5e7eb;
+    }
+    h2 {
+        color: #234b84;
+        border-left: 6px solid #4c7ec3;
+        padding-left: 12px;
+        margin-top: 0;
+    }
+    h3 { color: #2f5f9d; }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 14px;
+        font-size: 0.96rem;
+    }
+    th, td {
+        border: 1px solid #d9e0e8;
+        padding: 11px 10px;
+        vertical-align: top;
+    }
+    th {
+        background: #eaf1fb;
+        color: #214d84;
+        text-align: center;
+    }
+    tr:nth-child(even) td { background: #fbfcfe; }
+    .tag {
+        display: inline-block;
+        padding: 4px 9px;
+        margin: 2px;
+        border-radius: 999px;
+        background: #eef4fc;
+        color: #315f98;
+        font-size: .84rem;
+        font-weight: 700;
+    }
+    .lesson {
+        border-left: 5px solid #6b8fc4;
+        padding-left: 17px;
+        margin: 26px 0 34px;
+    }
+    .lesson-title {
+        font-size: 1.28rem;
+        font-weight: 800;
+        color: #214d84;
+        margin-bottom: 8px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap: 14px;
+    }
+    .mini {
+        background: #f8fafc;
+        border: 1px solid #e4eaf1;
+        border-radius: 12px;
+        padding: 15px;
+    }
+    .mini strong { color: #315f98; }
+    .steps {
+        counter-reset: step;
+        padding-left: 0;
+        list-style: none;
+    }
+    .steps li {
+        margin: 8px 0;
+        padding-left: 38px;
+        position: relative;
+    }
+    .steps li:before {
+        counter-increment: step;
+        content: counter(step);
+        position: absolute;
+        left: 0; top: 1px;
+        width: 25px; height: 25px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: #3f6fa9;
+        color: white;
+        font-weight: 800;
+        font-size: .82rem;
+    }
+    .note {
+        background: #fff8e8;
+        border: 1px solid #f3d99d;
+        border-radius: 12px;
+        padding: 15px;
+    }
+    .print-btn {
+        position: fixed;
+        left: 12px;
+        top: 12px;
+        z-index: 1000;
+        border: none;
+        border-radius: 9px;
+        background: #203b66;
+        color: white;
+        padding: 9px 13px;
+        cursor: pointer;
+        box-shadow: 0 3px 10px rgba(0,0,0,.15);
+    }
+    .toc a {
+        text-decoration: none;
+        color: #2d5d97;
+        font-weight: 700;
+        margin-right: 12px;
+        white-space: nowrap;
+    }
+    footer { text-align:center; color:#6b7280; padding: 20px; }
+    @media(max-width: 760px) {
+        .grid { grid-template-columns: 1fr; }
+        header h1 { font-size: 1.7rem; }
+        table { font-size: .88rem; }
+        th, td { padding: 8px 6px; }
+    }
+    @media print {
+        body { background: white; }
+        .print-btn { display:none; }
+        .card { box-shadow:none; break-inside: avoid; }
+        header { background: white; color:black; border-bottom: 2px solid #333; }
+    }
+</style>
+</head>
+<body>
+<button class="print-btn" onclick="window.print()">인쇄 / PDF</button>
+
+<header>
+    <h1>디지털 윤리 8차시 연간 수업계획</h1>
+    <p>고등학교 정보·AI·디지털 시민교육 연계형 | 개념 이해 · 사례 분석 · 토론 · 실천 프로젝트</p>
+</header>
+
+<div class="wrap">
+
+<section class="card">
+    <h2>1. 과목 운영 개요</h2>
+    <table>
+        <tr><th>항목</th><th>내용</th></tr>
+        <tr><td>교육 주제</td><td>디지털 사회에서 책임 있고 안전하며 타인을 존중하는 시민으로 살아가기 위한 디지털 윤리</td></tr>
+        <tr><td>총 차시</td><td>8차시</td></tr>
+        <tr><td>대상</td><td>고등학생</td></tr>
+        <tr><td>수업 방법</td><td>개념 학습, 실제 사례 분석, 토론, 모둠 활동, 실습, 프로젝트</td></tr>
+        <tr><td>핵심 역량</td><td>정보윤리 역량, 비판적 사고력, 문제 해결력, 의사소통 역량, 공동체 역량, 디지털 시민성</td></tr>
+        <tr><td>평가 방향</td><td>지식 암기보다 실제 디지털 상황에서 윤리적 판단을 내리고 그 근거를 설명하며 실천 방안을 설계하는 능력을 평가</td></tr>
+    </table>
+</section>
+
+<section class="card">
+    <h2>2. 전체 교육 목표</h2>
+    <p>
+        학생이 디지털 기술의 편리함뿐 아니라 그 기술 사용에 따르는 책임을 함께 이해하고,
+        개인정보, 저작권, 인공지능, 온라인 의사소통, 사이버 폭력, 허위정보, 알고리즘 편향 등
+        실제 생활에서 마주치는 윤리적 문제를 비판적으로 분석하도록 한다.
+        최종적으로는 자신과 공동체를 보호하면서도 타인의 권리를 존중하는
+        <strong>책임 있는 디지털 시민의 행동 원칙</strong>을 스스로 설계하고 실천할 수 있도록 한다.
+    </p>
+    <div>
+        <span class="tag">디지털 시민성</span>
+        <span class="tag">개인정보</span>
+        <span class="tag">저작권</span>
+        <span class="tag">AI 윤리</span>
+        <span class="tag">사이버 폭력</span>
+        <span class="tag">미디어 리터러시</span>
+        <span class="tag">알고리즘 편향</span>
+        <span class="tag">책임 있는 실천</span>
+    </div>
+</section>
+
+<section class="card">
+    <h2>3. 8차시 연간 수업계획 한눈에 보기</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>차시</th>
+                <th>주제</th>
+                <th>핵심 내용</th>
+                <th>주요 활동</th>
+                <th>평가</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>디지털 윤리와 디지털 시민성</td>
+                <td>디지털 윤리의 필요성, 권리와 책임</td>
+                <td>디지털 생활 자가진단, 윤리 딜레마 토론</td>
+                <td>개념 이해 및 근거 제시</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>개인정보와 프라이버시</td>
+                <td>개인정보, 민감정보, 디지털 발자국, 동의</td>
+                <td>개인정보 노출 사례 분석, 보호 규칙 만들기</td>
+                <td>위험요소 식별</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>저작권과 올바른 콘텐츠 이용</td>
+                <td>저작권, 출처 표시, 표절, 생성형 AI 결과물 활용</td>
+                <td>올바른 인용·출처표시 실습</td>
+                <td>사례 판별 및 수정</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>사이버 폭력과 온라인 의사소통</td>
+                <td>악성댓글, 따돌림, 혐오표현, 온라인 공감</td>
+                <td>댓글 바꾸기, 갈등 상황 역할극</td>
+                <td>대응방법 설명</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>허위정보·딥페이크와 미디어 리터러시</td>
+                <td>허위정보, 조작정보, 출처 검증, 팩트체크</td>
+                <td>뉴스 신뢰도 체크리스트 적용</td>
+                <td>검증 절차 수행</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>인공지능 윤리와 알고리즘 편향</td>
+                <td>AI 판단의 한계, 데이터 편향, 공정성, 설명가능성</td>
+                <td>AI 의사결정 사례 분석</td>
+                <td>윤리 쟁점 분석</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>디지털 중독·추천 알고리즘과 책임 있는 사용</td>
+                <td>주의경제, 과몰입, 추천 시스템, 자기조절</td>
+                <td>사용패턴 점검, 디지털 웰빙 계획</td>
+                <td>실천 계획 수립</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>우리 반 디지털 윤리 헌장 프로젝트</td>
+                <td>8차시 핵심 내용 종합</td>
+                <td>윤리 헌장·캠페인 제작 및 발표</td>
+                <td>프로젝트 평가·자기평가</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="card" id="detail">
+    <h2>4. 차시별 상세 수업계획</h2>
+
+    <div class="lesson">
+        <div class="lesson-title">1차시. 디지털 윤리와 디지털 시민성</div>
+        <div class="grid">
+            <div class="mini"><strong>학습목표</strong><br>디지털 윤리의 의미를 설명하고 디지털 사회에서 개인의 권리와 책임을 구분할 수 있다.</div>
+            <div class="mini"><strong>핵심개념</strong><br>윤리, 디지털 시민성, 권리, 책임, 존중, 책임 있는 선택</div>
+        </div>
+        <h3>수업 흐름</h3>
+        <ol class="steps">
+            <li>스마트폰·SNS·AI 사용 경험을 바탕으로 디지털 생활 자가진단을 한다.</li>
+            <li>“가능한 행동”과 “해도 되는 행동”은 같은가를 질문하며 기술과 윤리의 차이를 이해한다.</li>
+            <li>친구 사진 무단 게시, 단체 채팅방 캡처 공유 등 생활 속 사례를 모둠별로 분석한다.</li>
+            <li>자유, 책임, 타인 존중의 관점에서 가장 윤리적인 행동을 선택하고 근거를 발표한다.</li>
+            <li>수업 종료 전 ‘내가 생각하는 좋은 디지털 시민’ 한 문장 쓰기를 한다.</li>
+        </ol>
+        <p><strong>평가:</strong> 디지털 윤리 문제에서 관련된 권리와 책임을 2가지 이상 찾아 근거를 설명하는가?</p>
+    </div>
+
+    <div class="lesson">
+        <div class="lesson-title">2차시. 개인정보와 프라이버시</div>
+        <div class="grid">
+            <div class="mini"><strong>학습목표</strong><br>개인정보의 유형을 구분하고 온라인에서 개인정보가 노출되는 경로와 위험을 설명할 수 있다.</div>
+            <div class="mini"><strong>핵심개념</strong><br>개인정보, 민감정보, 프라이버시, 동의, 최소수집, 디지털 발자국</div>
+        </div>
+        <ol class="steps">
+            <li>이름·사진·위치·학교·생일·검색 기록 중 개인정보에 해당하는 것을 분류한다.</li>
+            <li>SNS 게시물 하나에 어떤 개인정보가 포함될 수 있는지 역추적한다.</li>
+            <li>회원가입 시 불필요한 정보 요구 사례를 보고 ‘꼭 필요한 정보인가’를 판단한다.</li>
+            <li>강한 비밀번호, 2단계 인증, 위치정보 관리, 공개범위 설정 등 보호 방법을 정리한다.</li>
+            <li>개인정보 보호를 위한 ‘나의 5가지 실천 규칙’을 작성한다.</li>
+        </ol>
+        <p><strong>평가:</strong> 개인정보 노출 위험을 정확히 찾아내고 적절한 보호 대책을 제안하는가?</p>
+    </div>
+
+    <div class="lesson">
+        <div class="lesson-title">3차시. 저작권과 올바른 콘텐츠 이용</div>
+        <div class="grid">
+            <div class="mini"><strong>학습목표</strong><br>저작권과 표절의 의미를 이해하고 다른 사람의 자료를 올바르게 이용할 수 있다.</div>
+            <div class="mini"><strong>핵심개념</strong><br>저작권, 저작자, 인용, 출처, 표절, 라이선스, 생성형 AI 활용 윤리</div>
+        </div>
+        <ol class="steps">
+            <li>인터넷에서 찾은 사진과 글을 과제에 그대로 사용하는 상황의 문제점을 분석한다.</li>
+            <li>‘무료로 볼 수 있음’과 ‘마음대로 사용 가능함’의 차이를 토론한다.</li>
+            <li>출처 표기의 기본 요소를 익히고 실제 자료에 출처를 붙여 본다.</li>
+            <li>생성형 AI를 이용한 과제에서 학생 자신의 판단과 검토가 필요한 이유를 생각한다.</li>
+            <li>표절 사례를 올바른 인용 방식으로 수정하는 실습을 한다.</li>
+        </ol>
+        <p><strong>평가:</strong> 주어진 콘텐츠 사용 사례에서 저작권·표절 문제를 구분하고 올바른 이용 방법으로 수정하는가?</p>
+    </div>
+
+    <div class="lesson">
+        <div class="lesson-title">4차시. 사이버 폭력과 온라인 의사소통</div>
+        <div class="grid">
+            <div class="mini"><strong>학습목표</strong><br>사이버 폭력의 유형을 구분하고 피해·목격 상황에서 책임 있게 대응할 수 있다.</div>
+            <div class="mini"><strong>핵심개념</strong><br>악성댓글, 사이버 따돌림, 혐오표현, 공감, 방관, 신고, 증거 보존</div>
+        </div>
+        <ol class="steps">
+            <li>장난, 비판, 모욕, 혐오표현의 경계를 사례를 통해 비교한다.</li>
+            <li>단체 채팅방에서 특정 학생을 배제하는 상황을 역할별로 분석한다.</li>
+            <li>공격적 댓글을 사실 중심·존중 중심의 표현으로 바꾸어 본다.</li>
+            <li>피해자가 되었을 때와 목격자가 되었을 때의 대응 절차를 구분한다.</li>
+            <li>우리 반 온라인 대화 규칙 5가지를 모둠별로 제안한다.</li>
+        </ol>
+        <p><strong>평가:</strong> 폭력 상황을 감정적으로 확대하지 않고 안전한 대응 방법과 도움 요청 방법을 설명하는가?</p>
+    </div>
+
+    <div class="lesson">
+        <div class="lesson-title">5차시. 허위정보·딥페이크와 미디어 리터러시</div>
+        <div class="grid">
+            <div class="mini"><strong>학습목표</strong><br>온라인 정보의 신뢰성을 검토하고 허위·조작 가능성을 판단하는 검증 절차를 수행할 수 있다.</div>
+            <div class="mini"><strong>핵심개념</strong><br>허위정보, 조작정보, 딥페이크, 출처, 교차검증, 팩트체크, 확증편향</div>
+        </div>
+        <ol class="steps">
+            <li>자극적인 제목의 게시물을 보고 사실이라고 믿게 되는 이유를 분석한다.</li>
+            <li>작성자, 게시일, 원출처, 근거 자료, 다른 보도 여부를 확인하는 체크리스트를 익힌다.</li>
+            <li>같은 사건을 다룬 서로 다른 게시물을 비교해 신뢰도를 판단한다.</li>
+            <li>이미지·영상도 조작될 수 있다는 점을 딥페이크 사례의 원리 수준에서 이해한다.</li>
+            <li>확인되지 않은 정보를 공유하기 전에 지켜야 할 3단계 규칙을 만든다.</li>
+        </ol>
+        <p><strong>평가:</strong> 정보의 신뢰성을 단순한 느낌이 아니라 출처·근거·교차확인에 근거하여 판단하는가?</p>
+    </div>
+
+    <div class="lesson">
+        <div class="lesson-title">6차시. 인공지능 윤리와 알고리즘 편향</div>
+        <div class="grid">
+            <div class="mini"><strong>학습목표</strong><br>인공지능의 판단이 항상 공정하거나 정확하지 않을 수 있음을 이해하고 윤리적 쟁점을 분석할 수 있다.</div>
+            <div class="mini"><strong>핵심개념</strong><br>데이터 편향, 알고리즘 편향, 공정성, 투명성, 설명가능성, 책임성</div>
+        </div>
+        <ol class="steps">
+            <li>AI가 입학, 채용, 대출, 추천 등에 사용되는 상황을 살펴본다.</li>
+            <li>학습 데이터에 특정 집단이 충분히 포함되지 않을 때 어떤 문제가 생길지 생각한다.</li>
+            <li>‘정확도가 높은 AI’와 ‘공정한 AI’가 항상 같은지 토론한다.</li>
+            <li>AI의 결과를 사람이 검토해야 하는 상황과 자동화해도 되는 상황을 비교한다.</li>
+            <li>공정한 AI를 위한 원칙을 데이터·알고리즘·사용자·운영자 관점에서 작성한다.</li>
+        </ol>
+        <p><strong>평가:</strong> AI 의사결정 사례에서 편향 가능성, 피해 대상, 개선 방안을 구체적으로 제시하는가?</p>
+    </div>
+
+    <div class="lesson">
+        <div class="lesson-title">7차시. 디지털 중독·추천 알고리즘과 책임 있는 사용</div>
+        <div class="grid">
+            <div class="mini"><strong>학습목표</strong><br>추천 알고리즘과 디지털 서비스의 사용 유도 방식을 이해하고 자신의 이용 습관을 조절할 수 있다.</div>
+            <div class="mini"><strong>핵심개념</strong><br>추천 시스템, 주의경제, 과몰입, 필터 버블, 자기조절, 디지털 웰빙</div>
+        </div>
+        <ol class="steps">
+            <li>하루 동안 가장 자주 사용하는 앱과 사용 이유를 기록한다.</li>
+            <li>자동재생, 알림, 무한스크롤이 사용 시간을 늘리는 방식을 분석한다.</li>
+            <li>추천 알고리즘이 편리함과 동시에 정보 편식을 만들 수 있음을 이해한다.</li>
+            <li>알림 끄기, 사용시간 제한, 취침 전 기기 분리 등 실천 방법을 비교한다.</li>
+            <li>일주일 동안 실천할 ‘나의 디지털 웰빙 계획’을 작성한다.</li>
+        </ol>
+        <p><strong>평가:</strong> 자신의 디지털 사용 습관을 객관적으로 점검하고 실천 가능한 개선 방안을 세우는가?</p>
+    </div>
+
+    <div class="lesson">
+        <div class="lesson-title">8차시. 우리 반 디지털 윤리 헌장 프로젝트</div>
+        <div class="grid">
+            <div class="mini"><strong>학습목표</strong><br>앞선 7차시 내용을 종합하여 공동체가 지켜야 할 디지털 윤리 원칙을 설계하고 근거를 설명할 수 있다.</div>
+            <div class="mini"><strong>핵심개념</strong><br>책임, 존중, 안전, 공정성, 신뢰, 공동체, 실천</div>
+        </div>
+        <ol class="steps">
+            <li>1~7차시의 핵심 내용을 개인정보·저작권·소통·정보검증·AI·디지털 웰빙으로 정리한다.</li>
+            <li>모둠별로 반드시 포함해야 할 윤리 원칙 10개를 선정한다.</li>
+            <li>각 원칙에 ‘왜 필요한가’와 ‘구체적으로 어떻게 실천할 것인가’를 함께 작성한다.</li>
+            <li>포스터, 카드뉴스, 발표자료 또는 웹페이지 형식으로 결과물을 제작한다.</li>
+            <li>모둠 발표 후 학급 투표와 협의를 통해 최종 ‘우리 반 디지털 윤리 헌장’을 완성한다.</li>
+        </ol>
+        <p><strong>평가:</strong> 문제 이해 25%, 윤리적 근거 25%, 실천 가능성 25%, 의사소통·협업 25%</p>
+    </div>
+</section>
+
+<section class="card">
+    <h2>5. 교수·학습 방법</h2>
+    <table>
+        <tr><th>방법</th><th>적용 방식</th></tr>
+        <tr><td>사례 기반 학습</td><td>SNS, 메신저, AI, 동영상 플랫폼 등 학생 생활과 가까운 상황을 활용하여 윤리 문제를 구체화한다.</td></tr>
+        <tr><td>토론·토의</td><td>정답을 먼저 제시하기보다 서로 다른 가치가 충돌하는 상황에서 자신의 판단 근거를 말하도록 한다.</td></tr>
+        <tr><td>체크리스트 학습</td><td>개인정보 보호, 정보 검증, AI 활용 등 실제 생활에서 반복 사용할 수 있는 판단 절차를 익힌다.</td></tr>
+        <tr><td>프로젝트 학습</td><td>최종 차시에 디지털 윤리 헌장이나 캠페인을 제작하며 개념을 실제 행동 원칙으로 전환한다.</td></tr>
+    </table>
+</section>
+
+<section class="card">
+    <h2>6. 평가 계획</h2>
+    <table>
+        <thead>
+            <tr><th>평가 영역</th><th>비율 예시</th><th>평가 내용</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>개념 이해</td><td>20%</td><td>디지털 윤리, 개인정보, 저작권, AI 윤리 등 핵심 개념 이해</td></tr>
+            <tr><td>사례 분석</td><td>30%</td><td>상황 속 문제, 피해 가능성, 관련 권리와 책임을 찾아내는 능력</td></tr>
+            <tr><td>윤리적 판단</td><td>25%</td><td>여러 대안 가운데 적절한 행동을 선택하고 근거를 설명하는 능력</td></tr>
+            <tr><td>실천 프로젝트</td><td>25%</td><td>구체적이고 현실적인 디지털 윤리 실천 원칙을 설계하고 협업하는 능력</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="card">
+    <h2>7. 성취수준 예시</h2>
+    <table>
+        <tr><th>수준</th><th>수행 특성</th></tr>
+        <tr><td>A</td><td>다양한 디지털 윤리 문제를 여러 관점에서 분석하고 권리·책임·공정성·안전의 근거를 들어 적절한 해결 방안을 스스로 설계할 수 있다.</td></tr>
+        <tr><td>B</td><td>주요 디지털 윤리 문제를 정확히 파악하고 관련 개념을 적용하여 합리적인 해결 방안을 제시할 수 있다.</td></tr>
+        <tr><td>C</td><td>대표적인 디지털 윤리 문제를 구분하고 기본적인 대응 방법을 설명할 수 있다.</td></tr>
+        <tr><td>D</td><td>교사의 안내에 따라 디지털 윤리 문제의 일부를 찾아 기본적인 실천 방법을 제시할 수 있다.</td></tr>
+    </table>
+</section>
+
+<section class="card">
+    <h2>8. 차시별 준비물 및 산출물</h2>
+    <table>
+        <tr><th>차시</th><th>준비물</th><th>학생 산출물</th></tr>
+        <tr><td>1</td><td>사례 카드, 설문지</td><td>좋은 디지털 시민 한 문장</td></tr>
+        <tr><td>2</td><td>가상 SNS 게시물 예시</td><td>개인정보 보호 5대 규칙</td></tr>
+        <tr><td>3</td><td>이미지·글 자료 예시</td><td>출처표시 실습지</td></tr>
+        <tr><td>4</td><td>온라인 갈등 시나리오</td><td>온라인 대화 규칙</td></tr>
+        <tr><td>5</td><td>뉴스·게시물 비교 자료</td><td>정보 신뢰도 체크리스트</td></tr>
+        <tr><td>6</td><td>AI 의사결정 사례</td><td>공정한 AI 원칙</td></tr>
+        <tr><td>7</td><td>디지털 사용 기록지</td><td>디지털 웰빙 실천 계획</td></tr>
+        <tr><td>8</td><td>제작 도구</td><td>디지털 윤리 헌장·캠페인 결과물</td></tr>
+    </table>
+</section>
+
+<section class="card">
+    <h2>9. 수업 운영 시 유의점</h2>
+    <div class="note">
+        실제 사건이나 학생 개인의 민감한 경험을 공개적으로 말하도록 요구하지 않는다.
+        사례는 가능한 한 가상화·익명화하여 사용하고, 사이버 폭력·개인정보 침해 사례에서는
+        피해자의 책임을 묻는 방식이 아니라 안전한 대응과 공동체의 책임을 중심으로 다룬다.
+        생성형 AI 관련 수업에서는 단순한 사용 금지보다 출처 확인, 사실 검증, 인간의 최종 판단,
+        개인정보 입력 주의 등 책임 있는 사용 원칙을 강조한다.
+    </div>
+</section>
+
+<section class="card">
+    <h2>10. 8차시 핵심 질문</h2>
+    <table>
+        <tr><th>차시</th><th>핵심 질문</th></tr>
+        <tr><td>1</td><td>기술적으로 할 수 있는 일은 모두 해도 되는 일일까?</td></tr>
+        <tr><td>2</td><td>내 정보는 어디까지 공개해도 안전할까?</td></tr>
+        <tr><td>3</td><td>인터넷에 공개된 자료는 누구나 자유롭게 사용해도 될까?</td></tr>
+        <tr><td>4</td><td>온라인에서는 왜 말에 대한 책임이 더 중요할까?</td></tr>
+        <tr><td>5</td><td>우리는 온라인 정보가 사실인지 어떻게 확인할 수 있을까?</td></tr>
+        <tr><td>6</td><td>인공지능의 판단은 언제 공정하다고 말할 수 있을까?</td></tr>
+        <tr><td>7</td><td>추천 알고리즘을 내가 사용하는 것일까, 알고리즘이 나의 행동을 이끄는 것일까?</td></tr>
+        <tr><td>8</td><td>우리 공동체가 함께 지켜야 할 디지털 윤리 원칙은 무엇일까?</td></tr>
+    </table>
+</section>
+
+</div>
+
+<footer>
+    디지털 윤리 8차시 연간 수업계획 · 학교 수업용 편집 가능 HTML
+</footer>
+</body>
+</html>

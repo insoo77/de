@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디지털 윤리 8차시 - 우리 반 디지털 윤리 헌장 프로젝트</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --navy:#17365d; --blue:#2f66a3; --light:#edf4fb; --line:#d7e1ec;
+  --text:#1f2937; --green:#147d64; --red:#b23a48; --gold:#946200;
+}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;background:#f5f7fa;color:var(--text);line-height:1.72}
+header{background:linear-gradient(135deg,#17365d,#3b6fa7);color:#fff;padding:46px 20px 38px;text-align:center}
+header h1{margin:0 0 8px;font-size:2.12rem}
+header p{margin:0;opacity:.94}
+.wrap{width:min(1180px,94%);margin:25px auto 60px}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin-bottom:22px;box-shadow:0 4px 16px rgba(0,0,0,.055)}
+h2{color:var(--navy);border-left:6px solid #4c7bb1;padding-left:12px;margin-top:0}
+h3{color:#285788}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.box{background:#f8fafc;border:1px solid #e3e9ef;border-radius:12px;padding:16px}
+.keyword{display:inline-block;background:var(--light);color:#275b91;border-radius:999px;padding:5px 10px;margin:3px;font-weight:700;font-size:.9rem}
+.opening{background:linear-gradient(135deg,#f3f8ff,#eef7f5);border:1px solid #cbdced;border-radius:14px;padding:20px;font-size:1.04rem}
+.notice{background:#fff8e7;border:1px solid #ecd49a;border-radius:12px;padding:15px}
+.flow{counter-reset:n;list-style:none;padding:0}
+.flow li{position:relative;margin:12px 0;padding:13px 15px 13px 52px;background:#fafcff;border:1px solid #e1e8f0;border-radius:11px}
+.flow li:before{counter-increment:n;content:counter(n);position:absolute;left:14px;top:13px;width:27px;height:27px;border-radius:50%;background:#315f94;color:#fff;display:grid;place-items:center;font-weight:800}
+.info-table{width:100%;border-collapse:collapse}
+.info-table th,.info-table td{border:1px solid var(--line);padding:10px;vertical-align:top}
+.info-table th{background:#eaf1f8;color:#17365d}
+.rubric{width:100%;border-collapse:collapse;margin-top:12px}
+.rubric th,.rubric td{border:1px solid #d8e1eb;padding:9px;text-align:center}
+.rubric th{background:#eef4fa;color:#214e7d}
+.formbar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+input[type=text]{width:100%;padding:11px;border:1px solid #bcc9d7;border-radius:9px;font-size:1rem}
+.q{border:1px solid #dfe6ee;border-radius:13px;padding:18px;margin:16px 0;background:#fff}
+.q-title{font-weight:800;color:#183b63;margin-bottom:10px}
+.options label{display:block;margin:7px 0;padding:8px 10px;border-radius:8px;background:#f8fafc;cursor:pointer}
+.options label:hover{background:#edf4fb}
+button{border:0;border-radius:9px;padding:11px 17px;font-weight:800;cursor:pointer}
+.primary{background:#214f80;color:#fff}
+.secondary{background:#e6edf5;color:#20466e}
+.download{background:#147d64;color:#fff}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.result{display:none;margin-top:20px;padding:18px;border-radius:12px;background:#f4f8fc;border:1px solid #cbd9e8}
+.correct{color:var(--green);font-weight:800}
+.wrong{color:var(--red);font-weight:800}
+.explain{margin-top:9px;background:#fbfcfe;border-left:4px solid #688caf;padding:10px 12px}
+.small{font-size:.91rem;color:#5b6573}
+.score-big{font-size:1.65rem;font-weight:900;color:#17365d}
+.topbtn{position:fixed;top:10px;left:10px;z-index:1000;background:#17365d;color:white;border-radius:8px;padding:8px 11px}
+footer{text-align:center;color:#6b7280;padding:25px}
+@media(max-width:760px){.grid,.formbar{grid-template-columns:1fr}header h1{font-size:1.65rem}.rubric{font-size:.85rem}}
+@media print{.topbtn,.actions{display:none!important}.card{box-shadow:none;break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+<button class="topbtn" onclick="window.print()">인쇄 / PDF</button>
+
+<header>
+<h1>디지털 윤리 8차시</h1>
+<p>우리 반 디지털 윤리 헌장 프로젝트 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+
+<section class="card">
+<h2>1. 수업 개요</h2>
+<table class="info-table">
+<tr><th>수업 주제</th><td>우리 반 디지털 윤리 헌장 프로젝트</td><th>차시</th><td>8 / 8차시</td></tr>
+<tr><th>수업 유형</th><td>개념기반 목표지향 프로젝트 수업</td><th>대상</th><td>고등학생·과학고 학생</td></tr>
+<tr><th>핵심 질문</th><td colspan="3"><strong>“우리 공동체가 함께 지켜야 할 디지털 윤리 원칙은 무엇일까?”</strong></td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>2. 학습목표</h2>
+<div class="grid">
+<div class="box"><strong>지식·이해</strong><br>개인정보, 저작권, 온라인 의사소통, 허위정보, AI 윤리, 디지털 웰빙 등 앞선 차시의 핵심 개념을 종합하여 설명할 수 있다.</div>
+<div class="box"><strong>과정·기능</strong><br>학교생활에서 발생할 수 있는 디지털 윤리 문제를 분석하고, 구체적인 행동 원칙과 실천 기준으로 변환할 수 있다.</div>
+<div class="box"><strong>가치·태도</strong><br>자신의 편의뿐 아니라 타인의 권리·안전·존엄과 공동체의 신뢰를 함께 고려하는 태도를 기른다.</div>
+<div class="box"><strong>최종 도달 목표</strong><br>우리 반이 실제로 적용할 수 있는 디지털 윤리 헌장 10개 원칙을 만들고 각 원칙의 필요성과 실천 방법을 설명할 수 있다.</div>
+</div>
+</section>
+
+<section class="card">
+<h2>3. 핵심개념</h2>
+<p>
+<span class="keyword">디지털 시민성</span>
+<span class="keyword">책임</span>
+<span class="keyword">개인정보 보호</span>
+<span class="keyword">저작권</span>
+<span class="keyword">존중 있는 소통</span>
+<span class="keyword">사실 확인</span>
+<span class="keyword">AI 공정성</span>
+<span class="keyword">설명가능성</span>
+<span class="keyword">디지털 웰빙</span>
+<span class="keyword">공동체 규범</span>
+</p>
+<div class="notice">
+<strong>개념적 일반화:</strong> 디지털 윤리는 개인의 선택만이 아니라 공동체의 신뢰와 안전을 만드는 규범이다. 좋은 디지털 윤리 원칙은 추상적인 구호에 머물지 않고, 실제 상황에서 무엇을 해야 하는지 판단할 수 있도록 구체적이고 실천 가능해야 한다.
+</div>
+</section>
+
+<section class="card">
+<h2>4. 수업 열기 멘트</h2>
+<div class="opening">
+여러분이 앞으로 연구실에서 새로운 AI를 만들고, 중요한 데이터를 분석하고, 논문을 쓰고, 국제 공동연구를 한다고 상상해 봅시다.<br><br>
+
+그때 여러분이 가장 자주 마주치는 문제는 아마 “이 코드가 실행되는가?”만은 아닐 것입니다. <strong>“이 데이터를 사용해도 되는가?”, “이 사람의 정보를 공개해도 되는가?”, “이 결과를 AI에게 맡겨도 되는가?”, “이 표현은 동료를 존중하는가?”, “이 정보는 사실인가?”</strong> 같은 질문을 계속 만나게 될 것입니다.<br><br>
+
+지금까지 우리는 7차시 동안 이런 문제를 하나씩 살펴보았습니다. 개인정보를 어떻게 지킬지, 다른 사람의 창작물을 어떻게 존중할지, 온라인에서는 어떻게 말해야 할지, 허위정보를 어떻게 확인할지, AI의 판단을 어떻게 검토할지, 추천 알고리즘 속에서 나의 시간과 주의력을 어떻게 지킬지 생각했습니다.<br><br>
+
+이제 마지막 시간에는 선생님이 규칙을 정해 주지 않겠습니다.<br><br>
+
+대신 여러분이 직접 <strong>“우리 반에서 기술을 사용할 때 반드시 지켜야 할 원칙”</strong>을 만들어 보겠습니다. 단순히 “나쁜 말 하지 않기”, “개인정보 보호하기”처럼 끝나는 문장이 아니라, 실제 상황에서 행동을 결정할 수 있는 원칙이어야 합니다.<br><br>
+
+예를 들어 “개인정보를 보호한다”보다 <strong>“친구의 사진·이름·연락처를 온라인에 공유하기 전에 당사자의 동의를 확인한다”</strong>가 더 좋은 원칙입니다. 행동이 보이고, 판단 기준이 있기 때문입니다.<br><br>
+
+과학은 재현 가능한 기준을 중요하게 생각합니다. 오늘 우리가 만드는 디지털 윤리 헌장도 마찬가지입니다. 누구나 읽었을 때 <strong>“이 상황에서는 이렇게 행동하면 되겠구나”</strong>라고 이해할 수 있어야 합니다.<br><br>
+
+오늘 수업의 마지막 질문은 이것입니다. <strong>“우리가 함께 기술을 사용할 때 서로를 더 안전하고 자유롭게 만드는 규칙은 무엇일까?”</strong> 여러분의 답이 바로 우리 반의 디지털 윤리 헌장이 됩니다.
+</div>
+</section>
+
+<section class="card">
+<h2>5. 수업의 흐름</h2>
+<ol class="flow">
+<li><strong>도입 5분</strong> — 1~7차시에서 배운 핵심 질문을 빠르게 회상하고 가장 중요하다고 생각하는 디지털 윤리 문제를 하나 선택한다.</li>
+<li><strong>목표 공유 3분</strong> — 오늘 목표가 ‘규칙 암기’가 아니라 실제로 적용할 수 있는 공동체 원칙을 설계하는 것임을 확인한다.</li>
+<li><strong>핵심 개념 종합 10분</strong> — 개인정보·저작권·소통·허위정보·AI 윤리·디지털 웰빙을 한 장의 개념 지도에 연결한다.</li>
+<li><strong>헌장 초안 작성 12분</strong> — 모둠별로 10개 원칙을 제안하고 각 원칙마다 ‘왜 필요한가?’와 ‘어떻게 실천할 것인가?’를 작성한다.</li>
+<li><strong>상호 검토 8분</strong> — 다른 모둠의 원칙을 읽고 구체성·공정성·실천 가능성·중복 여부를 점검한다.</li>
+<li><strong>최종 헌장 합의 5분</strong> — 학급 전체가 중요 원칙을 선정하고 표현을 다듬어 최종 디지털 윤리 헌장을 완성한다.</li>
+<li><strong>형성평가 5분</strong> — OX 5문항과 옳은 것 3개 고르기 5문항으로 1~8차시 핵심 개념을 종합 점검한다.</li>
+<li><strong>정리 2분</strong> — “책임 있는 디지털 시민은 기술을 사용할 때 ________까지 생각한다.”를 완성하며 마무리한다.</li>
+</ol>
+</section>
+
+<section class="card">
+<h2>6. 프로젝트 산출물과 평가 기준</h2>
+<p><strong>산출물:</strong> 우리 반 디지털 윤리 헌장 10개 원칙 + 각 원칙의 필요성 + 구체적 실천 방법</p>
+<table class="rubric">
+<tr><th>평가 요소</th><th>비율</th><th>확인 내용</th></tr>
+<tr><td>문제 이해</td><td>25%</td><td>디지털 윤리 문제의 핵심을 정확히 파악했는가?</td></tr>
+<tr><td>윤리적 판단</td><td>25%</td><td>권리·책임·공정성·안전·존중의 근거가 드러나는가?</td></tr>
+<tr><td>실천 가능성</td><td>25%</td><td>학교생활에서 실제로 적용할 수 있는 구체적 행동인가?</td></tr>
+<tr><td>의사소통·협력</td><td>25%</td><td>다른 의견을 존중하며 공동의 원칙으로 합의했는가?</td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>7. 형성평가</h2>
+<p class="small">총 10문항, 각 10점. 6~10번은 정답 3개를 모두 선택하고 오답 보기를 선택하지 않아야 정답으로 처리됩니다.</p>
+
+<div class="formbar">
+<div><label><strong>학번</strong></label><input id="studentId" type="text" placeholder="예: 1101"></div>
+<div><label><strong>이름</strong></label><input id="studentName" type="text" placeholder="예: 홍길동"></div>
+</div>
+
+<h3>Ⅰ. OX 퀴즈 5문항</h3>
+
+<div class="q" data-num="1" data-type="radio" data-answer="O">
+<div class="q-title">1. 좋은 디지털 윤리 원칙은 추상적인 구호보다 실제 상황에서 어떤 행동을 해야 하는지 알 수 있도록 구체적으로 작성하는 것이 바람직하다.</div>
+<div class="options">
+<label><input type="radio" name="q1" value="O"> O</label>
+<label><input type="radio" name="q1" value="X"> X</label>
+</div>
+<div class="explain">해설: 윤리 원칙은 실제 행동을 판단하는 기준이 되어야 한다. 예를 들어 ‘개인정보를 보호한다’보다 ‘친구의 사진을 공유하기 전에 동의를 확인한다’가 더 구체적이고 실천 가능하다.</div>
+</div>
+
+<div class="q" data-num="2" data-type="radio" data-answer="X">
+<div class="q-title">2. 인터넷에 공개된 자료라면 저작권이나 출처를 고려하지 않고 자유롭게 사용할 수 있다.</div>
+<div class="options">
+<label><input type="radio" name="q2" value="O"> O</label>
+<label><input type="radio" name="q2" value="X"> X</label>
+</div>
+<div class="explain">해설: 온라인에서 볼 수 있다는 사실과 자유롭게 사용할 수 있다는 것은 다르다. 저작권, 라이선스, 인용 방식, 출처 표시를 확인해야 한다.</div>
+</div>
+
+<div class="q" data-num="3" data-type="radio" data-answer="O">
+<div class="q-title">3. AI의 높은 정확도만으로 공정성을 판단하기 어렵기 때문에 데이터 대표성과 집단별 오류 차이도 함께 살펴볼 필요가 있다.</div>
+<div class="options">
+<label><input type="radio" name="q3" value="O"> O</label>
+<label><input type="radio" name="q3" value="X"> X</label>
+</div>
+<div class="explain">해설: 전체 정확도가 높아도 특정 집단에 오류가 집중될 수 있다. 공정한 AI를 평가하려면 데이터와 집단별 영향까지 검토해야 한다.</div>
+</div>
+
+<div class="q" data-num="4" data-type="radio" data-answer="X">
+<div class="q-title">4. 온라인 정보는 많은 사람이 공유했다면 별도의 원출처 확인 없이 사실이라고 판단해도 된다.</div>
+<div class="options">
+<label><input type="radio" name="q4" value="O"> O</label>
+<label><input type="radio" name="q4" value="X"> X</label>
+</div>
+<div class="explain">해설: 조회 수나 공유 횟수는 사실성을 보장하지 않는다. 작성자, 날짜, 원출처, 근거, 교차 검증 등을 통해 신뢰성을 확인해야 한다.</div>
+</div>
+
+<div class="q" data-num="5" data-type="radio" data-answer="O">
+<div class="q-title">5. 책임 있는 디지털 사용은 기술을 무조건 피하는 것이 아니라 목적과 상황에 맞게 스스로 조절하여 사용하는 것과 관련이 있다.</div>
+<div class="options">
+<label><input type="radio" name="q5" value="O"> O</label>
+<label><input type="radio" name="q5" value="X"> X</label>
+</div>
+<div class="explain">해설: 디지털 웰빙은 사용 자체를 금지하는 것이 아니라 필요와 목적을 인식하고 시간, 알림, 추천 환경 등을 조절하여 균형 있게 사용하는 데 초점을 둔다.</div>
+</div>
+
+<h3>Ⅱ. 옳은 것 3개 고르기 — 5지선다형 5문항</h3>
+
+<div class="q" data-num="6" data-type="check" data-answer="A,C,E">
+<div class="q-title">6. 개인정보 보호 원칙으로 적절한 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q6" value="A"> ① 필요한 정보만 최소한으로 수집하거나 공유한다.</label>
+<label><input type="checkbox" name="q6" value="B"> ② 친구의 연락처를 알고 있다면 동의 없이 단체방에 공유해도 된다.</label>
+<label><input type="checkbox" name="q6" value="C"> ③ 사진이나 게시물을 올리기 전에 다른 사람의 개인정보가 포함되어 있는지 확인한다.</label>
+<label><input type="checkbox" name="q6" value="D"> ④ 공개된 개인정보는 이후 어떤 목적으로 사용해도 괜찮다.</label>
+<label><input type="checkbox" name="q6" value="E"> ⑤ 다른 사람의 정보를 공유할 때 당사자의 동의와 공개 범위를 고려한다.</label>
+</div>
+<div class="explain">해설: 정답은 ①, ③, ⑤이다. 최소수집, 타인의 정보 확인, 동의와 공개 범위 고려가 개인정보 보호의 핵심이다.</div>
+</div>
+
+<div class="q" data-num="7" data-type="check" data-answer="B,C,D">
+<div class="q-title">7. 온라인 공동연구에서 책임 있는 의사소통에 해당하는 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q7" value="A"> ① 실수를 한 학생을 공개적으로 조롱하여 다시 실수하지 않게 한다.</label>
+<label><input type="checkbox" name="q7" value="B"> ② 사람의 능력보다 코드·근거·분석 방법처럼 개선 가능한 요소를 비판한다.</label>
+<label><input type="checkbox" name="q7" value="C"> ③ 오해가 생길 수 있는 표현은 근거와 의도를 구체적으로 설명한다.</label>
+<label><input type="checkbox" name="q7" value="D"> ④ 갈등이 커질 때는 필요하면 공개 채팅보다 적절한 도움 요청과 별도 대화를 활용한다.</label>
+<label><input type="checkbox" name="q7" value="E"> ⑤ 여러 사람이 동의하면 한 사람을 반복적으로 놀려도 괜찮다.</label>
+</div>
+<div class="explain">해설: 정답은 ②, ③, ④이다. 건강한 온라인 협업에서는 인신공격을 피하고 문제 자체를 비판하며, 오해를 줄이고 갈등을 안전하게 해결해야 한다.</div>
+</div>
+
+<div class="q" data-num="8" data-type="check" data-answer="A,B,E">
+<div class="q-title">8. 온라인 정보를 책임 있게 판단하기 위한 행동으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q8" value="A"> ① 원출처와 작성자를 확인한다.</label>
+<label><input type="checkbox" name="q8" value="B"> ② 다른 독립적인 자료에서도 같은 사실이 확인되는지 비교한다.</label>
+<label><input type="checkbox" name="q8" value="C"> ③ 제목에 숫자와 그래프가 있으면 사실이라고 판단한다.</label>
+<label><input type="checkbox" name="q8" value="D"> ④ 자신의 생각과 일치하면 추가 확인을 생략한다.</label>
+<label><input type="checkbox" name="q8" value="E"> ⑤ 게시 날짜와 맥락이 현재 주장과 일치하는지 살펴본다.</label>
+</div>
+<div class="explain">해설: 정답은 ①, ②, ⑤이다. 원출처, 교차 검증, 날짜와 맥락을 확인해야 정보의 신뢰성을 더 정확히 판단할 수 있다.</div>
+</div>
+
+<div class="q" data-num="9" data-type="check" data-answer="A,D,E">
+<div class="q-title">9. 책임 있는 AI 사용 원칙으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q9" value="A"> ① AI 결과가 특정 집단에 불리하게 작동하지 않는지 점검한다.</label>
+<label><input type="checkbox" name="q9" value="B"> ② AI가 자동으로 계산했으므로 결과에 대한 인간의 책임은 없다.</label>
+<label><input type="checkbox" name="q9" value="C"> ③ 정확도가 높으면 데이터 편향 여부는 확인할 필요가 없다.</label>
+<label><input type="checkbox" name="q9" value="D"> ④ 중요한 결정에서는 사람이 결과를 다시 검토할 수 있는 절차를 마련한다.</label>
+<label><input type="checkbox" name="q9" value="E"> ⑤ 연구 결과를 발표할 때 AI의 한계와 오류 가능성도 함께 밝힌다.</label>
+</div>
+<div class="explain">해설: 정답은 ①, ④, ⑤이다. 공정성 점검, 인간 검토, 한계 공개가 책임 있는 AI 활용에 필요하다.</div>
+</div>
+
+<div class="q" data-num="10" data-type="check" data-answer="B,C,E">
+<div class="q-title">10. 좋은 디지털 윤리 헌장이 갖추어야 할 조건으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q10" value="A"> ① 가능한 한 추상적인 표현만 사용한다.</label>
+<label><input type="checkbox" name="q10" value="B"> ② 실제 학교생활에서 적용할 수 있는 행동 기준을 제시한다.</label>
+<label><input type="checkbox" name="q10" value="C"> ③ 개인의 편의뿐 아니라 타인의 권리와 공동체의 안전을 고려한다.</label>
+<label><input type="checkbox" name="q10" value="D"> ④ 규칙이 많을수록 항상 좋은 헌장이므로 비슷한 내용을 반복한다.</label>
+<label><input type="checkbox" name="q10" value="E"> ⑤ 왜 필요한 원칙인지 구성원이 이해할 수 있도록 근거를 제시한다.</label>
+</div>
+<div class="explain">해설: 정답은 ②, ③, ⑤이다. 좋은 헌장은 실천 가능하고, 공동체의 권리와 안전을 고려하며, 원칙의 이유가 분명해야 한다.</div>
+</div>
+
+<div class="actions">
+<button class="primary" onclick="gradeQuiz()">채점하기</button>
+<button class="download" onclick="downloadResult()">결과 TXT 저장</button>
+<button class="secondary" onclick="resetQuiz()">다시 풀기</button>
+</div>
+<div id="result" class="result"></div>
+</section>
+
+<section class="card">
+<h2>8. 교사용 정리 포인트</h2>
+<ul>
+<li>8차시는 앞선 내용을 다시 설명하는 시간이 아니라 <strong>학생이 스스로 원칙을 설계하고 적용하는 종합 활동</strong>으로 운영한다.</li>
+<li>헌장 문구는 ‘하지 않는다’만 반복하기보다 <strong>무엇을 어떻게 할 것인지</strong>가 드러나도록 수정하게 한다.</li>
+<li>학생 개인의 민감한 경험을 공개하지 않도록 하고, 가상 사례와 학교 공동체의 일반적인 상황을 중심으로 논의한다.</li>
+<li>완성된 헌장은 포스터, 카드뉴스, 발표자료, 웹페이지 등으로 시각화하여 실제 학급 규범으로 활용할 수 있다.</li>
+<li>마무리 질문: <strong>“좋은 기술을 만드는 것과 좋은 기술 문화를 만드는 것 중 어느 것이 더 어려울까?”</strong></li>
+</ul>
+</section>
+
+</div>
+<footer>디지털 윤리 8차시 · 우리 반 디지털 윤리 헌장 프로젝트</footer>
+
+<script>
+let lastResultText="";
+let lastScore=null;
+let lastTime="";
+
+const explanations={
+1:"좋은 윤리 원칙은 실제 행동을 결정할 수 있을 만큼 구체적이어야 한다. 추상적인 구호보다 행동 기준이 분명한 문장이 실천에 도움이 된다.",
+2:"온라인 공개 여부와 자유 이용 가능 여부는 다르다. 저작권, 라이선스, 인용 방식, 출처 표시를 확인해야 한다.",
+3:"AI의 전체 정확도가 높아도 특정 집단에 오류가 집중될 수 있으므로 데이터 대표성과 집단별 영향을 함께 점검해야 한다.",
+4:"많은 공유와 조회 수는 정보의 사실성을 보장하지 않는다. 원출처, 작성자, 날짜, 근거, 교차 검증이 필요하다.",
+5:"책임 있는 디지털 사용은 기술을 무조건 거부하는 것이 아니라 목적과 상황에 맞게 스스로 사용 환경과 시간을 조절하는 것이다.",
+6:"정답은 ①, ③, ⑤이다. 필요한 정보만 최소한으로 다루고, 타인의 개인정보 포함 여부를 확인하며, 동의와 공개 범위를 고려해야 한다.",
+7:"정답은 ②, ③, ④이다. 사람을 공격하지 않고 문제와 근거를 중심으로 소통하며, 갈등 상황에서는 안전한 해결 방법을 선택해야 한다.",
+8:"정답은 ①, ②, ⑤이다. 원출처 확인, 독립 자료를 통한 교차 검증, 날짜와 맥락 점검이 정보 신뢰성 판단에 중요하다.",
+9:"정답은 ①, ④, ⑤이다. 공정성 점검, 인간의 재검토, 한계 공개는 책임 있는 AI 활용의 핵심 요소이다.",
+10:"정답은 ②, ③, ⑤이다. 좋은 디지털 윤리 헌장은 실제 행동에 적용 가능하고, 공동체의 권리와 안전을 고려하며, 원칙의 이유가 명확해야 한다."
+};
+
+function selectedValue(q){
+  const type=q.dataset.type,num=q.dataset.num;
+  if(type==="radio"){
+    const el=document.querySelector('input[name="q'+num+'"]:checked');
+    return el?el.value:"";
+  }
+  return [...document.querySelectorAll('input[name="q'+num+'"]:checked')].map(x=>x.value).sort().join(",");
+}
+
+function displaySelected(q,val){
+  if(!val) return "미응답";
+  if(q.dataset.type==="radio") return val;
+  const map={A:"①",B:"②",C:"③",D:"④",E:"⑤"};
+  return val.split(",").map(v=>map[v]).join(", ");
+}
+
+function gradeQuiz(){
+  const sid=document.getElementById("studentId").value.trim();
+  const name=document.getElementById("studentName").value.trim();
+  if(!sid||!name){alert("학번과 이름을 입력하세요.");return;}
+
+  let score=0,html="",lines=[];
+  lastTime=new Date().toLocaleString("ko-KR");
+
+  document.querySelectorAll(".q").forEach(q=>{
+    const num=q.dataset.num;
+    const ans=q.dataset.answer.split(",").sort().join(",");
+    const sel=selectedValue(q);
+    const ok=sel===ans;
+    if(ok) score+=10;
+
+    html+=`<div>
+      <span class="${ok?'correct':'wrong'}">${num}번 ${ok?'정답':'오답'}</span>
+      · 선택: ${displaySelected(q,sel)}
+      · 정답: ${displaySelected(q,ans)}
+      <div class="explain">${explanations[num]}</div>
+    </div><hr>`;
+
+    lines.push(`[${num}번] ${ok?'정답':'오답'}`);
+    lines.push(`선택: ${displaySelected(q,sel)}`);
+    lines.push(`정답: ${displaySelected(q,ans)}`);
+    lines.push(`상세 해설: ${explanations[num]}`);
+    lines.push("");
+  });
+
+  lastScore=score;
+  const result=document.getElementById("result");
+  result.style.display="block";
+  result.innerHTML=`<div class="score-big">${sid} ${name} · ${score}점 / 100점</div>
+  <p>응시시각: ${lastTime}</p><hr>${html}`;
+
+  lastResultText=
+`디지털 윤리 8차시 형성평가 결과
+========================================
+학번: ${sid}
+이름: ${name}
+점수: ${score}점 / 100점
+응시시각: ${lastTime}
+========================================
+
+${lines.join("\n")}
+
+[수업 핵심]
+디지털 윤리는 개인정보, 저작권, 온라인 소통, 정보 검증, AI 공정성, 디지털 웰빙을 서로 연결하여 판단하는 능력이다.
+좋은 디지털 윤리 헌장은 추상적인 구호가 아니라 실제 학교생활에서 적용할 수 있는 구체적인 행동 기준과 그 이유를 제시해야 한다.
+`;
+
+  result.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function safeFile(s){
+  return s.replace(/[\\/:*?"<>|]/g,"_").replace(/\s+/g,"");
+}
+
+function timestampForFile(){
+  const d=new Date();
+  const p=n=>String(n).padStart(2,"0");
+  return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`;
+}
+
+function downloadResult(){
+  if(lastScore===null){
+    gradeQuiz();
+    if(lastScore===null)return;
+  }
+  const sid=safeFile(document.getElementById("studentId").value.trim());
+  const name=safeFile(document.getElementById("studentName").value.trim());
+  const filename=`${sid}_${name}_${lastScore}점_디윤8차시_${timestampForFile()}.txt`;
+  const blob=new Blob(["\ufeff"+lastResultText],{type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=filename;
+  document.body.appendChild(a);
+  a.click();
+  URL.revokeObjectURL(a.href);
+  a.remove();
+}
+
+function resetQuiz(){
+  document.querySelectorAll('input[type="radio"],input[type="checkbox"]').forEach(x=>x.checked=false);
+  document.getElementById("result").style.display="none";
+  lastResultText="";lastScore=null;lastTime="";
+  document.querySelector(".formbar").scrollIntoView({behavior:"smooth",block:"start"});
+}
+</script>
+
+</body>
+</html>

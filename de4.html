@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디지털 윤리 4차시 - 사이버 폭력과 온라인 의사소통</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --navy:#17365d; --blue:#2f66a3; --light:#edf4fb; --line:#d7e1ec;
+  --text:#1f2937; --green:#147d64; --red:#b23a48;
+}
+body{margin:0;font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;background:#f5f7fa;color:var(--text);line-height:1.72}
+header{background:linear-gradient(135deg,#17365d,#3b6fa7);color:white;padding:45px 20px 36px;text-align:center}
+header h1{margin:0 0 8px;font-size:2.1rem} header p{margin:0;opacity:.93}
+.wrap{width:min(1180px,94%);margin:25px auto 60px}
+.card{background:white;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin-bottom:22px;box-shadow:0 4px 16px rgba(0,0,0,.055)}
+h2{color:var(--navy);border-left:6px solid #4c7bb1;padding-left:12px;margin-top:0}
+h3{color:#285788}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.box{background:#f8fafc;border:1px solid #e3e9ef;border-radius:12px;padding:16px}
+.keyword{display:inline-block;background:var(--light);color:#275b91;border-radius:999px;padding:5px 10px;margin:3px;font-weight:700;font-size:.9rem}
+.opening{background:linear-gradient(135deg,#f3f8ff,#eef7f5);border:1px solid #cbdced;border-radius:14px;padding:20px;font-size:1.04rem}
+.flow{counter-reset:n;list-style:none;padding:0}
+.flow li{position:relative;margin:12px 0;padding:13px 15px 13px 52px;background:#fafcff;border:1px solid #e1e8f0;border-radius:11px}
+.flow li:before{counter-increment:n;content:counter(n);position:absolute;left:14px;top:13px;width:27px;height:27px;border-radius:50%;background:#315f94;color:white;display:grid;place-items:center;font-weight:800}
+.info-table{width:100%;border-collapse:collapse}.info-table th,.info-table td{border:1px solid var(--line);padding:10px;vertical-align:top}.info-table th{background:#eaf1f8;color:#17365d}
+.formbar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+input[type=text]{width:100%;padding:11px;border:1px solid #bcc9d7;border-radius:9px;font-size:1rem}
+.q{border:1px solid #dfe6ee;border-radius:13px;padding:18px;margin:16px 0;background:#fff}
+.q-title{font-weight:800;color:#183b63;margin-bottom:10px}
+.options label{display:block;margin:7px 0;padding:8px 10px;border-radius:8px;background:#f8fafc;cursor:pointer}
+.options label:hover{background:#edf4fb}
+button{border:0;border-radius:9px;padding:11px 17px;font-weight:800;cursor:pointer}
+.primary{background:#214f80;color:white}.secondary{background:#e6edf5;color:#20466e}.download{background:#147d64;color:white}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.result{display:none;margin-top:20px;padding:18px;border-radius:12px;background:#f4f8fc;border:1px solid #cbd9e8}
+.correct{color:var(--green);font-weight:800}.wrong{color:var(--red);font-weight:800}
+.explain{margin-top:9px;background:#fbfcfe;border-left:4px solid #688caf;padding:10px 12px}
+.small{font-size:.91rem;color:#5b6573}.notice{background:#fff8e7;border:1px solid #ecd49a;border-radius:12px;padding:15px}
+.score-big{font-size:1.65rem;font-weight:900;color:#17365d}
+footer{text-align:center;color:#6b7280;padding:25px}
+.topbtn{position:fixed;top:10px;left:10px;z-index:1000;background:#17365d;color:white;border-radius:8px;padding:8px 11px}
+@media(max-width:760px){.grid,.formbar{grid-template-columns:1fr}header h1{font-size:1.65rem}}
+@media print{.topbtn,.actions{display:none!important}.card{box-shadow:none;break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+<button class="topbtn" onclick="window.print()">인쇄 / PDF</button>
+
+<header>
+  <h1>디지털 윤리 4차시</h1>
+  <p>사이버 폭력과 온라인 의사소통 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+
+<section class="card">
+<h2>1. 수업 개요</h2>
+<table class="info-table">
+<tr><th>수업 주제</th><td>사이버 폭력과 온라인 의사소통</td><th>차시</th><td>4 / 8차시</td></tr>
+<tr><th>수업 유형</th><td>개념기반 목표지향 수업</td><th>대상</th><td>고등학생·과학고 학생</td></tr>
+<tr><th>핵심 질문</th><td colspan="3"><strong>“온라인에서는 왜 말에 대한 책임이 더 중요할까?”</strong></td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>2. 학습목표</h2>
+<div class="grid">
+<div class="box"><strong>지식·이해</strong><br>사이버 폭력, 악성 댓글, 온라인 따돌림, 혐오 표현, 방관의 의미를 설명할 수 있다.</div>
+<div class="box"><strong>과정·기능</strong><br>온라인 갈등 사례에서 폭력적 요소와 이해관계자를 찾아내고 안전한 대응 방법을 선택할 수 있다.</div>
+<div class="box"><strong>가치·태도</strong><br>온라인에서도 상대방의 존엄과 감정을 존중하며 책임 있게 의사소통하는 태도를 기른다.</div>
+<div class="box"><strong>최종 도달 목표</strong><br>사이버 폭력 상황에서 피해를 확대하지 않으면서 증거를 보존하고 적절한 도움을 요청하는 방법을 설명할 수 있다.</div>
+</div>
+</section>
+
+<section class="card">
+<h2>3. 핵심개념</h2>
+<p>
+<span class="keyword">사이버 폭력</span>
+<span class="keyword">온라인 따돌림</span>
+<span class="keyword">악성 댓글</span>
+<span class="keyword">혐오 표현</span>
+<span class="keyword">공감</span>
+<span class="keyword">방관자</span>
+<span class="keyword">증거 보존</span>
+<span class="keyword">신고와 도움 요청</span>
+<span class="keyword">존중 있는 피드백</span>
+</p>
+<div class="notice">
+<strong>개념적 일반화:</strong> 온라인 의사소통은 빠르게 복제·확산되고 비언어적 맥락이 부족하기 때문에 오프라인보다 오해와 피해가 커질 수 있다. 따라서 디지털 공간에서는 표현의 자유와 함께 상대방의 존엄, 안전, 공동체의 책임을 더욱 신중하게 고려해야 한다.
+</div>
+</section>
+
+<section class="card">
+<h2>4. 수업 열기 멘트</h2>
+<div class="opening">
+과학고에서 가장 자주 사용하는 연구 도구 중 하나는 의외로 실험 장비가 아니라 <strong>단체 채팅방</strong>일지도 모릅니다. 실험 시간을 정하고, 코드 오류를 묻고, 발표 자료를 공유하고, 밤늦게까지 서로 피드백을 주고받습니다.<br><br>
+
+그런데 같은 문장도 화면에서는 전혀 다르게 느껴질 수 있습니다. 누군가가 발표 자료를 올렸을 때 “이건 좀 별론데?”라고 한 줄 남겼다고 해 봅시다. 말한 사람은 가볍게 한 표현일 수 있지만, 받는 사람은 며칠 동안 준비한 결과 전체가 부정당했다고 느낄 수 있습니다. 여기에 다른 친구들이 웃는 이모티콘을 붙이고, 캡처 화면이 다른 방으로 퍼진다면 상황은 더 커집니다.<br><br>
+
+온라인에서는 목소리의 높낮이도, 표정도, 바로 이어지는 설명도 잘 보이지 않습니다. 대신 <strong>기록은 남고, 복사는 쉽고, 전달은 빠릅니다.</strong> 그래서 한 번의 말이 생각보다 오래 남고 더 많은 사람에게 영향을 줄 수 있습니다.<br><br>
+
+과학자는 비판을 많이 주고받는 사람입니다. 논문도 비판받고, 실험 설계도 비판받고, 코드도 리뷰받습니다. 그렇다면 중요한 것은 비판을 없애는 것이 아니라 <strong>사람을 공격하지 않고 아이디어를 비판하는 능력</strong>입니다. “이 부분의 근거가 부족해 보여”와 “너는 왜 이것도 못하냐”는 전혀 다른 말입니다.<br><br>
+
+오늘은 단순히 “악플을 달지 말자”는 이야기를 하지 않겠습니다. 대신 좋은 연구자와 좋은 동료가 되기 위해 꼭 필요한 질문을 다뤄 보겠습니다. <strong>어떻게 말해야 상대를 존중하면서도 정확하게 비판할 수 있을까? 그리고 온라인에서 누군가가 상처받고 있다면 나는 어떤 행동을 해야 할까?</strong>
+</div>
+</section>
+
+<section class="card">
+<h2>5. 수업의 흐름</h2>
+<ol class="flow">
+<li><strong>도입 5분</strong> — 연구 발표 피드백이 단체 채팅방에서 갈등으로 번지는 사례를 제시하고 ‘비판과 공격의 차이’를 질문한다.</li>
+<li><strong>목표 공유 3분</strong> — 핵심 질문과 함께 오늘 수업의 목표인 존중 있는 의사소통과 안전한 대응 방법을 확인한다.</li>
+<li><strong>개념 형성 12분</strong> — 사이버 폭력, 악성 댓글, 따돌림, 혐오 표현, 방관자, 증거 보존 개념을 실제 온라인 사례와 연결한다.</li>
+<li><strong>사례 탐구 12분</strong> — 단체 채팅방 조롱, 의도적 제외, 발표 비난, 캡처 재유포 사례에서 피해자·행위자·방관자의 역할을 분석한다.</li>
+<li><strong>개념 전이 8분</strong> — 공격적 문장을 존중 있는 피드백으로 바꾸고, 피해 상황에서 ‘중단-보존-차단-도움 요청’ 원칙을 만든다.</li>
+<li><strong>형성평가 7분</strong> — OX 5문항과 옳은 것 3개 고르기 5문항으로 핵심 개념을 점검한다.</li>
+<li><strong>정리 3분</strong> — “좋은 온라인 피드백은 사람을 공격하지 않고 ________을/를 설명한다.”를 완성하며 마무리한다.</li>
+</ol>
+</section>
+
+<section class="card">
+<h2>6. 형성평가</h2>
+<p class="small">총 10문항, 각 10점. 6~10번은 정답 3개를 모두 선택하고 오답 보기를 선택하지 않아야 정답으로 처리됩니다.</p>
+
+<div class="formbar">
+<div><label><strong>학번</strong></label><input id="studentId" type="text" placeholder="예: 1101"></div>
+<div><label><strong>이름</strong></label><input id="studentName" type="text" placeholder="예: 홍길동"></div>
+</div>
+
+<h3>Ⅰ. OX 퀴즈 5문항</h3>
+
+<div class="q" data-num="1" data-type="radio" data-answer="O">
+<div class="q-title">1. 온라인 메시지는 표정이나 말투 같은 비언어적 정보가 부족하여 같은 문장이라도 오해가 생길 가능성이 있다.</div>
+<div class="options">
+<label><input type="radio" name="q1" value="O"> O</label>
+<label><input type="radio" name="q1" value="X"> X</label>
+</div>
+<div class="explain">해설: 온라인 텍스트는 표정, 억양, 즉각적인 설명이 부족한 경우가 많기 때문에 의도와 다르게 받아들여질 수 있다. 따라서 표현을 더 구체적이고 존중 있게 선택할 필요가 있다.</div>
+</div>
+
+<div class="q" data-num="2" data-type="radio" data-answer="X">
+<div class="q-title">2. 단체 채팅방에서 여러 사람이 한 학생을 반복적으로 조롱하더라도 직접 욕설을 사용하지 않았다면 사이버 폭력과 관련이 없다.</div>
+<div class="options">
+<label><input type="radio" name="q2" value="O"> O</label>
+<label><input type="radio" name="q2" value="X"> X</label>
+</div>
+<div class="explain">해설: 사이버 폭력은 욕설만을 의미하지 않는다. 반복적 조롱, 배제, 모욕, 소문 유포, 이미지 재유포 등도 상대방에게 지속적인 피해를 줄 수 있다.</div>
+</div>
+
+<div class="q" data-num="3" data-type="radio" data-answer="O">
+<div class="q-title">3. 온라인에서 공격을 받았을 때 관련 메시지나 화면을 보존하는 것은 이후 상황을 설명하거나 도움을 요청할 때 유용할 수 있다.</div>
+<div class="options">
+<label><input type="radio" name="q3" value="O"> O</label>
+<label><input type="radio" name="q3" value="X"> X</label>
+</div>
+<div class="explain">해설: 피해 상황의 기록은 사실관계를 설명하거나 학교·보호자·플랫폼 등에 도움을 요청할 때 중요한 자료가 될 수 있다. 다만 증거를 확보한다는 이유로 해당 내용을 다시 퍼뜨려 피해를 확대해서는 안 된다.</div>
+</div>
+
+<div class="q" data-num="4" data-type="radio" data-answer="X">
+<div class="q-title">4. 사이버 폭력을 목격했지만 자신이 직접 피해를 입지 않았다면 아무 행동도 하지 않는 것이 가장 책임 있는 태도이다.</div>
+<div class="options">
+<label><input type="radio" name="q4" value="O"> O</label>
+<label><input type="radio" name="q4" value="X"> X</label>
+</div>
+<div class="explain">해설: 방관은 상황에 따라 피해자의 고립감을 키우거나 폭력적 분위기를 지속시키는 결과를 낳을 수 있다. 안전한 범위에서 피해자를 지지하고, 성인이나 담당자에게 알리며, 문제 게시물을 신고하는 행동이 도움이 될 수 있다.</div>
+</div>
+
+<div class="q" data-num="5" data-type="radio" data-answer="O">
+<div class="q-title">5. 연구 발표에 대한 비판은 사람의 능력을 공격하기보다 자료, 근거, 방법, 해석처럼 개선 가능한 요소를 중심으로 제시하는 것이 바람직하다.</div>
+<div class="options">
+<label><input type="radio" name="q5" value="O"> O</label>
+<label><input type="radio" name="q5" value="X"> X</label>
+</div>
+<div class="explain">해설: 건강한 피드백은 사람의 인격이나 능력을 공격하는 대신 구체적인 결과물과 개선 가능한 요소를 대상으로 한다. 이는 학문적 비판과 인신공격을 구분하는 중요한 기준이다.</div>
+</div>
+
+<h3>Ⅱ. 옳은 것 3개 고르기 — 5지선다형 5문항</h3>
+
+<div class="q" data-num="6" data-type="check" data-answer="A,C,E">
+<div class="q-title">6. 온라인에서 존중 있게 의사소통하는 행동으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q6" value="A"> ① 상대의 인격이 아니라 구체적인 행동이나 결과물에 대해 이야기한다.</label>
+<label><input type="checkbox" name="q6" value="B"> ② 화가 났을 때 감정을 가장 강하게 표현해야 상대가 문제를 빨리 이해한다.</label>
+<label><input type="checkbox" name="q6" value="C"> ③ 오해의 가능성이 있다면 의도와 근거를 구체적으로 설명한다.</label>
+<label><input type="checkbox" name="q6" value="D"> ④ 여러 사람이 동의하면 한 사람을 공개적으로 조롱해도 괜찮다.</label>
+<label><input type="checkbox" name="q6" value="E"> ⑤ 공개 비판이 꼭 필요한지, 개인적으로 이야기하는 것이 더 적절한지 고려한다.</label>
+</div>
+<div class="explain">해설: ①은 사람과 문제를 구분하는 태도, ③은 오해를 줄이는 구체적 설명, ⑤는 공개 범위에 대한 배려를 나타낸다. 감정적 공격이나 집단 조롱은 존중 있는 의사소통과 거리가 멀다.</div>
+</div>
+
+<div class="q" data-num="7" data-type="check" data-answer="B,C,D">
+<div class="q-title">7. 사이버 폭력 피해 상황에서 적절한 대응으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q7" value="A"> ① 같은 수준의 모욕적인 말로 즉시 되갚는다.</label>
+<label><input type="checkbox" name="q7" value="B"> ② 관련 메시지나 게시물 등 필요한 증거를 보존한다.</label>
+<label><input type="checkbox" name="q7" value="C"> ③ 차단·신고 기능을 활용하고 신뢰할 수 있는 성인이나 담당자에게 도움을 요청한다.</label>
+<label><input type="checkbox" name="q7" value="D"> ④ 피해를 확대하지 않는 범위에서 상황을 기록하고 사실관계를 정리한다.</label>
+<label><input type="checkbox" name="q7" value="E"> ⑤ 문제 상황을 알리기 위해 해당 게시물을 여러 단체방에 다시 퍼뜨린다.</label>
+</div>
+<div class="explain">해설: ② 증거 보존, ③ 차단·신고·도움 요청, ④ 사실관계 정리는 안전한 대응에 도움이 된다. 보복성 공격과 재유포는 갈등과 피해를 더 키울 수 있다.</div>
+</div>
+
+<div class="q" data-num="8" data-type="check" data-answer="A,B,E">
+<div class="q-title">8. 과학고의 공동연구 채팅방에서 건강한 피드백에 해당하는 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q8" value="A"> ① “이 그래프는 축 설명을 추가하면 결과를 더 명확히 이해할 수 있을 것 같아.”</label>
+<label><input type="checkbox" name="q8" value="B"> ② “이 결론은 실험 횟수가 적어서 근거가 충분한지 다시 확인해 보면 좋겠어.”</label>
+<label><input type="checkbox" name="q8" value="C"> ③ “이것도 제대로 못하면 연구를 왜 하냐?”</label>
+<label><input type="checkbox" name="q8" value="D"> ④ “다들 별로라고 생각하니까 네가 틀린 거야.”</label>
+<label><input type="checkbox" name="q8" value="E"> ⑤ “코드가 이 입력에서 오류가 나는 것 같은데, 예외 처리를 같이 확인해 보자.”</label>
+</div>
+<div class="explain">해설: ①·②·⑤는 결과물의 구체적 요소와 개선 방향을 제시한다. ③은 인격과 능력을 공격하고, ④는 다수의 의견을 근거 대신 사용하며 상대를 압박한다.</div>
+</div>
+
+<div class="q" data-num="9" data-type="check" data-answer="A,D,E">
+<div class="q-title">9. 사이버 폭력 상황에서 방관자가 할 수 있는 책임 있는 행동으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q9" value="A"> ① 피해자가 혼자가 아니라는 것을 알 수 있도록 안전하게 지지한다.</label>
+<label><input type="checkbox" name="q9" value="B"> ② 재미있는 상황이므로 이모티콘을 달아 분위기에 참여한다.</label>
+<label><input type="checkbox" name="q9" value="C"> ③ 상황을 더 많은 사람이 알 수 있도록 캡처 화면을 다른 방에 퍼뜨린다.</label>
+<label><input type="checkbox" name="q9" value="D"> ④ 문제 게시물이나 메시지를 적절한 기능을 이용해 신고한다.</label>
+<label><input type="checkbox" name="q9" value="E"> ⑤ 혼자 해결하기 어려운 상황이라면 교사·보호자 등 신뢰할 수 있는 사람에게 알린다.</label>
+</div>
+<div class="explain">해설: ① 피해자 지지, ④ 신고, ⑤ 도움 요청은 피해를 줄이는 데 도움이 될 수 있다. 조롱에 동참하거나 내용을 재유포하면 피해가 확대될 수 있다.</div>
+</div>
+
+<div class="q" data-num="10" data-type="check" data-answer="B,C,E">
+<div class="q-title">10. 온라인 갈등을 판단할 때 고려해야 할 기준으로 적절한 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q10" value="A"> ① 내가 재미있게 느꼈는가?</label>
+<label><input type="checkbox" name="q10" value="B"> ② 상대방에게 반복적이거나 심각한 피해가 생길 가능성이 있는가?</label>
+<label><input type="checkbox" name="q10" value="C"> ③ 해당 표현이 사람을 공격하는지, 문제나 의견을 비판하는지 구분할 수 있는가?</label>
+<label><input type="checkbox" name="q10" value="D"> ④ 많은 사람이 웃었다면 문제가 없는가?</label>
+<label><input type="checkbox" name="q10" value="E"> ⑤ 공개 범위와 확산 가능성이 피해를 더 크게 만들 수 있는가?</label>
+</div>
+<div class="explain">해설: ② 피해 가능성, ③ 인신공격과 비판의 구분, ⑤ 확산 가능성은 중요한 판단 기준이다. 개인의 재미나 다수의 반응은 윤리적 정당성을 보장하지 않는다.</div>
+</div>
+
+<div class="actions">
+<button class="primary" onclick="gradeQuiz()">채점하기</button>
+<button class="download" onclick="downloadResult()">결과 TXT 저장</button>
+<button class="secondary" onclick="resetQuiz()">다시 풀기</button>
+</div>
+
+<div id="result" class="result"></div>
+</section>
+
+<section class="card">
+<h2>7. 교사용 정리 포인트</h2>
+<ul>
+<li>사이버 폭력을 욕설 하나로만 판단하지 말고 <strong>반복성, 공개성, 배제, 재유포, 집단 참여, 피해 정도</strong>까지 함께 살펴보게 한다.</li>
+<li>학생에게 개인적 피해 경험을 공개하도록 요구하지 않고, 가상·익명 사례를 중심으로 수업을 진행한다.</li>
+<li>피해자에게 대응 책임을 떠넘기지 말고, 방관자와 공동체의 역할을 함께 다룬다.</li>
+<li>연구·토론 문화와 연결하여 <strong>사람을 공격하지 않고 근거와 결과물을 비판하는 방법</strong>을 반복적으로 연습하게 한다.</li>
+<li>마무리 질문: <strong>“내가 옳다고 생각하는 말을 할 때도 상대의 존엄을 지킬 수 있는가?”</strong></li>
+</ul>
+</section>
+
+</div>
+<footer>디지털 윤리 4차시 · 사이버 폭력과 온라인 의사소통</footer>
+
+<script>
+let lastResultText = "";
+let lastScore = null;
+let lastTime = "";
+
+const explanations = {
+1:"온라인 텍스트는 표정과 억양 같은 비언어적 정보가 부족해 의도와 다르게 해석될 수 있으므로 표현을 더 구체적이고 신중하게 선택할 필요가 있다.",
+2:"사이버 폭력은 욕설뿐 아니라 반복적 조롱, 배제, 모욕, 소문 유포, 이미지 재유포 등 다양한 형태로 나타날 수 있다.",
+3:"관련 메시지와 게시물의 기록은 사실관계를 설명하고 도움을 요청하는 데 유용할 수 있다. 다만 증거 확보를 이유로 재유포해서는 안 된다.",
+4:"방관은 피해자의 고립감을 키우거나 폭력적 분위기를 지속시킬 수 있다. 안전한 범위에서 지지, 신고, 도움 요청 등의 행동이 필요할 수 있다.",
+5:"건강한 학문적 비판은 사람의 인격이나 능력이 아니라 자료, 근거, 방법, 해석처럼 구체적이고 개선 가능한 요소를 대상으로 한다.",
+6:"정답은 ①, ③, ⑤이다. 사람과 문제를 구분하고, 오해를 줄이며, 공개 범위를 고려하는 것이 존중 있는 온라인 의사소통의 핵심이다.",
+7:"정답은 ②, ③, ④이다. 증거 보존, 차단·신고·도움 요청, 사실관계 정리는 안전한 대응에 도움이 된다. 보복이나 재유포는 피해를 확대할 수 있다.",
+8:"정답은 ①, ②, ⑤이다. 세 문장 모두 구체적인 연구 결과물이나 개선 가능한 요소에 초점을 두고 있다. ③과 ④는 사람을 공격하거나 다수의 의견을 압박 수단으로 사용한다.",
+9:"정답은 ①, ④, ⑤이다. 피해자 지지, 신고, 신뢰할 수 있는 사람에게 도움 요청은 방관자가 할 수 있는 책임 있는 행동이다.",
+10:"정답은 ②, ③, ⑤이다. 온라인 갈등에서는 피해 가능성, 인신공격 여부, 공개·확산 범위를 함께 고려해야 한다."
+};
+
+function selectedValue(q){
+  const type=q.dataset.type, num=q.dataset.num;
+  if(type==="radio"){
+    const el=document.querySelector('input[name="q'+num+'"]:checked');
+    return el?el.value:"";
+  }
+  const arr=[...document.querySelectorAll('input[name="q'+num+'"]:checked')].map(x=>x.value).sort();
+  return arr.join(",");
+}
+
+function displaySelected(q,val){
+  if(!val) return "미응답";
+  if(q.dataset.type==="radio") return val;
+  const map={A:"①",B:"②",C:"③",D:"④",E:"⑤"};
+  return val.split(",").map(v=>map[v]).join(", ");
+}
+
+function gradeQuiz(){
+  const sid=document.getElementById("studentId").value.trim();
+  const name=document.getElementById("studentName").value.trim();
+  if(!sid || !name){
+    alert("학번과 이름을 입력하세요.");
+    return;
+  }
+
+  let score=0, html="", lines=[];
+  const now=new Date();
+  lastTime=now.toLocaleString("ko-KR");
+
+  document.querySelectorAll(".q").forEach(q=>{
+    const num=q.dataset.num;
+    const ans=q.dataset.answer.split(",").sort().join(",");
+    const sel=selectedValue(q);
+    const ok=(sel===ans);
+    if(ok) score+=10;
+
+    html += `<div><span class="${ok?'correct':'wrong'}">${num}번 ${ok?'정답':'오답'}</span> · 선택: ${displaySelected(q,sel)} · 정답: ${displaySelected(q,ans)}
+    <div class="explain">${explanations[num]}</div></div><hr>`;
+
+    lines.push(`[${num}번] ${ok?'정답':'오답'}`);
+    lines.push(`선택: ${displaySelected(q,sel)}`);
+    lines.push(`정답: ${displaySelected(q,ans)}`);
+    lines.push(`상세 해설: ${explanations[num]}`);
+    lines.push("");
+  });
+
+  lastScore=score;
+  const result=document.getElementById("result");
+  result.style.display="block";
+  result.innerHTML=`<div class="score-big">${sid} ${name} · ${score}점 / 100점</div>
+  <p>응시시각: ${lastTime}</p><hr>${html}`;
+
+  lastResultText =
+`디지털 윤리 4차시 형성평가 결과
+========================================
+학번: ${sid}
+이름: ${name}
+점수: ${score}점 / 100점
+응시시각: ${lastTime}
+========================================
+
+${lines.join("\n")}
+
+[수업 핵심]
+온라인에서는 말과 행동이 빠르게 복제·확산될 수 있으므로 상대방의 존엄과 피해 가능성을 더 신중하게 고려해야 한다.
+사이버 폭력 상황에서는 보복보다 증거 보존, 차단·신고, 도움 요청, 피해자 지지가 중요하다.
+`;
+
+  result.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function safeFile(s){
+  return s.replace(/[\\/:*?"<>|]/g,"_").replace(/\s+/g,"");
+}
+
+function timestampForFile(){
+  const d=new Date();
+  const p=n=>String(n).padStart(2,"0");
+  return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`;
+}
+
+function downloadResult(){
+  if(lastScore===null){
+    gradeQuiz();
+    if(lastScore===null) return;
+  }
+  const sid=safeFile(document.getElementById("studentId").value.trim());
+  const name=safeFile(document.getElementById("studentName").value.trim());
+  const filename=`${sid}_${name}_${lastScore}점_디윤4차시_${timestampForFile()}.txt`;
+  const blob=new Blob(["\ufeff"+lastResultText],{type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=filename;
+  document.body.appendChild(a);
+  a.click();
+  URL.revokeObjectURL(a.href);
+  a.remove();
+}
+
+function resetQuiz(){
+  document.querySelectorAll('input[type="radio"],input[type="checkbox"]').forEach(x=>x.checked=false);
+  document.getElementById("result").style.display="none";
+  lastResultText=""; lastScore=null; lastTime="";
+  window.scrollTo({top:document.querySelector(".formbar").offsetTop-80,behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디지털 윤리 3차시 - 저작권과 올바른 콘텐츠 이용</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --navy:#17365d; --blue:#2f66a3; --light:#edf4fb; --line:#d7e1ec;
+  --text:#1f2937; --green:#147d64; --red:#b23a48;
+}
+body{margin:0;font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;background:#f5f7fa;color:var(--text);line-height:1.72}
+header{background:linear-gradient(135deg,#17365d,#3b6fa7);color:white;padding:45px 20px 36px;text-align:center}
+header h1{margin:0 0 8px;font-size:2.1rem} header p{margin:0;opacity:.93}
+.wrap{width:min(1180px,94%);margin:25px auto 60px}
+.card{background:white;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin-bottom:22px;box-shadow:0 4px 16px rgba(0,0,0,.055)}
+h2{color:var(--navy);border-left:6px solid #4c7bb1;padding-left:12px;margin-top:0}
+h3{color:#285788}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.box{background:#f8fafc;border:1px solid #e3e9ef;border-radius:12px;padding:16px}
+.keyword{display:inline-block;background:var(--light);color:#275b91;border-radius:999px;padding:5px 10px;margin:3px;font-weight:700;font-size:.9rem}
+.opening{background:linear-gradient(135deg,#f3f8ff,#eef7f5);border:1px solid #cbdced;border-radius:14px;padding:20px;font-size:1.04rem}
+.flow{counter-reset:n;list-style:none;padding:0}
+.flow li{position:relative;margin:12px 0;padding:13px 15px 13px 52px;background:#fafcff;border:1px solid #e1e8f0;border-radius:11px}
+.flow li:before{counter-increment:n;content:counter(n);position:absolute;left:14px;top:13px;width:27px;height:27px;border-radius:50%;background:#315f94;color:white;display:grid;place-items:center;font-weight:800}
+.info-table{width:100%;border-collapse:collapse}.info-table th,.info-table td{border:1px solid var(--line);padding:10px;vertical-align:top}.info-table th{background:#eaf1f8;color:#17365d}
+.formbar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+input[type=text]{width:100%;padding:11px;border:1px solid #bcc9d7;border-radius:9px;font-size:1rem}
+.q{border:1px solid #dfe6ee;border-radius:13px;padding:18px;margin:16px 0;background:#fff}
+.q-title{font-weight:800;color:#183b63;margin-bottom:10px}
+.options label{display:block;margin:7px 0;padding:8px 10px;border-radius:8px;background:#f8fafc;cursor:pointer}
+.options label:hover{background:#edf4fb}
+button{border:0;border-radius:9px;padding:11px 17px;font-weight:800;cursor:pointer}
+.primary{background:#214f80;color:white}.secondary{background:#e6edf5;color:#20466e}.download{background:#147d64;color:white}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.result{display:none;margin-top:20px;padding:18px;border-radius:12px;background:#f4f8fc;border:1px solid #cbd9e8}
+.correct{color:var(--green);font-weight:800}.wrong{color:var(--red);font-weight:800}
+.explain{margin-top:9px;background:#fbfcfe;border-left:4px solid #688caf;padding:10px 12px}
+.small{font-size:.91rem;color:#5b6573}.notice{background:#fff8e7;border:1px solid #ecd49a;border-radius:12px;padding:15px}
+.score-big{font-size:1.65rem;font-weight:900;color:#17365d}
+footer{text-align:center;color:#6b7280;padding:25px}
+.topbtn{position:fixed;top:10px;left:10px;z-index:1000;background:#17365d;color:white;border-radius:8px;padding:8px 11px}
+@media(max-width:760px){.grid,.formbar{grid-template-columns:1fr}header h1{font-size:1.65rem}}
+@media print{.topbtn,.actions{display:none!important}.card{box-shadow:none;break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+<button class="topbtn" onclick="window.print()">인쇄 / PDF</button>
+
+<header>
+  <h1>디지털 윤리 3차시</h1>
+  <p>저작권과 올바른 콘텐츠 이용 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+
+<section class="card">
+<h2>1. 수업 개요</h2>
+<table class="info-table">
+<tr><th>수업 주제</th><td>저작권과 올바른 콘텐츠 이용</td><th>차시</th><td>3 / 8차시</td></tr>
+<tr><th>수업 유형</th><td>개념기반 목표지향 수업</td><th>대상</th><td>고등학생·과학고 학생</td></tr>
+<tr><th>핵심 질문</th><td colspan="3"><strong>“인터넷에 공개된 자료는 누구나 자유롭게 사용해도 될까?”</strong></td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>2. 학습목표</h2>
+<div class="grid">
+<div class="box"><strong>지식·이해</strong><br>저작권, 저작자, 인용, 출처 표시, 표절, 라이선스의 의미를 설명할 수 있다.</div>
+<div class="box"><strong>과정·기능</strong><br>탐구보고서·발표자료·코드·이미지·AI 결과물 사용 사례에서 올바른 이용 여부를 판단할 수 있다.</div>
+<div class="box"><strong>가치·태도</strong><br>다른 사람의 창작과 기여를 존중하고 자신의 학습·연구 결과를 정직하게 표현하는 태도를 기른다.</div>
+<div class="box"><strong>최종 도달 목표</strong><br>필요한 자료를 적법하고 윤리적으로 활용하며 출처와 기여를 적절히 밝힐 수 있다.</div>
+</div>
+</section>
+
+<section class="card">
+<h2>3. 핵심개념</h2>
+<p>
+<span class="keyword">저작권</span>
+<span class="keyword">저작자</span>
+<span class="keyword">인용</span>
+<span class="keyword">출처 표시</span>
+<span class="keyword">표절</span>
+<span class="keyword">라이선스</span>
+<span class="keyword">공동저작</span>
+<span class="keyword">기여 인정</span>
+<span class="keyword">생성형 AI 활용 윤리</span>
+</p>
+<div class="notice">
+<strong>개념적 일반화:</strong> 디지털 자료는 쉽게 복제·편집·재배포할 수 있지만, 쉽게 얻을 수 있다는 사실이 자유로운 사용을 뜻하지는 않는다. 책임 있는 학습자와 연구자는 창작자의 권리와 기여를 존중하고, 사용 조건을 확인하며, 자신의 기여와 타인의 기여를 정직하게 구분한다.
+</div>
+</section>
+
+<section class="card">
+<h2>4. 수업 열기 멘트</h2>
+<div class="opening">
+여러분이 탐구대회 발표를 앞두고 있다고 해 봅시다. 밤늦게까지 자료를 만들었는데 그래프가 하나 부족합니다. 검색해 보니 완벽한 이미지가 나옵니다. 또 GitHub에는 필요한 코드가 있고, AI는 멋진 설명문까지 만들어 줍니다. 이제 복사해서 붙여 넣기만 하면 발표 자료가 훨씬 좋아집니다.<br><br>
+
+그런데 여기서 중요한 질문이 생깁니다. <strong>“내가 직접 만든 것은 어디까지이고, 다른 사람이 만든 것은 어디까지일까?”</strong><br><br>
+
+과학고에서는 이 질문이 특히 중요합니다. 연구는 혼자 하는 것처럼 보여도 실제로는 수많은 사람의 아이디어, 논문, 데이터, 코드, 그림, 실험 방법 위에 세워집니다. 우리가 다른 사람의 성과를 제대로 인정하지 않으면 연구의 신뢰가 무너집니다. 반대로 출처와 기여를 정확히 밝히면, 우리는 이전 연구를 존중하면서도 그 위에 새로운 지식을 쌓을 수 있습니다.<br><br>
+
+그리고 이제는 생성형 AI라는 새로운 도구도 등장했습니다. AI가 만든 문장을 그대로 붙여 넣는 것이 나의 글일까요? AI가 추천한 코드를 사용했다면 검토 책임은 누구에게 있을까요? 중요한 것은 단순히 “AI를 썼다, 안 썼다”가 아니라 <strong>무엇을 참고했고, 무엇을 검증했고, 무엇을 내가 판단했는지 투명하게 설명할 수 있는가</strong>입니다.<br><br>
+
+오늘은 저작권을 ‘금지 규칙’으로 배우지 않겠습니다. 대신 좋은 연구자와 좋은 개발자가 갖추어야 할 한 가지 중요한 습관, 즉 <strong>“남의 것을 존중하면서 내 것을 정직하게 만드는 방법”</strong>을 함께 배우겠습니다.
+</div>
+</section>
+
+<section class="card">
+<h2>5. 수업의 흐름</h2>
+<ol class="flow">
+<li><strong>도입 5분</strong> — 이미지·코드·AI 설명문을 탐구보고서에 넣는 가상 상황을 제시하고 “누구의 기여인가?”를 질문한다.</li>
+<li><strong>목표 공유 3분</strong> — 오늘의 핵심 질문과 ‘정직한 연구·학습’의 의미를 확인한다.</li>
+<li><strong>개념 형성 12분</strong> — 저작권, 인용, 출처 표시, 표절, 라이선스, 공동 기여 개념을 사례와 연결한다.</li>
+<li><strong>사례 탐구 12분</strong> — 논문 문장 복사, GitHub 코드 이용, 이미지 사용, 공동보고서 작성, 생성형 AI 활용 사례를 분석한다.</li>
+<li><strong>개념 전이 8분</strong> — “사용 권한이 있는가, 출처를 밝혔는가, 내 기여와 타인의 기여를 구분했는가, 검증했는가”의 4단계 기준을 만든다.</li>
+<li><strong>형성평가 7분</strong> — OX 5문항과 옳은 것 3개 고르기 5문항으로 핵심 개념을 점검한다.</li>
+<li><strong>정리 3분</strong> — “정직한 연구자라면 자료를 사용할 때 반드시 ________한다.”를 완성하며 수업을 마무리한다.</li>
+</ol>
+</section>
+
+<section class="card">
+<h2>6. 형성평가</h2>
+<p class="small">총 10문항, 각 10점. 6~10번은 정답 3개를 모두 선택하고 오답 보기를 선택하지 않아야 정답으로 처리됩니다.</p>
+
+<div class="formbar">
+<div><label><strong>학번</strong></label><input id="studentId" type="text" placeholder="예: 1101"></div>
+<div><label><strong>이름</strong></label><input id="studentName" type="text" placeholder="예: 홍길동"></div>
+</div>
+
+<h3>Ⅰ. OX 퀴즈 5문항</h3>
+
+<div class="q" data-num="1" data-type="radio" data-answer="X">
+<div class="q-title">1. 인터넷 검색으로 누구나 볼 수 있는 이미지는 공개된 자료이므로 출처를 표시하지 않고 과제에 자유롭게 사용해도 된다.</div>
+<div class="options">
+<label><input type="radio" name="q1" value="O"> O</label>
+<label><input type="radio" name="q1" value="X"> X</label>
+</div>
+<div class="explain">해설: 인터넷에서 볼 수 있다는 사실과 자유롭게 재사용할 수 있다는 사실은 다르다. 자료마다 저작권과 이용 조건이 다를 수 있으므로 사용 가능 범위와 출처 표시 여부를 확인해야 한다.</div>
+</div>
+
+<div class="q" data-num="2" data-type="radio" data-answer="O">
+<div class="q-title">2. 다른 사람의 문장이나 아이디어를 과제에 사용할 때 출처를 밝히는 것은 저작자의 기여를 존중하는 중요한 방법이다.</div>
+<div class="options">
+<label><input type="radio" name="q2" value="O"> O</label>
+<label><input type="radio" name="q2" value="X"> X</label>
+</div>
+<div class="explain">해설: 인용과 출처 표시는 자료의 출처와 기여를 투명하게 드러내어 독자가 원자료를 확인할 수 있게 하고, 타인의 지적 기여를 인정하는 역할을 한다.</div>
+</div>
+
+<div class="q" data-num="3" data-type="radio" data-answer="X">
+<div class="q-title">3. 친구가 작성한 코드를 조금 수정했다면 원래 코드의 출처나 기여를 밝힐 필요가 없다.</div>
+<div class="options">
+<label><input type="radio" name="q3" value="O"> O</label>
+<label><input type="radio" name="q3" value="X"> X</label>
+</div>
+<div class="explain">해설: 일부 수정만으로 원저작자의 기여가 사라지는 것은 아니다. 사용 조건과 과제 기준에 따라 원래 코드의 출처나 기여를 적절히 밝혀야 한다.</div>
+</div>
+
+<div class="q" data-num="4" data-type="radio" data-answer="O">
+<div class="q-title">4. 생성형 AI가 만든 내용도 실제 과제나 연구에 사용할 때에는 사용자가 사실 여부와 적절성을 검토할 책임이 있다.</div>
+<div class="options">
+<label><input type="radio" name="q4" value="O"> O</label>
+<label><input type="radio" name="q4" value="X"> X</label>
+</div>
+<div class="explain">해설: 생성형 AI는 부정확한 정보나 적절하지 않은 내용을 만들 수 있다. 따라서 결과물을 사용하는 사람이 검증하고 학교나 연구 활동의 AI 사용 기준을 따라야 한다.</div>
+</div>
+
+<div class="q" data-num="5" data-type="radio" data-answer="O">
+<div class="q-title">5. 표절은 다른 사람의 글을 그대로 복사하는 경우뿐 아니라 다른 사람의 아이디어나 결과를 자신의 것처럼 제시하는 경우에도 문제가 될 수 있다.</div>
+<div class="options">
+<label><input type="radio" name="q5" value="O"> O</label>
+<label><input type="radio" name="q5" value="X"> X</label>
+</div>
+<div class="explain">해설: 표절은 문장 복사에만 한정되지 않는다. 타인의 아이디어, 자료, 코드, 분석 결과 등의 기여를 적절히 밝히지 않고 자신의 성과처럼 제시하는 것도 학문적 정직성을 해칠 수 있다.</div>
+</div>
+
+<h3>Ⅱ. 옳은 것 3개 고르기 — 5지선다형 5문항</h3>
+
+<div class="q" data-num="6" data-type="check" data-answer="A,C,E">
+<div class="q-title">6. 다른 사람의 자료를 책임 있게 사용하는 행동으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q6" value="A"> ① 자료의 저작자와 출처를 확인한다.</label>
+<label><input type="checkbox" name="q6" value="B"> ② 검색 결과 상단에 나오면 자유 이용 자료로 판단한다.</label>
+<label><input type="checkbox" name="q6" value="C"> ③ 이용 조건이나 라이선스가 있는지 확인한다.</label>
+<label><input type="checkbox" name="q6" value="D"> ④ 문장을 일부 바꾸면 원자료를 참고했다는 사실을 숨겨도 된다.</label>
+<label><input type="checkbox" name="q6" value="E"> ⑤ 인용한 부분과 자신이 작성한 부분을 구분한다.</label>
+</div>
+<div class="explain">해설: ① 출처 확인, ③ 이용 조건 확인, ⑤ 자신의 기여와 인용 부분 구분은 책임 있는 이용의 핵심이다. 검색 순위는 사용 허가를 의미하지 않으며, 문장을 바꾸었다고 출처 표시 의무가 자동으로 사라지는 것도 아니다.</div>
+</div>
+
+<div class="q" data-num="7" data-type="check" data-answer="B,C,D">
+<div class="q-title">7. 과학고 탐구보고서 작성에서 학문적 정직성을 지키는 행동으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q7" value="A"> ① 결과가 예상과 다르면 불리한 데이터를 설명 없이 삭제한다.</label>
+<label><input type="checkbox" name="q7" value="B"> ② 참고한 논문과 데이터의 출처를 적절히 밝힌다.</label>
+<label><input type="checkbox" name="q7" value="C"> ③ 공동연구자의 실질적 기여를 결과물에 반영한다.</label>
+<label><input type="checkbox" name="q7" value="D"> ④ AI가 만든 설명을 사용할 경우 사실 검증과 학교의 사용 기준을 확인한다.</label>
+<label><input type="checkbox" name="q7" value="E"> ⑤ 친구의 분석 결과를 자신의 분석처럼 제시한다.</label>
+</div>
+<div class="explain">해설: ② 출처 표시, ③ 공동 기여 인정, ④ AI 결과 검증은 연구의 신뢰성과 정직성을 높인다. ①은 결과를 왜곡할 수 있고, ⑤는 타인의 기여를 자신의 것으로 제시하는 문제를 만든다.</div>
+</div>
+
+<div class="q" data-num="8" data-type="check" data-answer="A,B,E">
+<div class="q-title">8. 프로그래밍 코드와 저작권·기여 인정에 대한 설명으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q8" value="A"> ① 공개된 코드라도 라이선스나 이용 조건을 확인할 필요가 있다.</label>
+<label><input type="checkbox" name="q8" value="B"> ② 다른 사람의 코드를 참고했다면 과제 기준에 맞게 출처나 참고 사실을 밝히는 것이 바람직하다.</label>
+<label><input type="checkbox" name="q8" value="C"> ③ 코드의 변수 이름만 바꾸면 언제나 완전히 자신의 창작물이 된다.</label>
+<label><input type="checkbox" name="q8" value="D"> ④ 무료 저장소에 있는 코드는 모두 저작권이 없는 코드이다.</label>
+<label><input type="checkbox" name="q8" value="E"> ⑤ 코드 이용 시 기능뿐 아니라 사용 조건과 원저작자의 기여도 함께 고려해야 한다.</label>
+</div>
+<div class="explain">해설: ①·②·⑤가 옳다. 공개 저장소에 있다는 사실만으로 권리가 사라지지 않으며, 단순한 변수명 변경만으로 원래 코드의 기여가 없어지는 것도 아니다.</div>
+</div>
+
+<div class="q" data-num="9" data-type="check" data-answer="A,D,E">
+<div class="q-title">9. 생성형 AI를 학습·연구에 사용할 때 책임 있는 태도로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q9" value="A"> ① AI가 제시한 사실과 출처를 다시 확인한다.</label>
+<label><input type="checkbox" name="q9" value="B"> ② AI가 작성한 문장은 자동으로 자신의 독창적 글이 되므로 그대로 제출한다.</label>
+<label><input type="checkbox" name="q9" value="C"> ③ AI가 생성한 코드라면 오류 가능성이 없으므로 실행 검증이 필요 없다.</label>
+<label><input type="checkbox" name="q9" value="D"> ④ 학교나 대회의 AI 사용 지침이 있다면 그 기준을 따른다.</label>
+<label><input type="checkbox" name="q9" value="E"> ⑤ AI 결과를 참고하더라도 최종 판단과 설명의 책임은 사용자에게 있음을 인식한다.</label>
+</div>
+<div class="explain">해설: ① 사실 확인, ④ 사용 기준 준수, ⑤ 사용자 책임 인식은 바람직하다. AI 결과를 그대로 자신의 독창적 성과로 간주하거나 검증 없이 사용하는 것은 적절하지 않다.</div>
+</div>
+
+<div class="q" data-num="10" data-type="check" data-answer="B,C,E">
+<div class="q-title">10. 다음 중 ‘올바른 인용과 출처 표시’의 목적에 해당하는 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q10" value="A"> ① 보고서의 글자 수를 늘리기 위해서</label>
+<label><input type="checkbox" name="q10" value="B"> ② 타인의 아이디어와 기여를 인정하기 위해서</label>
+<label><input type="checkbox" name="q10" value="C"> ③ 독자가 원자료를 확인할 수 있도록 하기 위해서</label>
+<label><input type="checkbox" name="q10" value="D"> ④ 다른 사람의 문장을 자신의 것처럼 보이게 하기 위해서</label>
+<label><input type="checkbox" name="q10" value="E"> ⑤ 자신의 주장과 참고한 자료를 구분하여 연구의 투명성을 높이기 위해서</label>
+</div>
+<div class="explain">해설: ② 타인의 기여 인정, ③ 원자료 확인 가능성, ⑤ 연구의 투명성 확보가 인용과 출처 표시의 핵심 목적이다. 글자 수를 늘리거나 타인의 문장을 자신의 것처럼 보이게 하는 것은 목적이 아니다.</div>
+</div>
+
+<div class="actions">
+<button class="primary" onclick="gradeQuiz()">채점하기</button>
+<button class="download" onclick="downloadResult()">결과 TXT 저장</button>
+<button class="secondary" onclick="resetQuiz()">다시 풀기</button>
+</div>
+
+<div id="result" class="result"></div>
+</section>
+
+<section class="card">
+<h2>7. 교사용 정리 포인트</h2>
+<ul>
+<li>저작권을 ‘복사 금지’로만 설명하지 말고 <strong>기여 인정과 연구의 신뢰</strong>라는 관점에서 다룬다.</li>
+<li>과학고 맥락에서는 논문, 코드, 데이터, 그래프, 이미지, 공동연구 결과, 생성형 AI를 모두 하나의 연속선에서 살펴본다.</li>
+<li>학생이 “출처를 썼다”에서 끝나지 않고 <strong>사용 권한·이용 조건·자신의 기여·검증 책임</strong>까지 점검하도록 한다.</li>
+<li>마무리 질문: <strong>“좋은 연구자는 새로운 것을 많이 만드는 사람일까, 다른 사람의 기여를 정확히 인정하면서 새로운 것을 만드는 사람일까?”</strong></li>
+</ul>
+</section>
+
+</div>
+<footer>디지털 윤리 3차시 · 저작권과 올바른 콘텐츠 이용</footer>
+
+<script>
+let lastResultText = "";
+let lastScore = null;
+let lastTime = "";
+
+const explanations = {
+1:"인터넷에서 볼 수 있다는 사실은 자유로운 재사용 허가를 뜻하지 않는다. 자료마다 저작권과 이용 조건이 다를 수 있다.",
+2:"인용과 출처 표시는 타인의 지적 기여를 인정하고 독자가 원자료를 확인할 수 있게 하는 중요한 연구 윤리이다.",
+3:"일부 수정만으로 원저작자의 기여가 사라지는 것은 아니다. 코드 사용 시에도 출처, 기여, 이용 조건을 확인해야 한다.",
+4:"생성형 AI는 오류가 있을 수 있으므로 사용자가 사실성·적절성을 검토하고 적용 결과에 책임을 져야 한다.",
+5:"표절은 문장 복사뿐 아니라 타인의 아이디어·자료·코드·분석 결과를 자신의 성과처럼 제시하는 경우에도 문제가 될 수 있다.",
+6:"정답은 ①, ③, ⑤이다. 출처 확인, 이용 조건 확인, 인용과 자신의 기여 구분이 책임 있는 자료 이용의 핵심이다.",
+7:"정답은 ②, ③, ④이다. 출처 표시, 공동기여 인정, AI 사용 기준 준수와 검증은 학문적 정직성을 지키는 행동이다.",
+8:"정답은 ①, ②, ⑤이다. 공개 코드라도 라이선스를 확인하고, 참고 사실과 원저작자의 기여를 적절히 밝혀야 한다.",
+9:"정답은 ①, ④, ⑤이다. AI 결과는 다시 확인하고 사용 지침을 따르며, 최종 판단과 설명의 책임은 사용자에게 있음을 인식해야 한다.",
+10:"정답은 ②, ③, ⑤이다. 인용과 출처 표시는 타인의 기여를 인정하고 원자료 확인을 가능하게 하며 연구의 투명성을 높인다."
+};
+
+function selectedValue(q){
+  const type=q.dataset.type, num=q.dataset.num;
+  if(type==="radio"){
+    const el=document.querySelector('input[name="q'+num+'"]:checked');
+    return el?el.value:"";
+  }
+  const arr=[...document.querySelectorAll('input[name="q'+num+'"]:checked')].map(x=>x.value).sort();
+  return arr.join(",");
+}
+
+function displaySelected(q,val){
+  if(!val) return "미응답";
+  if(q.dataset.type==="radio") return val;
+  const map={A:"①",B:"②",C:"③",D:"④",E:"⑤"};
+  return val.split(",").map(v=>map[v]).join(", ");
+}
+
+function gradeQuiz(){
+  const sid=document.getElementById("studentId").value.trim();
+  const name=document.getElementById("studentName").value.trim();
+  if(!sid || !name){
+    alert("학번과 이름을 입력하세요.");
+    return;
+  }
+
+  let score=0, html="", lines=[];
+  const now=new Date();
+  lastTime=now.toLocaleString("ko-KR");
+
+  document.querySelectorAll(".q").forEach(q=>{
+    const num=q.dataset.num;
+    const ans=q.dataset.answer.split(",").sort().join(",");
+    const sel=selectedValue(q);
+    const ok=(sel===ans);
+    if(ok) score+=10;
+
+    html += `<div><span class="${ok?'correct':'wrong'}">${num}번 ${ok?'정답':'오답'}</span> · 선택: ${displaySelected(q,sel)} · 정답: ${displaySelected(q,ans)}
+    <div class="explain">${explanations[num]}</div></div><hr>`;
+
+    lines.push(`[${num}번] ${ok?'정답':'오답'}`);
+    lines.push(`선택: ${displaySelected(q,sel)}`);
+    lines.push(`정답: ${displaySelected(q,ans)}`);
+    lines.push(`상세 해설: ${explanations[num]}`);
+    lines.push("");
+  });
+
+  lastScore=score;
+  const result=document.getElementById("result");
+  result.style.display="block";
+  result.innerHTML=`<div class="score-big">${sid} ${name} · ${score}점 / 100점</div>
+  <p>응시시각: ${lastTime}</p><hr>${html}`;
+
+  lastResultText =
+`디지털 윤리 3차시 형성평가 결과
+========================================
+학번: ${sid}
+이름: ${name}
+점수: ${score}점 / 100점
+응시시각: ${lastTime}
+========================================
+
+${lines.join("\n")}
+
+[수업 핵심]
+인터넷에서 쉽게 얻을 수 있는 자료라도 자유롭게 사용할 수 있다는 뜻은 아니다.
+책임 있는 학습자와 연구자는 사용 조건을 확인하고 타인의 기여를 인정하며 자신의 기여와 참고 자료를 투명하게 구분해야 한다.
+`;
+
+  result.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function safeFile(s){
+  return s.replace(/[\\/:*?"<>|]/g,"_").replace(/\s+/g,"");
+}
+
+function timestampForFile(){
+  const d=new Date();
+  const p=n=>String(n).padStart(2,"0");
+  return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`;
+}
+
+function downloadResult(){
+  if(lastScore===null){
+    gradeQuiz();
+    if(lastScore===null) return;
+  }
+  const sid=safeFile(document.getElementById("studentId").value.trim());
+  const name=safeFile(document.getElementById("studentName").value.trim());
+  const filename=`${sid}_${name}_${lastScore}점_디윤3차시_${timestampForFile()}.txt`;
+  const blob=new Blob(["\ufeff"+lastResultText],{type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=filename;
+  document.body.appendChild(a);
+  a.click();
+  URL.revokeObjectURL(a.href);
+  a.remove();
+}
+
+function resetQuiz(){
+  document.querySelectorAll('input[type="radio"],input[type="checkbox"]').forEach(x=>x.checked=false);
+  document.getElementById("result").style.display="none";
+  lastResultText=""; lastScore=null; lastTime="";
+  window.scrollTo({top:document.querySelector(".formbar").offsetTop-80,behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>

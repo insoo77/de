@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디지털 윤리 5차시 - 허위정보·딥페이크와 미디어 리터러시</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --navy:#17365d; --blue:#2f66a3; --light:#edf4fb; --line:#d7e1ec;
+  --text:#1f2937; --green:#147d64; --red:#b23a48; --gold:#a86c00;
+}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;background:#f5f7fa;color:var(--text);line-height:1.72}
+header{background:linear-gradient(135deg,#17365d,#3b6fa7);color:#fff;padding:46px 20px 38px;text-align:center}
+header h1{margin:0 0 8px;font-size:2.12rem}
+header p{margin:0;opacity:.94}
+.wrap{width:min(1180px,94%);margin:25px auto 60px}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin-bottom:22px;box-shadow:0 4px 16px rgba(0,0,0,.055)}
+h2{color:var(--navy);border-left:6px solid #4c7bb1;padding-left:12px;margin-top:0}
+h3{color:#285788}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.box{background:#f8fafc;border:1px solid #e3e9ef;border-radius:12px;padding:16px}
+.keyword{display:inline-block;background:var(--light);color:#275b91;border-radius:999px;padding:5px 10px;margin:3px;font-weight:700;font-size:.9rem}
+.opening{background:linear-gradient(135deg,#f3f8ff,#eef7f5);border:1px solid #cbdced;border-radius:14px;padding:20px;font-size:1.04rem}
+.notice{background:#fff8e7;border:1px solid #ecd49a;border-radius:12px;padding:15px}
+.flow{counter-reset:n;list-style:none;padding:0}
+.flow li{position:relative;margin:12px 0;padding:13px 15px 13px 52px;background:#fafcff;border:1px solid #e1e8f0;border-radius:11px}
+.flow li:before{counter-increment:n;content:counter(n);position:absolute;left:14px;top:13px;width:27px;height:27px;border-radius:50%;background:#315f94;color:#fff;display:grid;place-items:center;font-weight:800}
+.info-table{width:100%;border-collapse:collapse}
+.info-table th,.info-table td{border:1px solid var(--line);padding:10px;vertical-align:top}
+.info-table th{background:#eaf1f8;color:#17365d}
+.checklist{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}
+.checkitem{background:#eef5fb;border:1px solid #d3e1ef;border-radius:10px;padding:10px;text-align:center;font-size:.92rem;font-weight:700;color:#234f7d}
+.formbar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+input[type=text]{width:100%;padding:11px;border:1px solid #bcc9d7;border-radius:9px;font-size:1rem}
+.q{border:1px solid #dfe6ee;border-radius:13px;padding:18px;margin:16px 0;background:#fff}
+.q-title{font-weight:800;color:#183b63;margin-bottom:10px}
+.options label{display:block;margin:7px 0;padding:8px 10px;border-radius:8px;background:#f8fafc;cursor:pointer}
+.options label:hover{background:#edf4fb}
+button{border:0;border-radius:9px;padding:11px 17px;font-weight:800;cursor:pointer}
+.primary{background:#214f80;color:#fff}
+.secondary{background:#e6edf5;color:#20466e}
+.download{background:#147d64;color:#fff}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.result{display:none;margin-top:20px;padding:18px;border-radius:12px;background:#f4f8fc;border:1px solid #cbd9e8}
+.correct{color:var(--green);font-weight:800}
+.wrong{color:var(--red);font-weight:800}
+.explain{margin-top:9px;background:#fbfcfe;border-left:4px solid #688caf;padding:10px 12px}
+.small{font-size:.91rem;color:#5b6573}
+.score-big{font-size:1.65rem;font-weight:900;color:#17365d}
+.topbtn{position:fixed;top:10px;left:10px;z-index:1000;background:#17365d;color:white;border-radius:8px;padding:8px 11px}
+footer{text-align:center;color:#6b7280;padding:25px}
+@media(max-width:760px){
+  .grid,.formbar{grid-template-columns:1fr}
+  .checklist{grid-template-columns:1fr}
+  header h1{font-size:1.65rem}
+}
+@media print{
+  .topbtn,.actions{display:none!important}
+  .card{box-shadow:none;break-inside:avoid}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<button class="topbtn" onclick="window.print()">인쇄 / PDF</button>
+
+<header>
+<h1>디지털 윤리 5차시</h1>
+<p>허위정보·딥페이크와 미디어 리터러시 · 개념기반 목표지향 수업지도안</p>
+</header>
+
+<div class="wrap">
+
+<section class="card">
+<h2>1. 수업 개요</h2>
+<table class="info-table">
+<tr><th>수업 주제</th><td>허위정보·딥페이크와 미디어 리터러시</td><th>차시</th><td>5 / 8차시</td></tr>
+<tr><th>수업 유형</th><td>개념기반 목표지향 수업</td><th>대상</th><td>고등학생·과학고 학생</td></tr>
+<tr><th>핵심 질문</th><td colspan="3"><strong>“우리는 온라인 정보가 사실인지 어떻게 확인할 수 있을까?”</strong></td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>2. 학습목표</h2>
+<div class="grid">
+<div class="box"><strong>지식·이해</strong><br>허위정보, 오정보, 조작정보, 딥페이크, 확증편향, 미디어 리터러시의 의미를 설명할 수 있다.</div>
+<div class="box"><strong>과정·기능</strong><br>온라인 정보의 작성자·작성 시점·원출처·근거·교차 검증 가능성을 확인하여 신뢰성을 판단할 수 있다.</div>
+<div class="box"><strong>가치·태도</strong><br>자신이 믿고 싶은 정보라도 근거를 확인하며, 확인되지 않은 내용을 성급하게 공유하지 않는 태도를 기른다.</div>
+<div class="box"><strong>최종 도달 목표</strong><br>과학 정보와 디지털 콘텐츠를 비판적으로 검토하고, 공유 전 사실 확인 절차를 스스로 적용할 수 있다.</div>
+</div>
+</section>
+
+<section class="card">
+<h2>3. 핵심개념</h2>
+<p>
+<span class="keyword">허위정보</span>
+<span class="keyword">오정보</span>
+<span class="keyword">조작정보</span>
+<span class="keyword">딥페이크</span>
+<span class="keyword">원출처</span>
+<span class="keyword">교차 검증</span>
+<span class="keyword">팩트체크</span>
+<span class="keyword">확증편향</span>
+<span class="keyword">미디어 리터러시</span>
+</p>
+<div class="notice">
+<strong>개념적 일반화:</strong> 디지털 정보의 신뢰성은 얼마나 그럴듯하게 보이는가가 아니라 누가 만들었는지, 언제 만들어졌는지, 어떤 근거가 있는지, 원자료를 확인할 수 있는지, 서로 독립적인 자료와 일치하는지를 통해 판단해야 한다.
+</div>
+<div class="checklist">
+<div class="checkitem">① 작성자 확인</div>
+<div class="checkitem">② 날짜·맥락 확인</div>
+<div class="checkitem">③ 원출처 확인</div>
+<div class="checkitem">④ 근거 검토</div>
+<div class="checkitem">⑤ 교차 검증</div>
+</div>
+</section>
+
+<section class="card">
+<h2>4. 수업 열기 멘트</h2>
+<div class="opening">
+여러분이 과학 탐구 발표를 준비하고 있는데 단체 채팅방에 아주 놀라운 게시물이 올라왔다고 상상해 봅시다. 제목은 이렇습니다.<br><br>
+
+<strong>“국내 연구진, 상온에서 작동하는 완전히 새로운 물질 발견! 기존 물리학 이론 뒤집혀.”</strong><br><br>
+
+게시물에는 흰 가운을 입은 연구자의 사진도 있고, 그럴듯한 그래프도 있으며, 수만 번 공유되었다는 표시도 있습니다. 더구나 영상 속 유명 과학자는 “이 결과는 교과서를 다시 써야 할 정도입니다.”라고 말합니다.<br><br>
+
+이 정도면 믿어도 될까요?<br><br>
+
+과학을 공부하는 여러분에게 이 질문은 꽤 특별합니다. 과학은 ‘그럴듯함’으로 결론을 내리지 않습니다. 누가 발표했는지, 어떤 실험을 했는지, 데이터는 공개되었는지, 다른 연구자가 재현했는지, 같은 결과를 독립적으로 확인했는지 살펴봅니다. 즉, <strong>과학적 사고 자체가 훌륭한 미디어 리터러시 훈련</strong>이기도 합니다.<br><br>
+
+오늘날에는 상황이 더 복잡해졌습니다. AI는 실제처럼 보이는 사진을 만들 수 있고, 존재하지 않는 사람의 목소리를 만들 수도 있으며, 영상 속 입 모양까지 자연스럽게 바꿀 수 있습니다. 하지만 중요한 것은 “AI로 만들었으니 모두 가짜다”라고 생각하는 것도 아닙니다. 진짜 영상도 편집될 수 있고, 실제 통계도 일부 구간만 잘라 보여 주면 잘못된 인상을 줄 수 있기 때문입니다.<br><br>
+
+그래서 오늘 우리가 연습할 능력은 단순히 가짜를 맞히는 능력이 아닙니다. <strong>‘이 정보가 사실이라고 믿을 충분한 근거가 있는가?’를 질문하는 능력</strong>입니다.<br><br>
+
+좋은 과학자는 새로운 사실을 빨리 믿는 사람이 아니라, <strong>놀라운 주장일수록 더 좋은 증거를 요구하는 사람</strong>입니다. 오늘부터 온라인 게시물을 볼 때도 작은 과학자가 되어 봅시다.
+</div>
+</section>
+
+<section class="card">
+<h2>5. 수업의 흐름</h2>
+<ol class="flow">
+<li><strong>도입 5분</strong> — ‘교과서를 뒤집는 새로운 과학 발견’이라는 가상 SNS 게시물을 제시하고 믿을 수 있는지 첫 판단을 기록한다.</li>
+<li><strong>목표 공유 3분</strong> — “그럴듯함과 신뢰성은 같은가?”라는 질문을 통해 수업 목표를 확인한다.</li>
+<li><strong>개념 형성 12분</strong> — 허위정보·오정보·조작정보·딥페이크·확증편향·팩트체크의 개념을 사례로 이해한다.</li>
+<li><strong>사례 탐구 12분</strong> — 과학 기사, SNS 게시물, 통계 그래프, AI 생성 영상 사례에서 작성자·날짜·원출처·근거를 분석한다.</li>
+<li><strong>개념 전이 8분</strong> — 서로 다른 출처를 비교하고, ‘작성자 → 날짜 → 원출처 → 근거 → 교차 검증’의 5단계 공유 전 확인 규칙을 만든다.</li>
+<li><strong>형성평가 7분</strong> — OX 5문항과 옳은 것 3개 고르기 5문항으로 핵심 개념을 점검한다.</li>
+<li><strong>정리 3분</strong> — “놀라운 정보를 보았을 때 나는 공유하기 전에 먼저 ________한다.”를 작성하며 마무리한다.</li>
+</ol>
+</section>
+
+<section class="card">
+<h2>6. 형성평가</h2>
+<p class="small">총 10문항, 각 10점. 6~10번은 정답 3개를 모두 선택하고 오답 보기를 선택하지 않아야 정답으로 처리됩니다.</p>
+
+<div class="formbar">
+<div><label><strong>학번</strong></label><input id="studentId" type="text" placeholder="예: 1101"></div>
+<div><label><strong>이름</strong></label><input id="studentName" type="text" placeholder="예: 홍길동"></div>
+</div>
+
+<h3>Ⅰ. OX 퀴즈 5문항</h3>
+
+<div class="q" data-num="1" data-type="radio" data-answer="X">
+<div class="q-title">1. 온라인 게시물이 수만 번 공유되었다면 많은 사람이 검증한 것이므로 사실이라고 판단해도 된다.</div>
+<div class="options">
+<label><input type="radio" name="q1" value="O"> O</label>
+<label><input type="radio" name="q1" value="X"> X</label>
+</div>
+<div class="explain">해설: 공유 횟수나 조회 수는 정보의 인기를 보여 줄 수 있지만 사실성을 증명하지는 않는다. 원출처, 근거, 작성자, 다른 신뢰할 만한 자료와의 일치 여부를 확인해야 한다.</div>
+</div>
+
+<div class="q" data-num="2" data-type="radio" data-answer="O">
+<div class="q-title">2. 같은 사건을 여러 독립적인 신뢰할 만한 출처가 비슷한 근거와 함께 보도하는지 확인하는 것은 교차 검증의 한 방법이다.</div>
+<div class="options">
+<label><input type="radio" name="q2" value="O"> O</label>
+<label><input type="radio" name="q2" value="X"> X</label>
+</div>
+<div class="explain">해설: 교차 검증은 하나의 정보에만 의존하지 않고 서로 독립적인 자료를 비교하여 핵심 사실이 일치하는지 살펴보는 과정이다.</div>
+</div>
+
+<div class="q" data-num="3" data-type="radio" data-answer="X">
+<div class="q-title">3. 사진이나 영상은 글보다 조작하기 어렵기 때문에 이미지가 포함된 게시물은 원출처를 확인할 필요가 없다.</div>
+<div class="options">
+<label><input type="radio" name="q3" value="O"> O</label>
+<label><input type="radio" name="q3" value="X"> X</label>
+</div>
+<div class="explain">해설: 사진과 영상도 편집, 재맥락화, 합성, AI 생성 등의 방식으로 사실과 다른 인상을 줄 수 있다. 따라서 이미지가 있다는 이유만으로 사실성이 보장되지 않는다.</div>
+</div>
+
+<div class="q" data-num="4" data-type="radio" data-answer="O">
+<div class="q-title">4. 자신이 원래 믿고 있던 생각과 일치하는 정보일수록 오히려 근거를 확인하려는 태도가 필요하다.</div>
+<div class="options">
+<label><input type="radio" name="q4" value="O"> O</label>
+<label><input type="radio" name="q4" value="X"> X</label>
+</div>
+<div class="explain">해설: 사람은 자신의 기존 생각과 일치하는 정보를 더 쉽게 받아들이고 반대 정보는 덜 받아들이는 확증편향을 보일 수 있다. 따라서 믿고 싶은 정보일수록 검증이 중요하다.</div>
+</div>
+
+<div class="q" data-num="5" data-type="radio" data-answer="O">
+<div class="q-title">5. 과학 기사를 읽을 때 연구 결과의 원논문이나 연구기관 발표 자료를 확인하는 것은 정보의 맥락과 근거를 파악하는 데 도움이 된다.</div>
+<div class="options">
+<label><input type="radio" name="q5" value="O"> O</label>
+<label><input type="radio" name="q5" value="X"> X</label>
+</div>
+<div class="explain">해설: 기사 제목만 보는 것보다 원논문, 연구기관 자료, 실제 데이터 등 원출처에 가까운 자료를 확인하면 연구 조건과 한계를 더 정확히 파악할 수 있다.</div>
+</div>
+
+<h3>Ⅱ. 옳은 것 3개 고르기 — 5지선다형 5문항</h3>
+
+<div class="q" data-num="6" data-type="check" data-answer="A,C,D">
+<div class="q-title">6. 온라인 과학 정보를 처음 접했을 때 신뢰성을 판단하기 위한 행동으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q6" value="A"> ① 누가 작성했는지와 해당 작성자의 전문성·책임성을 확인한다.</label>
+<label><input type="checkbox" name="q6" value="B"> ② 제목이 매우 구체적이면 본문을 읽지 않아도 사실로 판단한다.</label>
+<label><input type="checkbox" name="q6" value="C"> ③ 게시 날짜와 사건이 발생한 시점이 일치하는지 확인한다.</label>
+<label><input type="checkbox" name="q6" value="D"> ④ 주장에 연결된 원자료나 근거가 실제로 존재하는지 확인한다.</label>
+<label><input type="checkbox" name="q6" value="E"> ⑤ 댓글에서 찬성 의견이 많으면 검증을 끝낸다.</label>
+</div>
+<div class="explain">해설: ① 작성자, ③ 날짜와 맥락, ④ 원자료와 근거 확인은 정보 검증의 기본이다. 자극적인 제목이나 댓글의 다수 의견은 사실성의 직접적인 증거가 아니다.</div>
+</div>
+
+<div class="q" data-num="7" data-type="check" data-answer="B,D,E">
+<div class="q-title">7. 다음 중 딥페이크나 AI 생성 콘텐츠를 접했을 때 적절한 판단 태도를 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q7" value="A"> ① 영상이 자연스럽다면 실제 촬영 영상이라고 단정한다.</label>
+<label><input type="checkbox" name="q7" value="B"> ② 영상의 최초 게시자와 원본 출처를 찾아본다.</label>
+<label><input type="checkbox" name="q7" value="C"> ③ AI 생성 가능성이 있으므로 모든 디지털 영상을 거짓이라고 판단한다.</label>
+<label><input type="checkbox" name="q7" value="D"> ④ 다른 신뢰할 만한 자료에서도 같은 사건이 확인되는지 살펴본다.</label>
+<label><input type="checkbox" name="q7" value="E"> ⑤ 영상의 날짜·장소·맥락이 주장과 일치하는지 확인한다.</label>
+</div>
+<div class="explain">해설: ② 원출처, ④ 독립 자료 비교, ⑤ 날짜·장소·맥락 확인이 중요하다. 영상이 자연스럽다는 이유만으로 진짜라고 단정하거나, 반대로 모든 영상을 거짓이라고 판단하는 것도 적절하지 않다.</div>
+</div>
+
+<div class="q" data-num="8" data-type="check" data-answer="A,B,E">
+<div class="q-title">8. 과학 기사 제목이 “새로운 식품이 기억력을 200% 높인다”고 주장할 때 확인할 내용으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q8" value="A"> ① 200%라는 수치가 무엇을 기준으로 계산되었는지 확인한다.</label>
+<label><input type="checkbox" name="q8" value="B"> ② 연구 대상의 수와 실험 조건을 확인한다.</label>
+<label><input type="checkbox" name="q8" value="C"> ③ 제목에 숫자가 있으므로 객관적 연구라고 판단한다.</label>
+<label><input type="checkbox" name="q8" value="D"> ④ 유명인이 소개했다면 연구 설계를 확인할 필요가 없다.</label>
+<label><input type="checkbox" name="q8" value="E"> ⑤ 원논문이나 연구기관의 실제 발표 내용을 찾아본다.</label>
+</div>
+<div class="explain">해설: ① 수치의 기준, ② 연구 규모와 조건, ⑤ 원자료 확인이 필요하다. 숫자나 유명인의 소개 자체가 연구의 타당성을 보장하지는 않는다.</div>
+</div>
+
+<div class="q" data-num="9" data-type="check" data-answer="A,C,E">
+<div class="q-title">9. 확증편향을 줄이기 위한 행동으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q9" value="A"> ① 자신의 생각과 반대되는 근거도 의도적으로 찾아본다.</label>
+<label><input type="checkbox" name="q9" value="B"> ② 평소 신뢰하는 계정의 글만 확인한다.</label>
+<label><input type="checkbox" name="q9" value="C"> ③ 자신의 결론을 바꿀 수 있는 증거가 무엇인지 생각해 본다.</label>
+<label><input type="checkbox" name="q9" value="D"> ④ 나와 같은 의견의 사람이 많으면 더 이상 확인하지 않는다.</label>
+<label><input type="checkbox" name="q9" value="E"> ⑤ 주장과 사람을 분리하고 근거 자체의 질을 평가한다.</label>
+</div>
+<div class="explain">해설: ① 반대 근거 탐색, ③ 반증 가능성 고려, ⑤ 근거 자체 평가가 확증편향을 줄이는 데 도움이 된다. 익숙한 계정이나 다수 의견만 보는 것은 편향을 강화할 수 있다.</div>
+</div>
+
+<div class="q" data-num="10" data-type="check" data-answer="B,C,D">
+<div class="q-title">10. 정보를 다른 사람에게 공유하기 전 적용할 행동으로 옳은 것을 <strong>3개</strong> 고르시오.</div>
+<div class="options">
+<label><input type="checkbox" name="q10" value="A"> ① 흥미로운 내용이면 검증보다 빠른 공유를 우선한다.</label>
+<label><input type="checkbox" name="q10" value="B"> ② 제목만이 아니라 본문과 원출처를 확인한다.</label>
+<label><input type="checkbox" name="q10" value="C"> ③ 내용이 사실이더라도 오래된 정보가 현재 상황처럼 제시되고 있지 않은지 살펴본다.</label>
+<label><input type="checkbox" name="q10" value="D"> ④ 불확실하다면 단정적으로 재전달하지 않고 추가 확인을 한다.</label>
+<label><input type="checkbox" name="q10" value="E"> ⑤ 친구가 보내 준 정보라면 별도의 확인 없이 공유한다.</label>
+</div>
+<div class="explain">해설: ② 원출처 확인, ③ 날짜와 맥락 점검, ④ 불확실할 때 추가 확인이 책임 있는 공유 행동이다. 흥미나 전달자의 친밀도는 사실성을 보장하지 않는다.</div>
+</div>
+
+<div class="actions">
+<button class="primary" onclick="gradeQuiz()">채점하기</button>
+<button class="download" onclick="downloadResult()">결과 TXT 저장</button>
+<button class="secondary" onclick="resetQuiz()">다시 풀기</button>
+</div>
+<div id="result" class="result"></div>
+</section>
+
+<section class="card">
+<h2>7. 교사용 정리 포인트</h2>
+<ul>
+<li>학생이 ‘가짜를 맞히는 능력’보다 <strong>확인 절차를 적용하는 습관</strong>을 갖도록 지도한다.</li>
+<li>딥페이크 교육을 ‘영상은 믿을 수 없다’는 결론으로 끝내지 않고 원출처·맥락·교차 검증의 중요성으로 연결한다.</li>
+<li>과학고 맥락에서는 기사 제목, 연구 결과, 통계 수치, 그래프, 논문 요약, SNS 과학 정보를 적극 활용한다.</li>
+<li>확증편향은 다른 사람에게만 있는 문제가 아니라 누구에게나 나타날 수 있다는 점을 강조한다.</li>
+<li>마무리 질문: <strong>“내가 가장 믿고 싶은 정보가 사실인지 확인할 때 어떤 증거가 필요할까?”</strong></li>
+</ul>
+</section>
+
+</div>
+<footer>디지털 윤리 5차시 · 허위정보·딥페이크와 미디어 리터러시</footer>
+
+<script>
+let lastResultText="";
+let lastScore=null;
+let lastTime="";
+
+const explanations={
+1:"공유 횟수와 조회 수는 인기의 지표일 수 있지만 사실성을 증명하지 않는다. 원출처와 근거를 직접 확인해야 한다.",
+2:"교차 검증은 서로 독립적인 신뢰할 만한 자료에서 동일한 핵심 사실이 확인되는지 비교하는 과정이다.",
+3:"사진과 영상도 편집, 합성, 재맥락화, AI 생성이 가능하므로 시각 자료라는 이유만으로 신뢰성을 단정해서는 안 된다.",
+4:"확증편향 때문에 기존 생각과 일치하는 정보는 더 쉽게 믿을 수 있으므로 오히려 적극적인 검증이 필요하다.",
+5:"원논문이나 연구기관 자료를 확인하면 기사에서 생략된 연구 조건, 한계, 실제 데이터 등을 더 정확히 파악할 수 있다.",
+6:"정답은 ①, ③, ④이다. 작성자, 날짜와 맥락, 원자료와 근거를 확인하는 것은 정보 신뢰성 판단의 기본이다.",
+7:"정답은 ②, ④, ⑤이다. 딥페이크 가능성이 있는 콘텐츠는 원출처, 독립 자료, 날짜·장소·맥락을 함께 확인해야 한다.",
+8:"정답은 ①, ②, ⑤이다. 수치의 기준, 연구 대상과 실험 조건, 원자료를 확인해야 과학 기사의 주장을 올바르게 평가할 수 있다.",
+9:"정답은 ①, ③, ⑤이다. 반대 근거 탐색, 반증 가능성 고려, 근거 자체의 평가가 확증편향을 줄이는 데 도움이 된다.",
+10:"정답은 ②, ③, ④이다. 원출처, 날짜와 맥락, 불확실성 여부를 확인한 뒤 공유하는 것이 책임 있는 디지털 시민의 태도이다."
+};
+
+function selectedValue(q){
+  const type=q.dataset.type,num=q.dataset.num;
+  if(type==="radio"){
+    const el=document.querySelector('input[name="q'+num+'"]:checked');
+    return el?el.value:"";
+  }
+  return [...document.querySelectorAll('input[name="q'+num+'"]:checked')]
+    .map(x=>x.value).sort().join(",");
+}
+
+function displaySelected(q,val){
+  if(!val) return "미응답";
+  if(q.dataset.type==="radio") return val;
+  const map={A:"①",B:"②",C:"③",D:"④",E:"⑤"};
+  return val.split(",").map(v=>map[v]).join(", ");
+}
+
+function gradeQuiz(){
+  const sid=document.getElementById("studentId").value.trim();
+  const name=document.getElementById("studentName").value.trim();
+  if(!sid||!name){alert("학번과 이름을 입력하세요.");return;}
+
+  let score=0,html="",lines=[];
+  const now=new Date();
+  lastTime=now.toLocaleString("ko-KR");
+
+  document.querySelectorAll(".q").forEach(q=>{
+    const num=q.dataset.num;
+    const ans=q.dataset.answer.split(",").sort().join(",");
+    const sel=selectedValue(q);
+    const ok=sel===ans;
+    if(ok) score+=10;
+
+    html+=`<div>
+      <span class="${ok?'correct':'wrong'}">${num}번 ${ok?'정답':'오답'}</span>
+      · 선택: ${displaySelected(q,sel)}
+      · 정답: ${displaySelected(q,ans)}
+      <div class="explain">${explanations[num]}</div>
+    </div><hr>`;
+
+    lines.push(`[${num}번] ${ok?'정답':'오답'}`);
+    lines.push(`선택: ${displaySelected(q,sel)}`);
+    lines.push(`정답: ${displaySelected(q,ans)}`);
+    lines.push(`상세 해설: ${explanations[num]}`);
+    lines.push("");
+  });
+
+  lastScore=score;
+  const result=document.getElementById("result");
+  result.style.display="block";
+  result.innerHTML=`<div class="score-big">${sid} ${name} · ${score}점 / 100점</div>
+  <p>응시시각: ${lastTime}</p><hr>${html}`;
+
+  lastResultText=
+`디지털 윤리 5차시 형성평가 결과
+========================================
+학번: ${sid}
+이름: ${name}
+점수: ${score}점 / 100점
+응시시각: ${lastTime}
+========================================
+
+${lines.join("\n")}
+
+[수업 핵심]
+정보가 그럴듯해 보이거나 많은 사람이 공유했다는 사실만으로 신뢰성을 판단할 수 없다.
+작성자, 날짜, 원출처, 근거, 교차 검증의 과정을 거쳐 판단하고 불확실한 정보는 성급하게 공유하지 않아야 한다.
+`;
+
+  result.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function safeFile(s){
+  return s.replace(/[\\/:*?"<>|]/g,"_").replace(/\s+/g,"");
+}
+
+function timestampForFile(){
+  const d=new Date();
+  const p=n=>String(n).padStart(2,"0");
+  return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`;
+}
+
+function downloadResult(){
+  if(lastScore===null){
+    gradeQuiz();
+    if(lastScore===null)return;
+  }
+  const sid=safeFile(document.getElementById("studentId").value.trim());
+  const name=safeFile(document.getElementById("studentName").value.trim());
+  const filename=`${sid}_${name}_${lastScore}점_디윤5차시_${timestampForFile()}.txt`;
+  const blob=new Blob(["\ufeff"+lastResultText],{type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=filename;
+  document.body.appendChild(a);
+  a.click();
+  URL.revokeObjectURL(a.href);
+  a.remove();
+}
+
+function resetQuiz(){
+  document.querySelectorAll('input[type="radio"],input[type="checkbox"]').forEach(x=>x.checked=false);
+  document.getElementById("result").style.display="none";
+  lastResultText="";lastScore=null;lastTime="";
+  document.querySelector(".formbar").scrollIntoView({behavior:"smooth",block:"start"});
+}
+</script>
+
+</body>
+</html>
